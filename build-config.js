@@ -1,6 +1,6 @@
 ﻿
 /**
- * @license Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.html or http://ckeditor.com/license
  */
 
@@ -52,11 +52,13 @@ var CKBUILDER_CONFIG = {
 		'removeformat' : 1,
 		'sourcearea' : 1,
 		'specialchar' : 1,
+		'scayt' : 1,
 		'stylescombo' : 1,
 		'tab' : 1,
 		'table' : 1,
 		'tabletools' : 1,
 		'undo' : 1,
+		'wsc' : 1,
 		'dialog' : 1,
 		'dialogui' : 1,
 		'menu' : 1,
@@ -66,7 +68,8 @@ var CKBUILDER_CONFIG = {
 		'popup' : 1,
 		'richcombo' : 1,
 		'listblock' : 1,
-		'fakeobjects' : 1
+		'fakeobjects' : 1,
+		'menubutton' : 1
 	},
 	languages : {
 		'af' : 1,
