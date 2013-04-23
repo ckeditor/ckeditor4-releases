@@ -35,7 +35,6 @@ var CKBUILDER_CONFIG = {
 		'indent' : 1,
 		'link' : 1,
 		'list' : 1,
-		'pastetext' : 1,
 		'undo' : 1,
 		'dialog' : 1,
 		'dialogui' : 1,
@@ -44,6 +43,7 @@ var CKBUILDER_CONFIG = {
 	},
 	languages : {
 		'af' : 1,
+		'sq' : 1,
 		'ar' : 1,
 		'eu' : 1,
 		'bn' : 1,
