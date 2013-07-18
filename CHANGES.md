@@ -1,6 +1,15 @@
 CKEditor 4 Changelog
 ====================
 
+## CKEditor 4.1.3
+
+* Added new translation: Indonesian.
+* [#10644](http://dev.ckeditor.com/ticket/10644): Fixed critical bug when pasting plain text in Blink based browsers.
+* [#5189](http://dev.ckeditor.com/ticket/5189): Find/Replace dialog window: rename "Cancel" button to "Close".
+* [#10562](http://dev.ckeditor.com/ticket/10562): [Housekeeping] Unified CSS gradient filter formats in the Moono skin.
+* [#10537](http://dev.ckeditor.com/ticket/10537): ACF should register a default rule for [config.shiftEnterMode](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-shiftEnterMode).
+* [#10610](http://dev.ckeditor.com/ticket/10610): [CKEDITOR.dialog.addIframe](http://docs.ckeditor.com/#!/api/CKEDITOR.dialog-static-method-addIframe) incorrectly sets the iframe size in dialog windows.
+
 ## CKEditor 4.1.2
 
 * Added new translation: Sinhala.

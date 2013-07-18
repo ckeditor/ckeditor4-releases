@@ -75,6 +75,7 @@ var CKBUILDER_CONFIG = {
 		'hi' : 1,
 		'hu' : 1,
 		'is' : 1,
+		'id' : 1,
 		'it' : 1,
 		'ja' : 1,
 		'km' : 1,
