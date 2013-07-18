@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
- For licensing, see LICENSE.html or http://ckeditor.com/license
+ For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang("a11yhelp","sv",{title:"Hjälpmedelsinstruktioner",contents:"Hjälpinnehåll. För att stänga denna dialogruta trycker du på ESC.",legend:[{name:"Allmänt",items:[{name:"Editor verktygsfält",legend:"Tryck på ${toolbarFocus} för att navigera till verktygsfältet. Flytta till nästa och föregående verktygsfältsgrupp med TAB och SHIFT-TAB. Flytta till nästa och föregående knapp i verktygsfältet med HÖGERPIL eller VÄNSTERPIL. Tryck Space eller ENTER för att aktivera knappen i verktygsfältet."},
 {name:"Dialogeditor",legend:"Inuti en dialogruta, tryck TAB för att navigera till nästa fält i dialogrutan. Du trycker SKIFT + TAB för att flytta till föregående fält. Tryck ENTER för att skicka. Du avbryter och stänger dialogen med ESC. För dialogrutor som har flera flikar, tryck ALT + F10 navigera till fliklistan. Flytta sedan till nästa flik med HÖGERPIL. Flytta till föregående flik med SHIFT + TAB eller VÄNSTERPIL. Tryck Space eller ENTER för att välja fliken."},{name:"Editor för innehållsmeny",
