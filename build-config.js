@@ -32,13 +32,14 @@ var CKBUILDER_CONFIG = {
 		'entities' : 1,
 		'floatingspace' : 1,
 		'wysiwygarea' : 1,
-		'indent' : 1,
+		'indentlist' : 1,
 		'link' : 1,
 		'list' : 1,
 		'undo' : 1,
 		'dialog' : 1,
 		'dialogui' : 1,
 		'button' : 1,
+		'indent' : 1,
 		'fakeobjects' : 1
 	},
 	languages : {
