@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <style>
+      a {
+        color:darkblue;
+      }
+      a.active {
+        color:purple;
+      }
+    </style>
+    <script>
+    active = function (eltActive) {
+      [].forEach.call( document.getElementsByTagName('a'), function(elt) {
+        elt.className = '';
+      });
+      eltActive.className = 'active';
+    }
+    </script>
+  </head>
+  <body>
+    Chargement du texte...
+  </body>
+</html>
