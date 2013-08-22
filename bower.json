@@ -1,0 +1,5 @@
+{
+  "name": "ckeditor",
+  "version": "4.3.0",
+  "main": "ckeditor.js"
+}

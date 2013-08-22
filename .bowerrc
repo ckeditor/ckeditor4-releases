@@ -1,0 +1,10 @@
+{
+  "registry": {
+    "register": "http://arnold.lemonde-interactif.fr:8082",
+    "publish": "http://arnold.lemonde-interactif.fr:8082",
+    "search": [
+      "http://arnold.lemonde-interactif.fr:8082",
+      "https://bower.herokuapp.com"
+    ]
+  }
+}
