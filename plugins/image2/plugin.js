@@ -3,6 +3,9 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
+/**
+ * Comment added to check on updates to NYPL repo.
+ */
 'use strict';
 
 (function() {
