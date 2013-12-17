@@ -115,6 +115,9 @@
 				classes: '!caption',
 				styles: 'float,display'
 			},
+			a: {
+				attributes: '!href,alt',
+			},
 			img: {
 				attributes: '!src,alt,width,height',
 				styles: 'float'
