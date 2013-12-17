@@ -133,6 +133,10 @@
 
 		// This widget has an editable caption.
 		editables: {
+			figure: {
+				selector: 'figure',
+				allowedContent: 'a[!href]'
+			},
 			caption: {
 				selector: 'figcaption',
 				allowedContent: 'br em strong sub sup u s; a[!href]'
