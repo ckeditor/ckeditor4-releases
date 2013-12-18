@@ -215,7 +215,8 @@
 				// This internal is required by the editor.
 				'data-cke-saved-src': widget.data.src,
 
-				alt: widget.data.alt
+				alt: widget.data.alt,
+				link: widget.data.link
 			} );
 
 			// Set dimensions of the image according to gathered data.
@@ -232,6 +233,7 @@
 					hasCaption: !!this.parts.caption,
 					src: image.getAttribute( 'src' ),
 					alt: image.getAttribute( 'alt' ) || '',
+					link: image.getAttribute( 'link' ) || '',
 					width: image.getAttribute( 'width' ) || '',
 					height: image.getAttribute( 'height' ) || '',
 
