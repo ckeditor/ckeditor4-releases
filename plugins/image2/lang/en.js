@@ -5,7 +5,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 CKEDITOR.plugins.setLang( 'image2', 'en', {
 	alt: 'Alternative Text',
 	btnUpload: 'Send it to the Server',
-	captioned: 'Captioned image',
+	captioned: 'Captioned TEST image',
 	infoTab: 'Image Info',
 	lockRatio: 'Lock Ratio',
 	menu: 'Image Properties',
