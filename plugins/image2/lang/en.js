@@ -4,7 +4,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang( 'image2', 'en', {
 	alt: 'Alternative Text',
-	link: 'Link to'
+	link: 'Link to',
 	btnUpload: 'Send it to the Server',
 	captioned: 'Captioned image',
 	infoTab: 'Image Info',
@@ -12,6 +12,7 @@ CKEDITOR.plugins.setLang( 'image2', 'en', {
 	menu: 'Image Properties',
 	pathName: 'image',
 	pathNameCaption: 'caption',
+	pathNameLink: 'link',
 	resetSize: 'Reset Size',
 	resizer: 'Click and drag to resize',
 	title: 'Image Properties',
