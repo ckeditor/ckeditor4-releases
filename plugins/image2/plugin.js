@@ -67,6 +67,7 @@
 			// Add custom elementspath names to widget definition.
 			image2.pathName = lang.pathName;
 			image2.editables.caption.pathName = lang.pathNameCaption;
+			image2.editables.figure.pathName = lang.pathName;
 
 			// Register the widget.
 			editor.widgets.add( 'image2', image2 );
