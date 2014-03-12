@@ -12,9 +12,9 @@ var profile = {
 			return isTestRe.test(filename);
 		},
 
-        copyOnly: function(filename, mid){
-            return !(mid in amdIncludes);
-        },
+                copyOnly: function(filename, mid){
+                        return !(mid in amdIncludes);
+                },
 
 		amd: function(filename, mid){
 			return isJsRe.test(filename) && (mid in amdIncludes);
