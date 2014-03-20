@@ -216,7 +216,8 @@
 				'data-cke-saved-src': widget.data.src,
 
 				alt: widget.data.alt,
-				'data-link': widget.data.link
+				'data-link': widget.data.link,
+				'data-float': widget.data.align
 			} );
 
 			// Set dimensions of the image according to gathered data.
