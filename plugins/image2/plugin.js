@@ -67,7 +67,7 @@
 			// Add custom elementspath names to widget definition.
 			image2.pathName = lang.pathName;
 			image2.editables.caption.pathName = lang.pathNameCaption;
-			//image2.editables.figure.pathName = lang.pathNameLink; 
+			image2.editables.figure.pathName = lang.pathNameLink; 
 
 			// Register the widget.
 			editor.widgets.add( 'image2', image2 );
@@ -215,8 +215,8 @@
 				// This internal is required by the editor.
 				'data-cke-saved-src': widget.data.src,
 
-				// alt: widget.data.alt,
-				// link: widget.data.link
+				alt: widget.data.alt,
+				'data-link': widget.data.link
 			} );
 
 			// Set dimensions of the image according to gathered data.
@@ -233,7 +233,7 @@
 					hasCaption: !!this.parts.caption,
 					src: image.getAttribute( 'src' ),
 					alt: image.getAttribute( 'alt' ) || '',
-					// link: image.getAttribute( 'link' ) || '',
+					link: image.getAttribute( 'link' ) || '',
 					width: image.getAttribute( 'width' ) || '',
 					height: image.getAttribute( 'height' ) || '',
 
@@ -285,10 +285,54 @@
 				editable = editor.editable(),
 
 				// The order that stateActions get executed. It matters!
-				shiftables = [ 'hasCaption', 'align' ],
+				shiftables = [ 'hasCaption', 'align'],
 
 				// Atomic procedures, one per state variable.
 				stateActions = {
+					// link: function( data, oldValue, newValue) {
+					// 	// console.log(data.element);
+
+					// 	if (!changed(data, 'link')) {
+					// 		//console.log('notchanged');
+					// 		return;
+					// 	}
+						
+					// 	var element = data.element,
+					// 			oldState = data.oldState,
+					// 			newState = data.newState,
+					// 			figure, img, a;
+
+					// 	data.destroy();
+
+					// 	if (newValue) {
+
+					// 		img = element.findOne( 'img' ) || element;
+
+					// 		// Create new <figure> from widget template.
+					// 		var figure = CKEDITOR.dom.element.createFromHtml("<a href='"+newValue+"'><img src='' /></a>", doc );
+
+					// 		// Replace element with <figure>.
+					// 		replaceSafely( figure, element );
+
+					// 		// Use old <img> instead of the one from the template,
+					// 		// so we won't lose additional attributes.
+					// 		img.replace( figure.findOne( 'img' ) );
+
+					// 		// Update widget's element.
+					// 		data.element = figure;
+					// 	}
+
+					// 	// The caption was present, but now it's to be removed.
+					// 	else {
+					// 		// Unwrap <img> from figure.
+					// 		img = element.findOne( 'img' );
+					// 		img.replace( element );
+
+					// 		// Update widget's element.
+					// 		data.element = img;
+					// 	}
+
+					// },
 					align: function( data, oldValue, newValue ) {
 						var hasCaptionAfter = data.newState.hasCaption,
 							element = data.element;

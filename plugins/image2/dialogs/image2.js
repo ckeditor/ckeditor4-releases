@@ -58,7 +58,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		lockRatio, userDefinedLock,
 
 		// Global variables referring to dialog fields and elements.
-		lockButton, resetButton, widthField, heightField,
+		lockButton, resetButton, widthField, heightField, linkField,
 
 		natural;
 
@@ -126,7 +126,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		// Remember that src is different than default.
 		if ( value !== widget.data.src ) {
 			// Update dimensions of the image once it's preloaded.
-			preLoader( value, function( image, width, height ) {
+			preLoader( value, function( image, width, height, link) {
 				// Re-enable width and height fields.
 				toggleDimensions( true );
 
@@ -139,6 +139,8 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 
 				// Fill height field with the height of the new image.
 				heightField.setValue( height );
+
+				linkField.setValue( link );
 
 				// Cache the new width.
 				preLoadedWidth = width;
@@ -413,17 +415,20 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 							widget.setData( 'alt', this.getValue() );
 						}
 					},
-					// {
-					// 	id: 'link',
-					// 	type: 'text',
-					// 	label: lang.link,
-					// 	setup: function( widget ) {
-					// 		this.setValue( widget.data.link );
-					// 	},
-					// 	commit: function( widget ) {
-					// 		widget.setData( 'link', this.getValue() );
-					// 	}
-					// },
+					{
+						id: 'link',
+						type: 'text',
+						label: lang.link,
+						onLoad: function() {
+							linkField = this;
+						},
+						setup: function( widget ) {
+							this.setValue( widget.data.link );
+						},
+						commit: function( widget ) {
+							widget.setData( 'link', this.getValue() );
+						}
+					},
 					{
 						type: 'hbox',
 						widths: [ '25%', '25%', '50%' ],
