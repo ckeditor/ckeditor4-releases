@@ -415,20 +415,20 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 							widget.setData( 'alt', this.getValue() );
 						}
 					},
-					{
-						id: 'link',
-						type: 'text',
-						label: lang.link,
-						onLoad: function() {
-							linkField = this;
-						},
-						setup: function( widget ) {
-							this.setValue( widget.data.link );
-						},
-						commit: function( widget ) {
-							widget.setData( 'link', this.getValue() );
-						}
-					},
+					// {
+					// 	id: 'link',
+					// 	type: 'text',
+					// 	label: lang.link,
+					// 	onLoad: function() {
+					// 		linkField = this;
+					// 	},
+					// 	setup: function( widget ) {
+					// 		this.setValue( widget.data.link );
+					// 	},
+					// 	commit: function( widget ) {
+					// 		widget.setData( 'link', this.getValue() );
+					// 	}
+					// },
 					{
 						type: 'hbox',
 						widths: [ '25%', '25%', '50%' ],

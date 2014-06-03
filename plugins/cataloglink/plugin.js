@@ -95,7 +95,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
         },
 
         onOk: function () {
-          var link = 'http://bibliocommons.com/',
+          var link = 'http://nypl.bibliocommons.com/',
               dialog = this,
               id = dialog.getValueOf('tab1', 'id'),
               text = dialog.getValueOf('tab1', 'text'),
@@ -112,6 +112,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
           if (id) {
             link += 'item/show/' + id;
           } else if (keywords) {
+            // split and add %20
             link += 'search?t=smart&q=' + keywords + '&commit=Search&searchOpt=catalogue';
           }
 
