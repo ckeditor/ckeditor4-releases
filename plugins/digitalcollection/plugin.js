@@ -67,6 +67,12 @@ CKEDITOR.plugins.add( 'digitalcollection', {
       }
     });
 
+    editor.ui.addButton('digitalcollection', {
+      label: 'Add Digital Collections Image',
+      command: 'digitalcollection',
+      icon: this.path + 'images/digitalcollection.png'
+    });
+
     editor.widgets.add('digitalcollection', {
       dialog: 'digitalcollectionDialog',
       init: function () {
@@ -120,7 +126,7 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.element.addClass('align-' + this.data.align);
         }
       },
-      button: 'Add Digital Collections image',
+
       template:
         '<div class="inline">' +
           '<figure>' +
