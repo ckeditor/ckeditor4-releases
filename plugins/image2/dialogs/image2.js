@@ -58,7 +58,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		lockRatio, userDefinedLock,
 
 		// Global variables referring to dialog fields and elements.
-		lockButton, resetButton, widthField, heightField, linkField,
+		lockButton, resetButton, widthField, heightField, // linkField,
 
 		natural;
 
@@ -126,7 +126,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		// Remember that src is different than default.
 		if ( value !== widget.data.src ) {
 			// Update dimensions of the image once it's preloaded.
-			preLoader( value, function( image, width, height, link) {
+			preLoader( value, function( image, width, height) {
 				// Re-enable width and height fields.
 				toggleDimensions( true );
 
@@ -140,7 +140,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 				// Fill height field with the height of the new image.
 				heightField.setValue( height );
 
-				linkField.setValue( link );
+				// linkField.setValue( link );
 
 				// Cache the new width.
 				preLoadedWidth = width;
