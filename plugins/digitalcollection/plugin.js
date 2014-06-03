@@ -26,11 +26,11 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.setData('img_uuid', uuid);
         }
 
-        if (this.element.hasClass('inline-left'))
+        if (this.element.hasClass('align-left'))
           this.setData('align', 'left');
-        if (this.element.hasClass('inline-right'))
+        if (this.element.hasClass('align-right'))
           this.setData('align', 'right');
-        if (this.element.hasClass('inline-center'))
+        if (this.element.hasClass('align-center'))
           this.setData('align', 'center');
       },
       data: function () {
@@ -56,19 +56,23 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.element.find('a').getItem(0).setAttribute('href', 'http://digitalcollections.nypl.org/items/'+this.data.img_uuid);
         }
 
-        this.element.removeClass('inline-left');
-        this.element.removeClass('inline-right');
-        this.element.removeClass('inline-center');
+        this.element.removeClass('inline');
+        this.element.removeClass('align-left');
+        this.element.removeClass('align-right');
+        this.element.removeClass('align-center');
         if (this.data.align) {
-          this.element.addClass('inline-' + this.data.align);
+          this.element.addClass('align-' + this.data.align);
+        }
+        if (this.data.align !== 'center') {
+          this.element.addClass('inline');
         }
       },
 
       template:
-        '<div class="inline">' +
-          '<figure>' +
-            '<a href=""><img data-id src="" class="digColImage" width="300px"/></a>' +
-            '<figcaption class="dcCaption">Caption</figcaption>' +
+        '<div class="">' +
+          '<figure class="caption">' +
+            '<a href="" target="_blank"><img data-id src="" width="300px"/></a>' +
+            '<figcaption>Caption</figcaption>' +
           '</figure>' +
         '</div>',
       editables: {
@@ -77,8 +81,8 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           allowedContent: 'strong em'
         }
       },
-      allowedContent: 'div(!inline,inline-left,inline-right,inline-center,data-width);' +
-        'figure;a(!data-uuid);img(!digColImage,data-id);figcaption(!dcCaption);',
+      allowedContent: 'div(!inline,align-left,align-right,align-center);' +
+        'figure(!caption);a(!data-uuid);img(!data-id);figcaption;',
       // requiredContent: 'div(!inline,align-left,align-right,align-center,data-width)',
       upcast: function (element) {
         return element.name == 'div' && element.hasClass('inline');
