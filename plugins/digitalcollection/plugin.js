@@ -69,21 +69,21 @@ CKEDITOR.plugins.add( 'digitalcollection', {
       },
 
       template:
-        '<div class="">' +
+        '<div class="digcol-image">' +
           '<figure class="caption">' +
             '<a href="" target="_blank"><img data-id src="" width="300px"/></a>' +
-            '<figcaption>Caption</figcaption>' +
+            '<figcaption class="digcol-caption">Caption</figcaption>' +
           '</figure>' +
         '</div>',
       editables: {
         caption: {
-          selector: '.dcCaption',
+          selector: '.digcol-caption',
           allowedContent: 'strong em'
         }
       },
-      allowedContent: 'div(!inline,align-left,align-right,align-center);' +
+      allowedContent: 'div(!digcol-image,inline,align-left,align-right,align-center);' +
         'figure(!caption);a(!data-uuid);img(!data-id);figcaption;',
-      // requiredContent: 'div(!inline,align-left,align-right,align-center,data-width)',
+      // requiredContent: 'div(!digcol-image)',
       upcast: function (element) {
         return element.name == 'div' && element.hasClass('inline');
       }

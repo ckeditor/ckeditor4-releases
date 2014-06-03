@@ -10,7 +10,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
       icon: this.path + 'images/cataloglink.png'
     });
     
-    CKEDITOR.dialog.add( 'cataloglinkDialog', function (editor) {
+    CKEDITOR.dialog.add('cataloglinkDialog', function (editor) {
       return {
         title: 'Catalog Link Properties',
         minWidth: 400,
@@ -100,7 +100,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
               id = dialog.getValueOf('tab1', 'id'),
               text = dialog.getValueOf('tab1', 'text'),
               keywords = dialog.getValueOf('tab1', 'keywords'),
-              keywordsArr = keywords.split(' ').join('%20');
+              keywordsArr = keywords.split(' ').join('%20'),
               cataloglink = dialog.element;
 
           dialog.commitContent(cataloglink);
