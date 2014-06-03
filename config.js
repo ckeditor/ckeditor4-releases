@@ -37,5 +37,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
   // Add extra plugins.
-  config.extraPlugins = 'widget,lineutils,image2';
+  config.extraPlugins = 'widget,lineutils,image2,cataloglink,digitalcollection';
 };
