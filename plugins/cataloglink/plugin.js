@@ -18,7 +18,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
         contents: [
           {
             id: 'tab1',
-            label: 'Add a Catalog link',
+            label: 'Add a Catalog link (Id or keywords)',
             elements:[
               {
                 type: 'text',
@@ -100,7 +100,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
               id = dialog.getValueOf('tab1', 'id'),
               text = dialog.getValueOf('tab1', 'text'),
               keywords = dialog.getValueOf('tab1', 'keywords'),
-              // cataloglink = editor.document.createElement('a');
+              keywordsArr = keywords.split(' ').join('%20');
               cataloglink = dialog.element;
 
           dialog.commitContent(cataloglink);
@@ -112,8 +112,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
           if (id) {
             link += 'item/show/' + id;
           } else if (keywords) {
-            // split and add %20
-            link += 'search?t=smart&q=' + keywords + '&commit=Search&searchOpt=catalogue';
+            link += 'search?t=smart&q=' + keywordsArr + '&commit=Search&searchOpt=catalogue';
           }
 
           cataloglink.setAttribute('data-id', id);

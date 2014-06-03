@@ -421,7 +421,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 					// 	label: lang.link,
 					// 	onLoad: function() {
 					// 		linkField = this;
-					// 	},
+					// 	}, 
 					// 	setup: function( widget ) {
 					// 		this.setValue( widget.data.link );
 					// 	},

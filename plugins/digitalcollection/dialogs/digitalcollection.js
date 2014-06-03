@@ -38,7 +38,8 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
           {
             id: 'img_id',
             type: 'text',
-            label: 'Image id',
+            label: 'Image ID',
+            validate: CKEDITOR.dialog.validate.notEmpty( "Image ID cannot be empty" ),
             setup: function (widget) {
               this.setValue(widget.data.img_id);
             },
@@ -49,7 +50,8 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
           {
             id: 'img_uuid',
             type: 'text',
-            label: 'Image uuid',
+            label: 'Image UUID',
+            validate: CKEDITOR.dialog.validate.notEmpty( "Image UUID cannot be empty" ),
             setup: function (widget) {
               this.setValue(widget.data.img_uuid);
             },

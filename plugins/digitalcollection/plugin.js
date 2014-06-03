@@ -2,70 +2,7 @@ CKEDITOR.plugins.add( 'digitalcollection', {
   requires: 'widget',
   icons: 'digitalcollection',
   init: function (editor) {
-    CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
-      return {
-        title: 'Edit Digital Collection Image',
-        minWidth: 200,
-        minHeight: 100,
-        contents: [
-          {
-            id: 'info',
-            elements: [
-              {
-                id: 'align',
-                type: 'select',
-                label: 'Align',
-                items: [
-                  [ editor.lang.common.notSet, '' ],
-                  [ editor.lang.common.alignLeft, 'left' ],
-                  [ editor.lang.common.alignRight, 'right' ],
-                  [ editor.lang.common.alignCenter, 'center' ]
-                ],
-                setup: function (widget) {
-                  this.setValue(widget.data.align);
-                },
-                commit: function (widget) {
-                  widget.setData('align', this.getValue());
-                }
-              },
-              {
-                id: 'width',
-                type: 'text',
-                label: 'Width (px)',
-                setup: function (widget) {
-                  this.setValue(widget.data.width);
-                },
-                commit: function (widget) {
-                  widget.setData('width', this.getValue());
-                }
-              },
-              {
-                id: 'img_id',
-                type: 'text',
-                label: 'Image id',
-                setup: function (widget) {
-                  this.setValue(widget.data.img_id);
-                },
-                commit: function (widget) {
-                  widget.setData('img_id', this.getValue());
-                }
-              },
-              {
-                id: 'img_uuid',
-                type: 'text',
-                label: 'Image uuid',
-                setup: function (widget) {
-                  this.setValue(widget.data.img_uuid);
-                },
-                commit: function (widget) {
-                  widget.setData('img_uuid', this.getValue());
-                }
-              }
-            ]
-          }
-        ]
-      }
-    });
+    CKEDITOR.dialog.add('digitalcollectionDialog', this.path + 'dialogs/digitalcollection.js');
 
     editor.ui.addButton('digitalcollection', {
       label: 'Add Digital Collections Image',
@@ -89,11 +26,11 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.setData('img_uuid', uuid);
         }
 
-        if (this.element.hasClass('align-left'))
+        if (this.element.hasClass('inline-left'))
           this.setData('align', 'left');
-        if (this.element.hasClass('align-right'))
+        if (this.element.hasClass('inline-right'))
           this.setData('align', 'right');
-        if (this.element.hasClass('align-center'))
+        if (this.element.hasClass('inline-center'))
           this.setData('align', 'center');
       },
       data: function () {
@@ -119,11 +56,11 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.element.find('a').getItem(0).setAttribute('href', 'http://digitalcollections.nypl.org/items/'+this.data.img_uuid);
         }
 
-        this.element.removeClass('align-left');
-        this.element.removeClass('align-right');
-        this.element.removeClass('align-center');
+        this.element.removeClass('inline-left');
+        this.element.removeClass('inline-right');
+        this.element.removeClass('inline-center');
         if (this.data.align) {
-          this.element.addClass('align-' + this.data.align);
+          this.element.addClass('inline-' + this.data.align);
         }
       },
 
@@ -140,8 +77,8 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           allowedContent: 'strong em'
         }
       },
-      allowedContent: 'div(!inline,align-left,align-right,align-center,data-width);' +
-        'figure;a;img(!digColImage);figcaption(!dcCaption);',
+      allowedContent: 'div(!inline,inline-left,inline-right,inline-center,data-width);' +
+        'figure;a(!data-uuid);img(!digColImage,data-id);figcaption(!dcCaption);',
       // requiredContent: 'div(!inline,align-left,align-right,align-center,data-width)',
       upcast: function (element) {
         return element.name == 'div' && element.hasClass('inline');
