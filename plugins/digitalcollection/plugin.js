@@ -34,13 +34,13 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.setData('align', 'center');
       },
       data: function () {
-        if (this.data.width == '') {
+        if (this.data.width === '') {
           this.element.find('img').getItem(0).setAttribute('width', '');
         } else {
           this.element.find('img').getItem(0).setAttribute('width', this.data.width);
         }
 
-        if (this.data.img_id == '') {
+        if (this.data.img_id === '') {
           this.element.find('img').getItem(0).setAttribute('data-id', '');
           this.element.find('img').getItem(0).setAttribute('src', '');
         } else {
@@ -48,7 +48,7 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           this.element.find('img').getItem(0).setAttribute('src', 'http://images.nypl.org/index.php?id='+this.data.img_id+'&t=w');
         }
 
-        if (this.data.img_uuid == '') {
+        if (this.data.img_uuid === '') {
           this.element.find('a').getItem(0).setAttribute('data-uuid', '');
           this.element.find('a').getItem(0).setAttribute('href', '');
         } else {
@@ -82,10 +82,10 @@ CKEDITOR.plugins.add( 'digitalcollection', {
         }
       },
       allowedContent: 'div(!digcol-image,inline,align-left,align-right,align-center);' +
-        'figure(!caption);a(!data-uuid);img(!data-id);figcaption;',
+        'figure(!caption);a(!data-uuid);img(!data-id);figcaption(!digcol-caption);',
       // requiredContent: 'div(!digcol-image)',
       upcast: function (element) {
-        return element.name == 'div' && element.hasClass('inline');
+        return element.name === 'div' && element.hasClass('inline');
       }
     });
   }
