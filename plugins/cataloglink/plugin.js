@@ -1,15 +1,21 @@
-CKEDITOR.plugins.add( 'cataloglink', {
+/*jslint indent: 2, maxlen: 80 */
+/*globals CKEDITOR */
 
-  init: function(editor) {
+CKEDITOR.plugins.add('cataloglink', {
+  init: function (editor) {
+    'use strict';
 
-    editor.addCommand('cataloglinkDialog', new CKEDITOR.dialogCommand('cataloglinkDialog'));
+    editor.addCommand(
+      'cataloglinkDialog',
+      new CKEDITOR.dialogCommand('cataloglinkDialog')
+    );
 
-    editor.ui.addButton( 'cataloglink', {
+    editor.ui.addButton('cataloglink', {
       label: 'Insert Catalog Link',
       command: 'cataloglinkDialog',
       icon: this.path + 'images/cataloglink.png'
     });
-    
+
     CKEDITOR.dialog.add('cataloglinkDialog', function (editor) {
       return {
         title: 'Catalog Link Properties',
@@ -19,7 +25,7 @@ CKEDITOR.plugins.add( 'cataloglink', {
           {
             id: 'tab1',
             label: 'Add a Catalog link (Id or keywords)',
-            elements:[
+            elements: [
               {
                 type: 'text',
                 id: 'text',
@@ -74,13 +80,13 @@ CKEDITOR.plugins.add( 'cataloglink', {
 
         onShow: function () {
           var selection = editor.getSelection(),
-              element = selection.getStartElement();
+            element = selection.getStartElement();
 
           if (element) {
             element = element.getAscendant('a', true);
           }
 
-          if (!element || element.getName() != 'a') {
+          if (!element || element.getName() !== 'a') {
             element = editor.document.createElement('a');
             this.insertMode = true;
           } else {
@@ -96,12 +102,12 @@ CKEDITOR.plugins.add( 'cataloglink', {
 
         onOk: function () {
           var link = 'http://nypl.bibliocommons.com/',
-              dialog = this,
-              id = dialog.getValueOf('tab1', 'id'),
-              text = dialog.getValueOf('tab1', 'text'),
-              keywords = dialog.getValueOf('tab1', 'keywords'),
-              keywordsArr = keywords.split(' ').join('%20'),
-              cataloglink = dialog.element;
+            dialog = this,
+            id = dialog.getValueOf('tab1', 'id'),
+            text = dialog.getValueOf('tab1', 'text'),
+            keywords = dialog.getValueOf('tab1', 'keywords'),
+            keywordsArr = keywords.split(' ').join('%20'),
+            cataloglink = dialog.element;
 
           dialog.commitContent(cataloglink);
 
@@ -112,7 +118,8 @@ CKEDITOR.plugins.add( 'cataloglink', {
           if (id) {
             link += 'item/show/' + id;
           } else if (keywords) {
-            link += 'search?t=smart&q=' + keywordsArr + '&commit=Search&searchOpt=catalogue';
+            link += 'search?t=smart&q=' + keywordsArr +
+              '&commit=Search&searchOpt=catalogue';
           }
 
           cataloglink.setAttribute('data-id', id);

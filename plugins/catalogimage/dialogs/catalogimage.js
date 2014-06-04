@@ -1,4 +1,8 @@
+/*jslint indent: 2, maxlen: 80 */
+/*globals CKEDITOR */
+
 CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
+  'use strict';
   return {
     title: 'Edit Catalog Image',
     minWidth: 200,
@@ -39,7 +43,8 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
             id: 'img_url',
             type: 'text',
             label: 'Image URL',
-            validate: CKEDITOR.dialog.validate.notEmpty( "Image URL cannot be empty" ),
+            validate: CKEDITOR.dialog
+              .validate.notEmpty("Image URL cannot be empty"),
             setup: function (widget) {
               this.setValue(widget.data.img_url);
             },
@@ -51,7 +56,8 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
             id: 'img_link',
             type: 'text',
             label: 'Image Link',
-            validate: CKEDITOR.dialog.validate.notEmpty( "Image Link cannot be empty" ),
+            validate: CKEDITOR.dialog
+              .validate.notEmpty("Image Link cannot be empty"),
             setup: function (widget) {
               this.setValue(widget.data.img_link);
             },
@@ -62,5 +68,5 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
         ]
       }
     ]
-  }
+  };
 });

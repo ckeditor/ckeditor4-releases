@@ -1,4 +1,9 @@
+/*jslint indent: 2, maxlen: 80 */
+/*globals CKEDITOR */
+
 CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
+  'use strict';
+
   return {
     title: 'Edit Digital Collection Image',
     minWidth: 200,
@@ -39,7 +44,8 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             id: 'img_id',
             type: 'text',
             label: 'Image ID',
-            validate: CKEDITOR.dialog.validate.notEmpty( "Image ID cannot be empty" ),
+            validate: CKEDITOR.dialog
+              .validate.notEmpty("Image ID cannot be empty"),
             setup: function (widget) {
               this.setValue(widget.data.img_id);
             },
@@ -51,7 +57,8 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             id: 'img_uuid',
             type: 'text',
             label: 'Image UUID',
-            validate: CKEDITOR.dialog.validate.notEmpty( "Image UUID cannot be empty" ),
+            validate: CKEDITOR.dialog
+              .validate.notEmpty("Image UUID cannot be empty"),
             setup: function (widget) {
               this.setValue(widget.data.img_uuid);
             },
@@ -62,5 +69,5 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
         ]
       }
     ]
-  }
+  };
 });

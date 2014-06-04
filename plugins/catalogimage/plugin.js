@@ -1,8 +1,16 @@
-CKEDITOR.plugins.add( 'catalogimage', {
+/*jslint indent: 2, maxlen: 80 */
+/*globals CKEDITOR */
+
+CKEDITOR.plugins.add('catalogimage', {
   requires: 'widget',
   icons: 'catalogimage',
   init: function (editor) {
-    CKEDITOR.dialog.add('catalogimageDialog', this.path + 'dialogs/catalogimage.js');
+    'use strict';
+
+    CKEDITOR.dialog.add(
+      'catalogimageDialog',
+      this.path + 'dialogs/catalogimage.js'
+    );
 
     editor.ui.addButton('catalogimage', {
       label: 'Add Catalog Image',
@@ -13,49 +21,59 @@ CKEDITOR.plugins.add( 'catalogimage', {
     editor.widgets.add('catalogimage', {
       dialog: 'catalogimageDialog',
       init: function () {
-        var width = this.element.find('img').getItem(0).getAttribute('width');
-        var img = this.element.find('img').getItem(0).getAttribute('src');
-        var link = this.element.find('a').getItem(0).getAttribute('href');
+        var img = this.element.find('img').getItem(0),
+          link = this.element.find('a').getItem(0),
+          width = img.getAttribute('width'),
+          img_url = img.getAttribute('src'),
+          img_link = link.getAttribute('href');
 
-        if (width)
+        if (width) {
           this.setData('width', width);
-        if (img) {
-          this.setData('img_url', img);
         }
-        if (link) {
-          this.setData('img_link', link);
+        if (img_url) {
+          this.setData('img_url', img_url);
+        }
+        if (img_link) {
+          this.setData('img_link', img_link);
         }
 
-        if (this.element.hasClass('align-left'))
+        if (this.element.hasClass('align-left')) {
           this.setData('align', 'left');
-        if (this.element.hasClass('align-right'))
+        }
+        if (this.element.hasClass('align-right')) {
           this.setData('align', 'right');
-        if (this.element.hasClass('align-center'))
+        }
+        if (this.element.hasClass('align-center')) {
           this.setData('align', 'center');
+        }
       },
       data: function () {
+        var img = this.element.find('img').getItem(0),
+          link = this.element.find('a').getItem(0);
+
         if (this.data.width === '') {
-          this.element.find('img').getItem(0).setAttribute('width', '');
+          img.setAttribute('width', '');
         } else {
-          this.element.find('img').getItem(0).setAttribute('width', this.data.width);
+          img.setAttribute('width', this.data.width);
         }
 
         if (this.data.img_url === '') {
-          this.element.find('img').getItem(0).setAttribute('src', '');
+          img.setAttribute('src', '');
         } else {
-          this.element.find('img').getItem(0).setAttribute('src', this.data.img_url);
+          img.setAttribute('src', this.data.img_url);
         }
 
         if (this.data.img_link === '') {
-          this.element.find('a').getItem(0).setAttribute('href', '');
+          link.setAttribute('href', '');
         } else {
-          this.element.find('a').getItem(0).setAttribute('href', this.data.img_link);
+          link.setAttribute('href', this.data.img_link);
         }
 
         this.element.removeClass('inline');
         this.element.removeClass('align-left');
         this.element.removeClass('align-right');
         this.element.removeClass('align-center');
+
         if (this.data.align) {
           this.element.addClass('align-' + this.data.align);
         }
@@ -77,11 +95,12 @@ CKEDITOR.plugins.add( 'catalogimage', {
           allowedContent: 'strong em'
         }
       },
-      allowedContent: 'div(!catalog-image,inline,align-left,align-right,align-center);' +
+      allowedContent:
+        'div(!catalog-image,inline,align-left,align-right,align-center);' +
         'figure(!caption);a;img;figcaption(!catalog-caption);',
       // requiredContent: 'div(!digcol-image)',
       upcast: function (element) {
-        return element.name == 'div' && element.hasClass('inline');
+        return element.name === 'div' && element.hasClass('inline');
       }
     });
   }

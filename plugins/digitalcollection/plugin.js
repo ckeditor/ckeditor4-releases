@@ -1,8 +1,16 @@
-CKEDITOR.plugins.add( 'digitalcollection', {
+/*jslint indent: 2, maxlen: 80 */
+/*globals CKEDITOR */
+
+CKEDITOR.plugins.add('digitalcollection', {
   requires: 'widget',
   icons: 'digitalcollection',
   init: function (editor) {
-    CKEDITOR.dialog.add('digitalcollectionDialog', this.path + 'dialogs/digitalcollection.js');
+    'use strict';
+
+    CKEDITOR.dialog.add(
+      'digitalcollectionDialog',
+      this.path + 'dialogs/digitalcollection.js'
+    );
 
     editor.ui.addButton('digitalcollection', {
       label: 'Add Digital Collections Image',
@@ -13,53 +21,65 @@ CKEDITOR.plugins.add( 'digitalcollection', {
     editor.widgets.add('digitalcollection', {
       dialog: 'digitalcollectionDialog',
       init: function () {
-        var width = this.element.find('img').getItem(0).getAttribute('width');
-        var img = this.element.find('img').getItem(0).data('id');
-        var uuid = this.element.find('a').getItem(0).data('uuid');
+        var img = this.element.find('img').getItem(0),
+          link = this.element.find('a').getItem(0),
+          width = img.getAttribute('width'),
+          img_id = img.data('id'),
+          img_uuid = link.data('uuid');
 
-        if (width)
+        if (width) {
           this.setData('width', width);
-        if (img) {
-          this.setData('img_id', img);
         }
-        if (uuid) {
-          this.setData('img_uuid', uuid);
+        if (img_id) {
+          this.setData('img_id', img_id);
+        }
+        if (img_uuid) {
+          this.setData('img_uuid', img_uuid);
         }
 
-        if (this.element.hasClass('align-left'))
+        if (this.element.hasClass('align-left')) {
           this.setData('align', 'left');
-        if (this.element.hasClass('align-right'))
+        }
+        if (this.element.hasClass('align-right')) {
           this.setData('align', 'right');
-        if (this.element.hasClass('align-center'))
+        }
+        if (this.element.hasClass('align-center')) {
           this.setData('align', 'center');
+        }
       },
       data: function () {
+        var img = this.element.find('img').getItem(0),
+          link = this.element.find('a').getItem(0);
+
         if (this.data.width === '') {
-          this.element.find('img').getItem(0).setAttribute('width', '');
+          img.setAttribute('width', '');
         } else {
-          this.element.find('img').getItem(0).setAttribute('width', this.data.width);
+          img.setAttribute('width', this.data.width);
         }
 
         if (this.data.img_id === '') {
-          this.element.find('img').getItem(0).setAttribute('data-id', '');
-          this.element.find('img').getItem(0).setAttribute('src', '');
+          img.setAttribute('data-id', '');
+          img.setAttribute('src', '');
         } else {
-          this.element.find('img').getItem(0).setAttribute('data-id', this.data.img_id);
-          this.element.find('img').getItem(0).setAttribute('src', 'http://images.nypl.org/index.php?id='+this.data.img_id+'&t=w');
+          img.setAttribute('data-id', this.data.img_id);
+          img.setAttribute('src',
+            'http://images.nypl.org/index.php?id=' + this.data.img_id + '&t=w');
         }
 
         if (this.data.img_uuid === '') {
-          this.element.find('a').getItem(0).setAttribute('data-uuid', '');
-          this.element.find('a').getItem(0).setAttribute('href', '');
+          link.setAttribute('data-uuid', '');
+          link.setAttribute('href', '');
         } else {
-          this.element.find('a').getItem(0).setAttribute('data-uuid', this.data.img_uuid);
-          this.element.find('a').getItem(0).setAttribute('href', 'http://digitalcollections.nypl.org/items/'+this.data.img_uuid);
+          link.setAttribute('data-uuid', this.data.img_uuid);
+          link.setAttribute('href',
+            'http://digitalcollections.nypl.org/items/' + this.data.img_uuid);
         }
 
         this.element.removeClass('inline');
         this.element.removeClass('align-left');
         this.element.removeClass('align-right');
         this.element.removeClass('align-center');
+
         if (this.data.align) {
           this.element.addClass('align-' + this.data.align);
         }
@@ -71,7 +91,8 @@ CKEDITOR.plugins.add( 'digitalcollection', {
       template:
         '<div class="digcol-image">' +
           '<figure class="caption">' +
-            '<a href="" target="_blank"><img data-id src="" width="300px"/></a>' +
+            '<a href="" target="_blank">' +
+            '<img data-id src="" width="300px"/></a>' +
             '<figcaption class="digcol-caption">Caption</figcaption>' +
           '</figure>' +
         '</div>',
@@ -81,8 +102,10 @@ CKEDITOR.plugins.add( 'digitalcollection', {
           allowedContent: 'strong em'
         }
       },
-      allowedContent: 'div(!digcol-image,inline,align-left,align-right,align-center);' +
-        'figure(!caption);a(!data-uuid);img(!data-id);figcaption(!digcol-caption);',
+      allowedContent:
+        'div(!digcol-image,inline,align-left,align-right,align-center);' +
+        'figure(!caption);a(!data-uuid);img(!data-id);' +
+        'figcaption(!digcol-caption);',
       // requiredContent: 'div(!digcol-image)',
       upcast: function (element) {
         return element.name === 'div' && element.hasClass('inline');
