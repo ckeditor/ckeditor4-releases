@@ -83,12 +83,12 @@ CKEDITOR.plugins.add('catalogimage', {
       },
 
       template:
-        '<div class="catalog-image">' +
+        '<span class="catalog-image">' +
           '<figure class="caption">' +
             '<a href="" target="_blank"><img src="" width="150px"/></a>' +
             '<figcaption class="catalog-caption">Caption</figcaption>' +
           '</figure>' +
-        '</div>',
+        '</span>',
       editables: {
         caption: {
           selector: '.catalog-caption',
@@ -96,9 +96,9 @@ CKEDITOR.plugins.add('catalogimage', {
         }
       },
       allowedContent:
-        'div(!catalog-image,inline,align-left,align-right,align-center);' +
+        'span(!catalog-image,inline,align-left,align-right,align-center);' +
         'figure(!caption);a;img;figcaption(!catalog-caption);',
-      requiredContent: 'div(catalog-image)',
+      requiredContent: 'span(catalog-image)',
       upcast: function (element) {
         return element.name === 'div' && element.hasClass('inline');
       }
