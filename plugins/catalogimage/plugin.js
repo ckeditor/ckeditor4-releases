@@ -100,7 +100,7 @@ CKEDITOR.plugins.add('catalogimage', {
         'figure(!caption);a;img;figcaption(!catalog-caption);',
       requiredContent: 'span(catalog-image)',
       upcast: function (element) {
-        return element.name === 'div' && element.hasClass('inline');
+        return element.name === 'span' && element.hasClass('inline');
       }
     });
   }
