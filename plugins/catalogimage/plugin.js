@@ -98,7 +98,7 @@ CKEDITOR.plugins.add('catalogimage', {
       allowedContent:
         'div(!catalog-image,inline,align-left,align-right,align-center);' +
         'figure(!caption);a;img;figcaption(!catalog-caption);',
-      // requiredContent: 'div(!digcol-image)',
+      requiredContent: 'div(catalog-image)',
       upcast: function (element) {
         return element.name === 'div' && element.hasClass('inline');
       }

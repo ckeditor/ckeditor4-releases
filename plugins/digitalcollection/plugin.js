@@ -106,7 +106,7 @@ CKEDITOR.plugins.add('digitalcollection', {
         'div(!digcol-image,inline,align-left,align-right,align-center);' +
         'figure(!caption);a(!data-uuid);img(!data-id);' +
         'figcaption(!digcol-caption);',
-      // requiredContent: 'div(!digcol-image)',
+      requiredContent: 'div(digcol-image)',
       upcast: function (element) {
         return element.name === 'div' && element.hasClass('inline');
       }
