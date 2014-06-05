@@ -40,6 +40,17 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
             }
           },
           {
+            id: 'alt',
+            type: 'text',
+            label: 'Alt',
+            setup: function (widget) {
+              this.setValue(widget.data.alt);
+            },
+            commit: function (widget) {
+              widget.setData('alt', this.getValue());
+            }
+          },
+          {
             id: 'img_url',
             type: 'text',
             label: 'Image URL',

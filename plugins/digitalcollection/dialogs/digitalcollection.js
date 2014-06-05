@@ -41,6 +41,17 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             }
           },
           {
+            id: 'alt',
+            type: 'text',
+            label: 'Alt',
+            setup: function (widget) {
+              this.setValue(widget.data.alt);
+            },
+            commit: function (widget) {
+              widget.setData('alt', this.getValue());
+            }
+          },
+          {
             id: 'img_id',
             type: 'text',
             label: 'Image ID',

@@ -23,10 +23,14 @@ CKEDITOR.plugins.add('catalogimage', {
       init: function () {
         var img = this.element.find('img').getItem(0),
           link = this.element.find('a').getItem(0),
+          alt = img.getAttribute('alt'),
           width = img.getAttribute('width'),
           img_url = img.getAttribute('src'),
           img_link = link.getAttribute('href');
 
+        if (alt) {
+          this.setData('alt', alt);
+        }
         if (width) {
           this.setData('width', width);
         }
@@ -50,6 +54,12 @@ CKEDITOR.plugins.add('catalogimage', {
       data: function () {
         var img = this.element.find('img').getItem(0),
           link = this.element.find('a').getItem(0);
+
+        if (this.data.alt === '') {
+          img.setAttribute('alt', '');
+        } else {
+          img.setAttribute('alt', this.data.alt);
+        }
 
         if (this.data.width === '') {
           img.setAttribute('width', '');
@@ -84,7 +94,8 @@ CKEDITOR.plugins.add('catalogimage', {
 
       template:
           '<figure class="catalog-image caption">' +
-            '<a href="" target="_blank"><img src="" width="150px"/></a>' +
+            '<a href="" target="_blank">' +
+            '<img src="" width="150px" alt=""/></a>' +
             '<figcaption class="catalog-caption">Caption</figcaption>' +
           '</figure>',
       editables: {

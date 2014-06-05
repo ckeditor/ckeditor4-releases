@@ -23,10 +23,14 @@ CKEDITOR.plugins.add('digitalcollection', {
       init: function () {
         var img = this.element.find('img').getItem(0),
           link = this.element.find('a').getItem(0),
+          alt = img.getAttribute('alt'),
           width = img.getAttribute('width'),
           img_id = img.data('id'),
           img_uuid = link.data('uuid');
 
+        if (alt) {
+          this.setData('alt', alt);
+        }
         if (width) {
           this.setData('width', width);
         }
@@ -50,6 +54,12 @@ CKEDITOR.plugins.add('digitalcollection', {
       data: function () {
         var img = this.element.find('img').getItem(0),
           link = this.element.find('a').getItem(0);
+
+        if (this.data.alt === '') {
+          img.setAttribute('alt', '');
+        } else {
+          img.setAttribute('alt', this.data.alt);
+        }
 
         if (this.data.width === '') {
           img.setAttribute('width', '');
@@ -92,7 +102,7 @@ CKEDITOR.plugins.add('digitalcollection', {
         '<div class="digcol-image">' +
           '<figure class="caption">' +
             '<a href="" target="_blank">' +
-            '<img data-id src="" width="300px"/></a>' +
+            '<img data-id src="" width="300px" alt=""/></a>' +
             '<figcaption class="digcol-caption">Caption</figcaption>' +
           '</figure>' +
         '</div>',
