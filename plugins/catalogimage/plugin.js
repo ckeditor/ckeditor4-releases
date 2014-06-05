@@ -28,7 +28,7 @@ CKEDITOR.plugins.add('catalogimage', {
           img_url = img.getAttribute('src'),
           img_link = link.getAttribute('href');
 
-        if (alt) {
+        if (alt && alt !== undefined) {
           this.setData('alt', alt);
         }
         if (width) {

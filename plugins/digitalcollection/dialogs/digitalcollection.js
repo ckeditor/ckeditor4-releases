@@ -43,7 +43,7 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
           {
             id: 'alt',
             type: 'text',
-            label: 'Alt',
+            label: 'Alt Text',
             setup: function (widget) {
               this.setValue(widget.data.alt);
             },

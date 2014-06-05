@@ -28,7 +28,7 @@ CKEDITOR.plugins.add('digitalcollection', {
           img_id = img.data('id'),
           img_uuid = link.data('uuid');
 
-        if (alt) {
+        if (alt && alt !== undefined) {
           this.setData('alt', alt);
         }
         if (width) {

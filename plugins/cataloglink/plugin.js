@@ -61,7 +61,7 @@ CKEDITOR.plugins.add('cataloglink', {
               {
                 type: 'text',
                 id: 'keywords',
-                label: 'keywords',
+                label: 'Keywords',
                 setup: function (element) {
                   this.setValue(element.getAttribute('data-keywords'));
                 },
