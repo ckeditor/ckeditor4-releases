@@ -28,7 +28,7 @@ CKEDITOR.plugins.add('catalogimage', {
       });
       editor.contextMenu.addListener(function (element) {
         var catalogElement = element.getAscendant('figure', true);
-        if (catalogElement.getAttribute('class') === 'catalog-image') {
+        if (catalogElement.getAttribute('class').indexOf('catalog-image') !== 0) {
           return { catalogImageItem: CKEDITOR.TRISTATE_OFF };
         }
       });

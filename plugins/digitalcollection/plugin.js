@@ -27,8 +27,8 @@ CKEDITOR.plugins.add('digitalcollection', {
         group: 'digitalCollectionGroup'
       });
       editor.contextMenu.addListener(function (element) {
-        var catalogElement = element.getAscendant('figure', true);
-        if (catalogElement.getAttribute('class') === 'digcol-image') {
+        var catalogElement = element.getAscendant('div', true);
+        if (catalogElement.getAttribute('class').indexOf('digcol-image') !== 0) {
           return { digitalCollectionItem: CKEDITOR.TRISTATE_OFF };
         }
       });
