@@ -18,22 +18,22 @@ CKEDITOR.plugins.add('digitalcollection', {
       icon: this.path + 'images/digitalcollection.png'
     });
 
-    if (editor.contextMenu) {
-      editor.addMenuGroup('digitalCollectionGroup');
-      editor.addMenuItem('digitalCollectionItem', {
-        label: 'Edit Digital Collections Image',
-        icon: this.path + 'images/digitalcollection.png',
-        command: 'digitalcollectionDialog',
-        group: 'digitalCollectionGroup'
-      });
-      editor.contextMenu.addListener(function (element) {
-        var catalogElement = element.getAscendant('div', true);
-        if (catalogElement &&
-            catalogElement.getAttribute('class').indexOf('digcol-image') !== 0) {
-          return { digitalCollectionItem: CKEDITOR.TRISTATE_OFF };
-        }
-      });
-    }
+    // if (editor.contextMenu) {
+    //   editor.addMenuGroup('digitalCollectionGroup');
+    //   editor.addMenuItem('digitalCollectionItem', {
+    //     label: 'Edit Digital Collections Image',
+    //     icon: this.path + 'images/digitalcollection.png',
+    //     command: 'digitalcollectionDialog',
+    //     group: 'digitalCollectionGroup'
+    //   });
+    //   editor.contextMenu.addListener(function (element) {
+    //     var catalogElement = element.getAscendant('div', true);
+    //     if (catalogElement &&
+    //         catalogElement.getAttribute('class').indexOf('digcol-image') !== 0) {
+    //       return { digitalCollectionItem: CKEDITOR.TRISTATE_OFF };
+    //     }
+    //   });
+    // }
 
     editor.widgets.add('digitalcollection', {
       dialog: 'digitalcollectionDialog',
