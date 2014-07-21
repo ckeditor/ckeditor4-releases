@@ -26,7 +26,8 @@ CKEDITOR.plugins.add('cataloglink', {
       });
       editor.contextMenu.addListener(function (element) {
         var catalogElement = element.getAscendant('a', true);
-        if (catalogElement.getAttribute('class') === 'catalog-link') {
+        if (catalogElement &&
+            catalogElement.getAttribute('class') === 'catalog-link') {
           return { catalogLinkItem: CKEDITOR.TRISTATE_OFF };
         }
       })
