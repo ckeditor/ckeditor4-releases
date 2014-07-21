@@ -13,7 +13,8 @@ CKEDITOR.plugins.add('cataloglink', {
     editor.ui.addButton('cataloglink', {
       label: 'Insert Catalog Link',
       command: 'cataloglinkDialog',
-      icon: this.path + 'images/cataloglink.png'
+      icon: this.path + 'images/cataloglink.png',
+      toolbar: 'nypl'
     });
 
     if (editor.contextMenu) {

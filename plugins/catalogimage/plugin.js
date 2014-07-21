@@ -15,7 +15,8 @@ CKEDITOR.plugins.add('catalogimage', {
     editor.ui.addButton('catalogimage', {
       label: 'Add Catalog Image',
       command: 'catalogimage',
-      icon: this.path + 'images/catalogimage.png'
+      icon: this.path + 'images/catalogimage.png',
+      toolbar: 'nypl'
     });
 
     // if (editor.contextMenu) {

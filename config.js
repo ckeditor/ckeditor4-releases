@@ -19,7 +19,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'others' },
 		'/',
-		{ name: 'nyplbuttons', groups: ['cataloglink', 'catalogimage', 'digitalcollection'] },
+		{ name: 'nypl', groups: ['cataloglink', 'catalogimage', 'digitalcollection'] },
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 		{ name: 'styles' },

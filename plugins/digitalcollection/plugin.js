@@ -15,7 +15,8 @@ CKEDITOR.plugins.add('digitalcollection', {
     editor.ui.addButton('digitalcollection', {
       label: 'Add Digital Collections Image',
       command: 'digitalcollection',
-      icon: this.path + 'images/digitalcollection.png'
+      icon: this.path + 'images/digitalcollection.png',
+      toolbar: 'nypl'
     });
 
     // if (editor.contextMenu) {
