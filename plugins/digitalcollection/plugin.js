@@ -118,7 +118,7 @@ CKEDITOR.plugins.add('digitalcollection', {
       template:
         '<div class="digcol-image">' +
           '<figure class="caption digcol-image">' +
-            '<a href="" target="_blank">' +
+            '<a href="">' +
             '<img data-id src="" width="300px" alt=""/></a>' +
             '<figcaption class="digcol-caption">Caption</figcaption>' +
           '</figure>' +

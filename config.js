@@ -19,6 +19,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'others' },
 		'/',
+		{ name: 'nyplbuttons', groups: ['cataloglink', 'catalogimage', 'digitalcollection'] },
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 		{ name: 'styles' },
@@ -37,5 +38,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
   // Add extra plugins.
-  config.extraPlugins = 'widget,lineutils,image2,digitalcollection,cataloglink';
+  config.extraPlugins = 'widget,lineutils,image2,digitalcollection,cataloglink,catalogimage';
 };

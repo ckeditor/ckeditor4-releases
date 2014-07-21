@@ -111,7 +111,7 @@ CKEDITOR.plugins.add('catalogimage', {
 
       template:
           '<figure class="catalog-image caption">' +
-            '<a href="" target="_blank">' +
+            '<a href="">' +
             '<img src="" width="150px" alt=""/></a>' +
             '<figcaption class="catalog-caption">Caption</figcaption>' +
           '</figure>',

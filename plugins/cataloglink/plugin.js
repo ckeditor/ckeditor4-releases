@@ -146,7 +146,7 @@ CKEDITOR.plugins.add('cataloglink', {
           cataloglink.setAttribute('title', text);
           cataloglink.setText(text);
           cataloglink.setAttribute('href', link);
-          cataloglink.setAttribute('target', '_blank');
+          // cataloglink.setAttribute('target', '_blank');
         }
       };
     });
