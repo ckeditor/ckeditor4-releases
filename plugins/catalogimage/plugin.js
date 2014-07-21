@@ -18,6 +18,22 @@ CKEDITOR.plugins.add('catalogimage', {
       icon: this.path + 'images/catalogimage.png'
     });
 
+    if (editor.contextMenu) {
+      editor.addMenuGroup('catalogImageGroup');
+      editor.addMenuItem('catalogImageItem', {
+        label: 'Edit Catalog Image',
+        icon: this.path + 'images/catalogimage.png',
+        command: 'catalogimageDialog',
+        group: 'catalogImageGroup'
+      });
+      editor.contextMenu.addListener(function (element) {
+        var catalogElement = element.getAscendant('figure', true);
+        if (catalogElement.getAttribute('class') === 'catalog-image') {
+          return { catalogImageItem: CKEDITOR.TRISTATE_OFF };
+        }
+      });
+    }
+
     editor.widgets.add('catalogimage', {
       dialog: 'catalogimageDialog',
       init: function () {

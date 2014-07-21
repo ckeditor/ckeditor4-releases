@@ -43,6 +43,9 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
             id: 'alt',
             type: 'text',
             label: 'Alt Text',
+            required: true,
+            validate: CKEDITOR.dialog
+              .validate.notEmpty("Please fill out the Alternative Text field."),
             setup: function (widget) {
               this.setValue(widget.data.alt);
             },
@@ -54,8 +57,10 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
             id: 'img_url',
             type: 'text',
             label: 'Image URL',
+            required: true,
             validate: CKEDITOR.dialog
-              .validate.notEmpty("Image URL cannot be empty"),
+              .validate.notEmpty("The Image URL field cannot be empty. " +
+                "Please add the URL for the image."),
             setup: function (widget) {
               this.setValue(widget.data.img_url);
             },
@@ -67,8 +72,10 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
             id: 'img_link',
             type: 'text',
             label: 'Image Link',
+            required: true,
             validate: CKEDITOR.dialog
-              .validate.notEmpty("Image Link cannot be empty"),
+              .validate.notEmpty("The Image Link field cannot be empty. " +
+                "Please add a URL to link the image to."),
             setup: function (widget) {
               this.setValue(widget.data.img_link);
             },

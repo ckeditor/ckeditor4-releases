@@ -16,6 +16,22 @@ CKEDITOR.plugins.add('cataloglink', {
       icon: this.path + 'images/cataloglink.png'
     });
 
+    if (editor.contextMenu) {
+      editor.addMenuGroup('catalogLinkGroup');
+      editor.addMenuItem('catalogLinkItem', {
+        label: 'Edit Catalog Link',
+        icon: this.path + 'images/cataloglink.png',
+        command: 'cataloglinkDialog',
+        group: 'catalogLinkGroup'
+      });
+      editor.contextMenu.addListener(function (element) {
+        var catalogElement = element.getAscendant('a', true);
+        if (catalogElement.getAttribute('class') === 'catalog-link') {
+          return { catalogLinkItem: CKEDITOR.TRISTATE_OFF };
+        }
+      })
+    }
+
     CKEDITOR.dialog.add('cataloglinkDialog', function (editor) {
       return {
         title: 'Catalog Link Properties',
@@ -125,6 +141,7 @@ CKEDITOR.plugins.add('cataloglink', {
           cataloglink.setAttribute('data-id', id);
           cataloglink.setAttribute('data-keywords', keywords);
 
+          cataloglink.setAttribute('class', 'catalog-link');
           cataloglink.setAttribute('title', text);
           cataloglink.setText(text);
           cataloglink.setAttribute('href', link);

@@ -44,6 +44,9 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             id: 'alt',
             type: 'text',
             label: 'Alt Text',
+            required: true,
+            validate: CKEDITOR.dialog
+              .validate.notEmpty("Please fill out the Alternative Text field."),
             setup: function (widget) {
               this.setValue(widget.data.alt);
             },
@@ -55,8 +58,10 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             id: 'img_id',
             type: 'text',
             label: 'Image ID',
+            required: true,
             validate: CKEDITOR.dialog
-              .validate.notEmpty("Image ID cannot be empty"),
+              .validate.notEmpty("The Image ID field cannot be empty. " +
+                "Please use the ID for the image from Digital Collections."),
             setup: function (widget) {
               this.setValue(widget.data.img_id);
             },
@@ -68,8 +73,10 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             id: 'img_uuid',
             type: 'text',
             label: 'Image UUID',
+            required: true,
             validate: CKEDITOR.dialog
-              .validate.notEmpty("Image UUID cannot be empty"),
+              .validate.notEmpty("The Image UUID cannot be empty. Please use " +
+                "The UUID for the image from Digital Collections."),
             setup: function (widget) {
               this.setValue(widget.data.img_uuid);
             },
