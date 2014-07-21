@@ -27,7 +27,7 @@ CKEDITOR.plugins.add('digitalcollection', {
         group: 'digitalCollectionGroup'
       });
       editor.contextMenu.addListener(function (element) {
-        var catalogElement = element.getAscendant('div', true);
+        var catalogElement = element.getAscendant('figure', true);
         if (catalogElement.getAttribute('class') === 'digcol-image') {
           return { digitalCollectionItem: CKEDITOR.TRISTATE_OFF };
         }
@@ -116,7 +116,7 @@ CKEDITOR.plugins.add('digitalcollection', {
 
       template:
         '<div class="digcol-image">' +
-          '<figure class="caption">' +
+          '<figure class="caption digcol-image">' +
             '<a href="" target="_blank">' +
             '<img data-id src="" width="300px" alt=""/></a>' +
             '<figcaption class="digcol-caption">Caption</figcaption>' +
