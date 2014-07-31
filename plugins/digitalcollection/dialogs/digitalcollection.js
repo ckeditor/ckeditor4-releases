@@ -72,11 +72,11 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
           {
             id: 'img_uuid',
             type: 'text',
-            label: 'Image UUID',
+            label: 'Image URL',
             required: true,
             validate: CKEDITOR.dialog
               .validate.notEmpty("The Image UUID cannot be empty. Please use " +
-                "The UUID for the image from Digital Collections."),
+                "The URL for the image from Digital Collections."),
             setup: function (widget) {
               this.setValue(widget.data.img_uuid);
             },

@@ -71,7 +71,8 @@ CKEDITOR.plugins.add('digitalcollection', {
       },
       data: function () {
         var img = this.element.find('img').getItem(0),
-          link = this.element.find('a').getItem(0);
+          link = this.element.find('a').getItem(0),
+          img_url;
 
         if (this.data.alt === '') {
           img.setAttribute('alt', '');
@@ -99,8 +100,13 @@ CKEDITOR.plugins.add('digitalcollection', {
           link.setAttribute('href', '');
         } else {
           link.setAttribute('data-uuid', this.data.img_uuid);
+
+          if (this.data.img_uuid) {
+            img_url = this.data.img_uuid.replace(/http:\/\/digitalcollections.nypl.org\/items\//, '');
+          }
+
           link.setAttribute('href',
-            'http://digitalcollections.nypl.org/items/' + this.data.img_uuid);
+            'http://digitalcollections.nypl.org/items/' + img_url);
         }
 
         this.element.removeClass('inline');
