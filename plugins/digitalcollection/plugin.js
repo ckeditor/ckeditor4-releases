@@ -99,12 +99,12 @@ CKEDITOR.plugins.add('digitalcollection', {
           link.setAttribute('data-uuid', '');
           link.setAttribute('href', '');
         } else {
-          link.setAttribute('data-uuid', this.data.img_uuid);
-
           if (this.data.img_uuid) {
             img_url = this.data.img_uuid.replace(/http:\/\/digitalcollections.nypl.org\/items\//, '');
+            console.log(img_url);
           }
 
+          link.setAttribute('data-uuid', img_url);
           link.setAttribute('href',
             'http://digitalcollections.nypl.org/items/' + img_url);
         }
