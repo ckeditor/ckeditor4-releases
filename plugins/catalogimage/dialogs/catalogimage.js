@@ -4,7 +4,7 @@
 CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
   'use strict';
   return {
-    title: 'Edit Catalog Image',
+    title: 'Catalog Image',
     minWidth: 200,
     minHeight: 100,
     contents: [

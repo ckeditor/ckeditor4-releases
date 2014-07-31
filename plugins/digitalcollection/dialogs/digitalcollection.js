@@ -5,7 +5,7 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
   'use strict';
 
   return {
-    title: 'Edit Digital Collection Image',
+    title: 'Digital Collection Image',
     minWidth: 200,
     minHeight: 100,
     contents: [
