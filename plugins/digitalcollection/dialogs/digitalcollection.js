@@ -70,7 +70,7 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
             }
           },
           {
-            id: 'img_uuid',
+            id: 'img_url',
             type: 'text',
             label: 'Image URL',
             required: true,
@@ -78,10 +78,10 @@ CKEDITOR.dialog.add('digitalcollectionDialog', function (editor) {
               .validate.notEmpty("The Image URL cannot be empty. Please use " +
                 "The URL for the image from Digital Collections."),
             setup: function (widget) {
-              this.setValue(widget.data.img_uuid);
+              this.setValue(widget.data.img_url);
             },
             commit: function (widget) {
-              widget.setData('img_uuid', this.getValue());
+              widget.setData('img_url', this.getValue());
             }
           }
         ]

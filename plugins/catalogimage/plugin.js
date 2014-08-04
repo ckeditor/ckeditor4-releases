@@ -89,12 +89,14 @@ CKEDITOR.plugins.add('catalogimage', {
           img.setAttribute('src', '');
         } else {
           img.setAttribute('src', this.data.img_url);
+          img.setAttribute('data-cke-saved-src', this.data.img_url);
         }
 
         if (this.data.img_link === '') {
           link.setAttribute('href', '');
         } else {
           link.setAttribute('href', this.data.img_link);
+          link.setAttribute('data-cke-saved-href', this.data.img_link)
         }
 
         this.element.removeClass('inline');

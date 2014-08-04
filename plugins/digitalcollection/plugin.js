@@ -19,23 +19,6 @@ CKEDITOR.plugins.add('digitalcollection', {
       toolbar: 'nypl'
     });
 
-    // if (editor.contextMenu) {
-    //   editor.addMenuGroup('digitalCollectionGroup');
-    //   editor.addMenuItem('digitalCollectionItem', {
-    //     label: 'Edit Digital Collections Image',
-    //     icon: this.path + 'images/digitalcollection.png',
-    //     command: 'digitalcollectionDialog',
-    //     group: 'digitalCollectionGroup'
-    //   });
-    //   editor.contextMenu.addListener(function (element) {
-    //     var catalogElement = element.getAscendant('div', true);
-    //     if (catalogElement &&
-    //         catalogElement.getAttribute('class').indexOf('digcol-image') !== 0) {
-    //       return { digitalCollectionItem: CKEDITOR.TRISTATE_OFF };
-    //     }
-    //   });
-    // }
-
     editor.widgets.add('digitalcollection', {
       dialog: 'digitalcollectionDialog',
       init: function () {
@@ -44,7 +27,7 @@ CKEDITOR.plugins.add('digitalcollection', {
           alt = img.getAttribute('alt'),
           width = img.getAttribute('width'),
           img_id = img.data('id'),
-          img_uuid = link.data('uuid');
+          img_url = link.data('url');
 
         if (alt && alt !== undefined) {
           this.setData('alt', alt);
@@ -55,8 +38,8 @@ CKEDITOR.plugins.add('digitalcollection', {
         if (img_id) {
           this.setData('img_id', img_id);
         }
-        if (img_uuid) {
-          this.setData('img_uuid', img_uuid);
+        if (img_url) {
+          this.setData('img_url', img_url);
         }
 
         if (this.element.hasClass('align-left')) {
@@ -91,19 +74,25 @@ CKEDITOR.plugins.add('digitalcollection', {
           img.setAttribute('src', '');
         } else {
           img.setAttribute('data-id', this.data.img_id);
+          img.setAttribute('data-cke-saved-src',
+            'http://images.nypl.org/index.php?id=' + this.data.img_id + '&t=w');
           img.setAttribute('src',
             'http://images.nypl.org/index.php?id=' + this.data.img_id + '&t=w');
         }
 
-        if (this.data.img_uuid === '') {
-          link.setAttribute('data-uuid', '');
+        if (this.data.img_url === '') {
+          link.setAttribute('data-url', '');
           link.setAttribute('href', '');
         } else {
-          if (this.data.img_uuid) {
-            img_url = this.data.img_uuid.replace(/http:\/\/digitalcollections.nypl.org\/items\//, '');
+          if (this.data.img_url) {
+            img_url =
+              this.data.img_url
+                .replace(/http:\/\/digitalcollections.nypl.org\/items\//, '');
           }
 
-          link.setAttribute('data-uuid', img_url);
+          link.setAttribute('data-url', img_url);
+          link.setAttribute('data-cke-saved-href',
+            'http://digitalcollections.nypl.org/items/' + img_url);
           link.setAttribute('href',
             'http://digitalcollections.nypl.org/items/' + img_url);
         }
@@ -137,7 +126,7 @@ CKEDITOR.plugins.add('digitalcollection', {
       },
       allowedContent:
         'div(!digcol-image,inline,align-left,align-right,align-center);' +
-        'figure(!caption);a(!data-uuid);img(!data-id);' +
+        'figure(!caption);a(!data-url);img(!data-id);' +
         'figcaption(!digcol-caption);',
       requiredContent: 'div(digcol-image)',
       upcast: function (element) {
