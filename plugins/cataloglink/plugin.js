@@ -146,8 +146,8 @@ CKEDITOR.plugins.add('cataloglink', {
           cataloglink.setAttribute('class', 'catalog-link');
           cataloglink.setAttribute('title', text);
           cataloglink.setText(text);
+          cataloglink.setAttribute('data-cke-saved-href', link);
           cataloglink.setAttribute('href', link);
-          // cataloglink.setAttribute('target', '_blank');
         }
       };
     });
