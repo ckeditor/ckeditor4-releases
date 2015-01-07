@@ -130,8 +130,7 @@ CKEDITOR.plugins.add('digitalcollection', {
         'figcaption(!digcol-caption);',
       requiredContent: 'div(digcol-image)',
       upcast: function (element) {
-        return element.name === 'div' && element.hasClass('inline')
-          && element.hasClass('digcol-image');
+        return element.name === 'div' && element.hasClass('digcol-image');
       }
     });
   }
