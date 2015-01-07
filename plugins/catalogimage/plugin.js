@@ -129,7 +129,8 @@ CKEDITOR.plugins.add('catalogimage', {
         'figure(!catalog-image, caption);a;img;figcaption(!catalog-caption);',
       // requiredContent: 'div(catalog-image)',
       upcast: function (element) {
-        return element.name === 'figure' && element.hasClass('inline');
+        return element.name === 'figure' && element.hasClass('inline')
+          && element.hasClass('catalog-image');
       }
     });
   }
