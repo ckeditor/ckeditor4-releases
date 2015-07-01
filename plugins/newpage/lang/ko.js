@@ -1,1 +1,1 @@
-﻿CKEDITOR.plugins.setLang("newpage","ko",{toolbar:"새 문서"});
+﻿CKEDITOR.plugins.setLang("newpage","ko",{toolbar:"새 페이지"});

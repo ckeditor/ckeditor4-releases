@@ -1,0 +1,7 @@
+﻿/*
+ Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+(function(){CKEDITOR.plugins.add("uploadimage",{requires:"uploadwidget",onLoad:function(){CKEDITOR.addCss(".cke_upload_uploading img{opacity: 0.3}")},init:function(d){if(CKEDITOR.plugins.clipboard.isFileApiSupported){var f=CKEDITOR.fileTools,j=f.getUploadUrl(d.config,"image");f.addUploadWidget(d,"uploadimage",{supportedTypes:/image\/(jpeg|png|gif)/,uploadUrl:j,fileToElement:function(){var a=new CKEDITOR.dom.element("img");a.setAttribute("src",h);return a},parts:{img:"img"},onUploading:function(a){this.parts.img.setAttribute("src",
+a.data)},onUploaded:function(a){this.replaceWith('<img src="'+a.url+'" width="'+this.parts.img.$.naturalWidth+'" height="'+this.parts.img.$.naturalHeight+'">')}});d.on("paste",function(a){if(a.data.dataValue.match(/<img[\s\S]+data:/i)){var a=a.data,c=document.implementation.createHTMLDocument(""),c=new CKEDITOR.dom.element(c.body),i,b,g;c.data("cke-editable",1);c.appendHtml(a.dataValue);i=c.find("img");for(g=0;g<i.count();g++){b=i.getItem(g);var e=b.getAttribute("src")&&"data:"==b.getAttribute("src").substring(0,
+5),h=null===b.data("cke-realelement");e&&(h&&!b.data("cke-upload-id")&&!b.isReadOnly(1))&&(e=d.uploadRepository.create(b.getAttribute("src")),e.upload(j),f.markElement(b,"uploadimage",e.id),f.bindNotifications(d,e))}a.dataValue=c.getHtml()}})}}});var h="data:image/gif;base64,R0lGODlhDgAOAIAAAAAAAP///yH5BAAAAAAALAAAAAAOAA4AAAIMhI+py+0Po5y02qsKADs="})();
