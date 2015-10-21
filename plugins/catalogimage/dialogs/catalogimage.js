@@ -71,10 +71,10 @@ CKEDITOR.dialog.add('catalogimageDialog', function (editor) {
           {
             id: 'img_link',
             type: 'text',
-            label: 'Bibliocommons Image Link',
+            label: 'Catalog Link',
             required: true,
             validate: CKEDITOR.dialog
-              .validate.notEmpty("The Bibliocommons Image Destination Link field cannot be empty. " +
+              .validate.notEmpty("The Encore Destination Link field cannot be empty. " +
                 "Please add a URL to link the image to."),
             setup: function (widget) {
               this.setValue(widget.data.img_link);

@@ -119,13 +119,15 @@ CKEDITOR.plugins.add('cataloglink', {
         },
 
         onOk: function () {
-          var link = 'http://nypl.bibliocommons.com/',
+          var base = 'http://browse.nypl.org/iii/encore/search/',
             dialog = this,
             id = dialog.getValueOf('tab1', 'id'),
             text = dialog.getValueOf('tab1', 'text'),
             keywords = dialog.getValueOf('tab1', 'keywords'),
             keywordsArr = keywords.split(' ').join('%20'),
-            cataloglink = dialog.element;
+            cataloglink = dialog.element,
+            search = '',
+            link = '';
 
           dialog.commitContent(cataloglink);
 
@@ -134,11 +136,13 @@ CKEDITOR.plugins.add('cataloglink', {
           }
 
           if (id) {
-            link += 'item/show/' + id;
-          } else if (keywords) {
-            link += 'search?t=smart&q=' + keywordsArr +
-              '&commit=Search&searchOpt=catalogue';
+            search += id;
           }
+          if (keywords) {
+            search += '%20' + keywordsArr;
+          }
+
+          link = base + 'C__S' + search + '__Orightresult__U?lang=eng&suite=def';
 
           cataloglink.setAttribute('data-id', id);
           cataloglink.setAttribute('data-keywords', keywords);
