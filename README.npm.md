@@ -1,4 +1,4 @@
-This package contains the official release of [CKEditor](http://ckeditor.com/) standrad-all version (learn more about [release versions](https://github.com/ckeditor/ckeditor-releases#releases-code)). You can also test CKEditor on our [official demo page](http://ckeditor.com/demo).
+This package contains the official release of [CKEditor](http://ckeditor.com/) standard-all version (learn more about [release versions](https://github.com/ckeditor/ckeditor-releases#releases-code)). You can also test CKEditor on our [official demo page](http://ckeditor.com/demo).
 
 # Installation
 To install CKEditor, follow the standard npm installation process. You can use:
