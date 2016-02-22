@@ -22,5 +22,6 @@
   "bugs": {
     "url": "http://dev.ckeditor.com"
   },
-  "homepage": "http://ckeditor.com"
+  "homepage": "http://ckeditor.com",
+  "tonicExampleFilename": "tonic-example.js"
 }
