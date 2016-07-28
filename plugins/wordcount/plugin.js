@@ -134,6 +134,15 @@ CKEDITOR.plugins.add("wordcount", {
 
             tmp.innerHTML = html;
 
+            // START: Presto edge-case
+            var divs = tmp.querySelectorAll('[assetid]');
+            divs.forEach(function(assetCard) {
+                if (assetCard.className) {
+                    tmp.removeChild(assetCard);
+                }
+            });
+            // END: Presto edge-case
+
             if (tmp.textContent == "" && typeof tmp.innerText == "undefined") {
                 return "";
             }
