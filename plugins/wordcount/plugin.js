@@ -138,7 +138,7 @@ CKEDITOR.plugins.add("wordcount", {
             var divs = tmp.querySelectorAll('[assetid]');
             divs.forEach(function(assetCard) {
                 if (assetCard.className) {
-                    tmp.removeChild(assetCard);
+                    assetCard.remove();
                 }
             });
             // END: Presto edge-case
