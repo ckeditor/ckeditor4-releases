@@ -1,5 +1,5 @@
 (function () {
-    CKEDITOR.plugins.add('CopyCheck', {
+    CKEDITOR.plugins.add('copycheck', {
         icons: 'CopyCheck',
         onLoad: function() {
             CKEDITOR.addCss(
