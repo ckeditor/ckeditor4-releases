@@ -14,7 +14,7 @@
         },
         init: function(editor) {
             var cqImage = this.path + 'icons/CopyCheckReverse.png';
-            editor.addCommand('CopyCheck', {
+            editor.addCommand('insertCQ', {
                 exec: function (editor) {
                     editor.insertHtml('<img class="notes" title="Copy checked" src="' + cqImage + '">');
                 }
@@ -22,11 +22,11 @@
 
             editor.ui.addButton('CopyCheck', {
                 label: 'Insert CQ Flag (ALT+Q)',
-                command: 'CopyCheck',
+                command: 'insertCQ',
                 toolbar: 'CopyCheck'
             });
 
-            editor.setKeystroke(CKEDITOR.ALT + 81, 'CopyCheck'); // ALT+Q
+            editor.setKeystroke(CKEDITOR.ALT + 81, 'insertCQ'); // ALT+Q
         }
     });
 })();
