@@ -5,6 +5,7 @@
 CKEDITOR.plugins.setLang('wordcount', 'en', {
     WordCount: 'Words:',
     CharCount: 'Characters:',
+    Inches: 'Print Inches (est.):',
     CharCountWithHTML: 'Characters (with HTML):',
     Paragraphs: 'Paragraphs:',
     pasteWarning: 'Content can not be pasted because it is above the allowed limit',

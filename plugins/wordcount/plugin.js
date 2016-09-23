@@ -57,6 +57,8 @@ CKEDITOR.plugins.add("wordcount", {
             showParagraphs: true,
             showWordCount: true,
             showCharCount: false,
+            showInches: false,
+            wordsPerInch: 35,
             countSpacesAsChars: false,
             countHTML: false,
             hardLimit: true,
@@ -114,6 +116,14 @@ CKEDITOR.plugins.add("wordcount", {
             if (config.maxCharCount > -1) {
                 defaultFormat += "/" + config.maxCharCount;
             }
+        }
+
+        if ((config.showCharCount || config.showWordCount) && config.showInches) {
+            defaultFormat += ", ";
+        }
+
+        if (config.showInches) {
+            defaultFormat += editor.lang.wordcount.Inches + " %inches%";
         }
 
         var format = defaultFormat;
@@ -223,6 +233,11 @@ CKEDITOR.plugins.add("wordcount", {
             return (words.length);
         }
 
+        function countInches(text) {
+            var inches = countWords(text) / config.wordsPerInch;
+            return Math.round(inches * 10) / 10;
+        }
+
         function limitReached(editorInstance, notify) {
             limitReachedNotified = true;
             limitRestoredNotified = false;
@@ -252,6 +267,7 @@ CKEDITOR.plugins.add("wordcount", {
             var paragraphs = 0,
                 wordCount = 0,
                 charCount = 0,
+                inches = 0,
                 text;
 
             if (text = editorInstance.getData()) {
@@ -266,9 +282,13 @@ CKEDITOR.plugins.add("wordcount", {
                 if (config.showWordCount) {
                     wordCount = countWords(text);
                 }
+
+                if (config.showInches) {
+                    inches = countInches(text);
+                }
             }
 
-            var html = format.replace("%wordCount%", wordCount).replace("%charCount%", charCount).replace("%paragraphs%", paragraphs);
+            var html = format.replace("%wordCount%", wordCount).replace("%charCount%", charCount).replace("%paragraphs%", paragraphs).replace("%inches%", inches);
 
             (editorInstance.config.wordcount || (editorInstance.config.wordcount = {})).wordCount = wordCount;
             (editorInstance.config.wordcount || (editorInstance.config.wordcount = {})).charCount = charCount;
