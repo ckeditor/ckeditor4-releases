@@ -3,7 +3,7 @@
     var excludeFromNewsGate = new CKEDITOR.style({
         element: 'span',
         attributes: {
-            'class': 'digital-only'
+            'class': 'exclude-from-newsgate'
         }
     });
 
