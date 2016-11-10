@@ -380,7 +380,7 @@
     }
 
     // START: Presto edge-case
-    if ( el.$.nodeName === 'BLOCKQUOTE' || el.$.parentElement.nodeName === 'BLOCKQUOTE') {
+    if ( el.$.nodeName === 'BLOCKQUOTE' || el.$.parentElement.nodeName === 'BLOCKQUOTE' || el.$.nodeName === 'DIV') {
      continue;
     }
     // END: Presto edge-case
