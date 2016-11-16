@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/b763fbf8a6a9f8d2597093c4b0cae1fe
+ * (2) http://ckeditor.com/builder/127f64f93e8e250cb1da9531d6762db1
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/b763fbf8a6a9f8d2597093c4b0cae1fe
+ * (3) http://ckeditor.com/builder/download/127f64f93e8e250cb1da9531d6762db1
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,7 +25,7 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'moono',
+	skin: 'moono-lisa',
 	preset: 'basic',
 	ignore: [
 		'.bender',
@@ -111,6 +111,7 @@ var CKBUILDER_CONFIG = {
 		'nb' : 1,
 		'nl' : 1,
 		'no' : 1,
+		'oc' : 1,
 		'pl' : 1,
 		'pt' : 1,
 		'pt-br' : 1,
