@@ -16,6 +16,5 @@
 CKEDITOR.stylesSet.add('default', [
 	{ name: 'H2', element: 'h2', attributes: { 'class': 'presto-h2' } },
 	{ name: 'H3', element: 'h3', attributes: { 'class': 'presto-h3' } },
-	{ name: 'Print Subhead', element: 'span', attributes: { 'class': 'print_subhead' } },
 	{ name: 'Print Infobox', element: 'span', attributes: { 'class': 'print_infobox' } }
 ]);
