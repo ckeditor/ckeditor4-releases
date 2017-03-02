@@ -16,7 +16,7 @@
             var cqImage = this.path + 'icons/CopyCheckReverse.png';
             editor.addCommand('insertCQ', {
                 exec: function (editor) {
-                    editor.insertHtml('<img class="notes" title="Copy checked" src="' + cqImage + '">');
+                    editor.insertHtml('<img class="notes px-cq" title="Copy checked" src="' + cqImage + '">');
                 }
             });
 
