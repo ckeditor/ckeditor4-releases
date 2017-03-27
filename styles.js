@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
@@ -16,6 +16,11 @@
 // For more information refer to: http://docs.ckeditor.com/#!/guide/dev_styles-section-style-rules
 
 CKEDITOR.stylesSet.add( 'default', [
+
+	{ name: 'H2', element: 'h2', attributes: { 'class': 'presto-h2' } },
+	{ name: 'H3', element: 'h3', attributes: { 'class': 'presto-h3' } },
+	{ name: 'Print Infobox', element: 'span', attributes: { 'class': 'print_infobox' } },
+
 	/* Block styles */
 
 	// These styles are already available in the "Format" drop-down list ("format" plugin),
@@ -134,4 +139,3 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: '1080p ', type: 'widget', widget: 'embed', attributes: { 'class': 'embed-1080p' }, group: 'size' }
 
 ] );
-

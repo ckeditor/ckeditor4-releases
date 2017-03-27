@@ -35,4 +35,13 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	
+	config.specialChars = config.specialChars.concat([
+		'&frac13;', 
+		'&frac23;',
+		'&frac18;', 
+		'&frac38;', 
+		'&frac58;', 
+		'&frac78;'
+	]);
 };
