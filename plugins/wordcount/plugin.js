@@ -151,6 +151,12 @@ CKEDITOR.plugins.add("wordcount", {
                     assetCard.remove();
                 }
             });
+
+            var markAsNotesTexts = tmp.querySelectorAll('.notes');
+
+            markAsNotesTexts.forEach(function(note) {
+                note.remove();
+            })
             // END: Presto edge-case
 
             if (tmp.textContent == "" && typeof tmp.innerText == "undefined") {
