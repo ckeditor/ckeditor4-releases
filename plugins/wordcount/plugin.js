@@ -156,7 +156,14 @@ CKEDITOR.plugins.add("wordcount", {
 
             markAsNotesTexts.forEach(function(note) {
                 note.remove();
-            })
+            });
+
+            var excludeFromNewsgateTexts = tmp.querySelectorAll('.exclude-from-newsgate');
+
+            excludeFromNewsgateTexts.forEach(function(note) {
+                note.remove();
+            });
+
             // END: Presto edge-case
 
             if (tmp.textContent == "" && typeof tmp.innerText == "undefined") {
