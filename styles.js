@@ -36,10 +36,10 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Heading 6',		element: 'h6' },
 	{ name: 'Preformatted Text',element: 'pre' },
 	{ name: 'Address',			element: 'address' },
-	*/
+	{ name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' } },
+	{ name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' } },
+	 */
 
-	// { name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' } },
-	// { name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' } },
 	{
 		name: 'Special Container',
 		element: 'div',
