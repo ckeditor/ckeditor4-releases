@@ -38,8 +38,8 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Address',			element: 'address' },
 	*/
 
-	{ name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' } },
-	{ name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' } },
+	// { name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' } },
+	// { name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' } },
 	{
 		name: 'Special Container',
 		element: 'div',
