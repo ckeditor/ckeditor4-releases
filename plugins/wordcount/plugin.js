@@ -58,7 +58,7 @@ CKEDITOR.plugins.add("wordcount", {
             showWordCount: true,
             showCharCount: false,
             showInches: false,
-            wordsPerInch: 35,
+            charactersPerInch: 235,
             countSpacesAsChars: false,
             countHTML: false,
             hardLimit: true,
@@ -234,7 +234,7 @@ CKEDITOR.plugins.add("wordcount", {
         }
 
         function countInches(text) {
-            var inches = countWords(text) / config.wordsPerInch;
+            var inches = countCharacters(text) / config.charactersPerInch;
             return Math.round(inches * 10) / 10;
         }
 
