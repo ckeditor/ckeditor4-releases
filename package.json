@@ -1,5 +1,5 @@
 {
-  "name": "@GannettDigital/ckeditor",
+  "name": "@gannett/ckeditor",
   "version": "1.0.0",
   "main": "ckeditor.js",
   "license": "UNLICENSED"
