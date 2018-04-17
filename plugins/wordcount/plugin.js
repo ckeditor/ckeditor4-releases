@@ -304,6 +304,7 @@ CKEDITOR.plugins.add("wordcount", {
 
             (editorInstance.config.wordcount || (editorInstance.config.wordcount = {})).wordCount = wordCount;
             (editorInstance.config.wordcount || (editorInstance.config.wordcount = {})).charCount = charCount;
+            (editorInstance.config.wordcount || (editorInstance.config.wordcount = {})).printInches = inches;
 
             if (CKEDITOR.env.gecko) {
                 counterElement(editorInstance).innerHTML = html;
