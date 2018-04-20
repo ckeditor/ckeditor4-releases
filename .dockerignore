@@ -1,0 +1,64 @@
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Ignore OSX file system object
+.DS_Store
+.nodemonignore
+.sass-cache/
+
+# Ignore git
+.git
+
+# Ignore all log files
+logs
+*.log
+
+# Ignore Node Modules
+node_modules/*
+
+# Ignore compiled js files
+public/dist
+
+# Ignore test output folders
+coverage
+test/coverage/*
+test/results/*
+
+
+# Ignore Intellij project folder
+.idea/*
+
+# Ignore Visual Studio Code project folder
+.vscode/*
+
+# Ignore Intellij JIRA plugin
+atlassian-ide-plugin.xml
+
+# Ignore nock generated missing files
+*.missing
+
+# Ignore Text Editor temp files
+*.swp
+*.kate-swp
+.sublime-grunt.cache
+
+# Ignore custom environment configurations
+.env
+
+# Ignore local pre-compilers
+*.jiphy
+
+# ignore editor configs
+.jsbeautifyrc
+
+test-results.xml
+
+# Ignore css complied files
+# Some are hard coded until all css is converted to scss files
+*.css.map
+**/sass/*.css
+
+# Ignore the Yarn file for any devs using Yarn
+yarn.lock
