@@ -39,7 +39,7 @@ pipeline {
       steps {
         script {
           withVaultCredentials([
-            [path: '/secret/content-engineering/global/artifactory/content-engineering@gannett.com', keys: ['username': 'ARTIFACTORY_USERNAME', 'password': 'ARTIFACTORY_PASSWORD']],
+            [path: "/secret/content-engineering/global/artifactory/content-engineering@gannett.com", keys: ['username': 'ARTIFACTORY_USERNAME', 'password': 'ARTIFACTORY_PASSWORD']],
             [path: "/secret/content-engineering/global/apigee/paas-api", keys: ['API_KEY': 'API_KEY']],
             [path: "/secret/content-engineering/global/github/content-solutions", keys: ['content-engineering-jenkins-token': 'GIT_PASSWORD']],
             [path: "/secret/content-engineering/global/github/content-solutions", keys: ['username': 'GIT_USERNAME']]
