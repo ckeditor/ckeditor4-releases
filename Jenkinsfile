@@ -56,7 +56,7 @@ pipeline {
             sh "git push https://${env.GIT_PASSWORD}:${env.GIT_PASSWORD}@github.com/GannettDigital/${env.GIT_REPO_NAME} ${env.BRANCH_NAME}"
             def pkg = sh(script: 'npm pack .', returnStdout: true).trim()
             archiveArtifacts artifacts: pkg
-            paasTag.create apiKey: env.TYK_API_KEY,
+            paasTag.create apiKey: env.API_KEY,
                            version: node_package.version,
                            org: 'GannettDigital',
                            repo: env.GIT_REPO_NAME,
