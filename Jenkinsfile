@@ -5,6 +5,7 @@ pipeline {
   environment {
     def NPM_CONFIG_CACHE = '/tmp/npm'
     def info = repoInfo()
+    ARTIFACTORY_REPO = 'cs-node'
   }
   stages {
     stage('prepare') {
