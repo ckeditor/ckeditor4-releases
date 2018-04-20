@@ -80,3 +80,5 @@ For example:
 Licensed under the GPL, LGPL, and MPL licenses, at your choice.
 
 Please check the `LICENSE.md` file for more information about the license.
+
+[CI Pipeline](https://cs-authoring-jenkins.gannettdigital.com/job/GannettDigital/job/ckeditor-releases/)
