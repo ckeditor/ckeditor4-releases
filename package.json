@@ -2,5 +2,8 @@
   "name": "@gannettdigital/ckeditor",
   "version": "1.0.1",
   "main": "ckeditor.js",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "author": {
+    "name": "content-engineering"
+  }
 }
