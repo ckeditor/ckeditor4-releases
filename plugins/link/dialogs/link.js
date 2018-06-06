@@ -78,7 +78,7 @@
                             d = a.definition.getContents("upload"),
                             d = d && d.hidden;
                         "url" == n ? (e.config.linkShowTargetTab &&
-                            a.showPage("target"), d || a.showPage("upload")) : (a.hidePage("target"), d || a.hidePage("upload"));
+                        a.showPage("target"), d || a.showPage("upload")) : (a.hidePage("target"), d || a.hidePage("upload"));
                         for (d = 0; d < b.length; d++) {
                             var c = a.getContentElement("info", b[d]);
                             c && (c = c.getElement().getParent().getParent(), b[d] == n + "Options" ? c.show() : c.hide())
@@ -94,76 +94,53 @@
                 }, {
                     type: "vbox",
                     id: "urlOptions",
-                    children: [{
-                        type: "hbox",
-                        widths: ["25%", "75%"],
-                        children: [{
-                            id: "protocol",
-                            type: "select",
-                            label: c.protocol,
-                            "default": "http://",
-                            items: [
-                                ["http://‎",
-                                    "http://"
-                                ],
-                                ["https://‎", "https://"],
-                                ["ftp://‎", "ftp://"],
-                                ["news://‎", "news://"],
-                                [b.other, ""]
-                            ],
-                            setup: function(a) {
-                                a.url && this.setValue(a.url.protocol || "")
-                            },
-                            commit: function(a) {
-                                a.url || (a.url = {});
-                                a.url.protocol = this.getValue()
+                    children: [
+                        {
+                            type: "hbox",
+                            widths: ["25%", "75%"],
+                            children: [
+                                {
+                                    type: "text",
+                                    id: "url",
+                                    label: c.url,
+                                    required: !0,
+                                    onLoad: function() {
+                                        this.allowOnChange = !0
+                                    },
+                                    onKeyUp: function() {
+                                    },
+                                    onChange: function() {
+                                    },
+                                    validate: function() {
+                                        var a = this.getDialog();
+                                        try {
+                                            new URL(this.getValue());
+                                            return a.getContentElement("info", "linkType") && "url" != a.getValueOf("info", "linkType") ? !0 : !e.config.linkJavaScriptLinksAllowed && /javascript\:/.test(this.getValue()) ? (alert(c.invalidValue), !1) : this.getDialog().fakeObj ? !0 : CKEDITOR.dialog.validate.notEmpty(b.noUrl).apply(this);
+                                        }
+                                        catch (ex) {
+                                            return false
+                                        }
+                                    },
+                                    setup: function(a) {
+                                        this.allowOnChange = !1;
+                                        a.url && this.setValue(a.url.protocol + a.url.url);
+                                        this.allowOnChange = !0
+                                    },
+                                    commit: function(data) {
+                                        data.url = { protocol: '', url: this.getValue() };
+                                        this.allowOnChange = !1
+                                    }
+                                }],
+                            setup: function() {
+                                this.getDialog().getContentElement("info", "linkType") || this.getElement().show()
                             }
                         }, {
-                            type: "text",
-                            id: "url",
-                            label: c.url,
-                            required: !0,
-                            onLoad: function() {
-                                this.allowOnChange = !0
-                            },
-                            onKeyUp: function() {
-                                this.allowOnChange = !1;
-                                var a = this.getDialog().getContentElement("info", "protocol"),
-                                    b = this.getValue(),
-                                    c = /^((javascript:)|[#\/\.\?])/i,
-                                    d = /^(http|https|ftp|news):\/\/(?=.)/i.exec(b);
-                                d ? (this.setValue(b.substr(d[0].length)), a.setValue(d[0].toLowerCase())) : c.test(b) && a.setValue("");
-                                this.allowOnChange = !0
-                            },
-                            onChange: function() {
-                                if (this.allowOnChange) this.onKeyUp()
-                            },
-                            validate: function() {
-                                var a = this.getDialog();
-                                return a.getContentElement("info", "linkType") && "url" != a.getValueOf("info", "linkType") ? !0 : !e.config.linkJavaScriptLinksAllowed && /javascript\:/.test(this.getValue()) ? (alert(c.invalidValue), !1) : this.getDialog().fakeObj ? !0 : CKEDITOR.dialog.validate.notEmpty(b.noUrl).apply(this)
-                            },
-                            setup: function(a) {
-                                this.allowOnChange = !1;
-                                a.url && this.setValue(a.url.url);
-                                this.allowOnChange = !0
-                            },
-                            commit: function(a) {
-                                this.onChange();
-                                a.url || (a.url = {});
-                                a.url.url = this.getValue();
-                                this.allowOnChange = !1
-                            }
-                        }],
-                        setup: function() {
-                            this.getDialog().getContentElement("info", "linkType") || this.getElement().show()
-                        }
-                    }, {
-                        type: "button",
-                        id: "browse",
-                        hidden: "true",
-                        filebrowser: "info:url",
-                        label: c.browseServer
-                    }]
+                            type: "button",
+                            id: "browse",
+                            hidden: "true",
+                            filebrowser: "info:url",
+                            label: c.browseServer
+                        }]
                 }, {
                     type: "vbox",
                     id: "anchorOptions",
@@ -233,7 +210,7 @@
                         id: "noAnchors",
                         style: "text-align: center;",
                         html: '\x3cdiv role\x3d"note" tabIndex\x3d"-1"\x3e' +
-                            CKEDITOR.tools.htmlEncode(b.noAnchors) + "\x3c/div\x3e",
+                        CKEDITOR.tools.htmlEncode(b.noAnchors) + "\x3c/div\x3e",
                         focus: !0,
                         setup: function() {
                             this.getElement()[g && g.length ? "hide" : "show"]()
@@ -283,7 +260,7 @@
                         "default": "",
                         setup: function(a) {
                             a.email &&
-                                this.setValue(a.email.body)
+                            this.setValue(a.email.body)
                         },
                         commit: function(a) {
                             a.email || (a.email = {});
