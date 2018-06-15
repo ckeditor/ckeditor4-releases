@@ -110,7 +110,7 @@
                             validate: function() {
                                 var a = this.getDialog();
                                 try {
-                                    new URL(this.getValue());
+                                    a.getContentElement("info", "linkType") && "url" != a.getValueOf("info", "linkType") ? !0 : new URL(this.getValue());
                                     return a.getContentElement("info", "linkType") && "url" != a.getValueOf("info", "linkType") ? !0 : !e.config.linkJavaScriptLinksAllowed && /javascript\:/.test(this.getValue()) ? (alert(c.invalidValue), !1) : this.getDialog().fakeObj ? !0 : CKEDITOR.dialog.validate.notEmpty(b.noUrl).apply(this);
                                 } catch (ex) {
                                     return false
