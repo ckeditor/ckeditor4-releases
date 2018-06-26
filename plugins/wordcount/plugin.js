@@ -67,6 +67,9 @@ CKEDITOR.plugins.add("wordcount", {
             maxWordCount: -1,
             maxCharCount: -1,
 
+            //SEO Check Flag
+            enableSEOCheck: false,
+
             // Filter
             filter: null,
 
@@ -188,6 +191,36 @@ CKEDITOR.plugins.add("wordcount", {
             return html;
         }
 
+        function doSEOCheck(text, editorInstance) {
+            text = getTextBeforeFirstSEOObject(text);
+            var wordCount = countWords(text);
+            toggleSEO(editorInstance, wordCount);
+        }
+
+        function getTextBeforeFirstSEOObject(text) {
+            var assetCardSeperator = '<div asset="::asset"';
+            var relatedLinkSeperator = '<span class="exclude-from-newsgate';
+            var indexOfAssetCard = text.indexOf(assetCardSeperator);
+            var indexOfRelatedLink = text.indexOf(relatedLinkSeperator);
+
+            //If condition to check if the relatedlink exists before a asset card.
+            if (indexOfRelatedLink != -1 && (indexOfAssetCard == -1 || indexOfRelatedLink < indexOfAssetCard)) {
+                return text.split('<span class="exclude-from-newsgate')[0];
+            } else if (indexOfAssetCard > 0){
+                return text.split('<div asset="::asset"')[0];
+            } else if (indexOfAssetCard == 0 && !_.isEmpty(text)) {
+                return getTextBeforeFirstSEOObject('<div ' + text.slice(assetCardSeperator.length));
+            }
+        }
+
+        function toggleSEO(editorInstance, wordCount) {
+            if (wordCount < 100) {
+                document.getElementById('cke_' + editorInstance.name).classList.add('seo_warning');
+            } else {
+                document.getElementById('cke_' + editorInstance.name).classList.remove('seo_warning');
+            }
+        }
+
         function countCharacters(text, editorInstance) {
             if (config.countHTML) {
                 return (filter(text).length);
@@ -201,7 +234,6 @@ CKEDITOR.plugins.add("wordcount", {
                         var j = text.search(new RegExp("</body>", "i"));
                         text = text.substring(i + 6, j);
                     }
-
                 }
 
                 normalizedText = text;
@@ -297,6 +329,10 @@ CKEDITOR.plugins.add("wordcount", {
 
                 if (config.showInches) {
                     inches = countInches(text);
+                }
+
+                if (config.enableSEOCheck) {
+                    doSEOCheck(text, editorInstance);
                 }
             }
 
