@@ -193,7 +193,7 @@ CKEDITOR.plugins.add("wordcount", {
 
         function doSEOCheck(text, editorInstance) {
             text = getTextBeforeFirstSEOObject(text);
-            let wordCount = countWords(text);
+            var wordCount = countWords(text);
             toggleSEO(editorInstance, wordCount);
         }
 
@@ -205,20 +205,18 @@ CKEDITOR.plugins.add("wordcount", {
 
             //If condition to check if the relatedlink exists before a asset card.
             if (indexOfRelatedLink != -1 && (indexOfAssetCard == -1 || indexOfRelatedLink < indexOfAssetCard)) {
-                text = text.split('<span class="exclude-from-newsgate')[0];
+                return text.split('<span class="exclude-from-newsgate')[0];
             } else if (indexOfAssetCard > 0){
-                text = text.split('<div asset="::asset"')[0];
+                return text.split('<div asset="::asset"')[0];
             } else if (indexOfAssetCard == 0 && !_.isEmpty(text)) {
-                text = getTextBeforeFirstSEOObject('<div ' + text.slice(assetCardSeperator.length));
+                return getTextBeforeFirstSEOObject('<div ' + text.slice(assetCardSeperator.length));
             }
-
-            return text;
         }
 
         function toggleSEO(editorInstance, wordCount) {
             if (wordCount < 100) {
                 document.getElementById('cke_' + editorInstance.name).classList.add('seo_warning');
-            } else if (wordCount >= 100) {
+            } else {
                 document.getElementById('cke_' + editorInstance.name).classList.remove('seo_warning');
             }
         }
@@ -242,13 +240,13 @@ CKEDITOR.plugins.add("wordcount", {
 
                 if (!config.countSpacesAsChars) {
                     normalizedText = text.
-                    replace(/\s/g, "").
-                    replace(/&nbsp;/g, "");
+                        replace(/\s/g, "").
+                        replace(/&nbsp;/g, "");
                 }
 
                 normalizedText = normalizedText.
-                replace(/(\r\n|\n|\r)/gm, "").
-                replace(/&nbsp;/gi, " ");
+                    replace(/(\r\n|\n|\r)/gm, "").
+                    replace(/&nbsp;/gi, " ");
 
                 normalizedText = strip(normalizedText).replace(/^([\t\r\n]*)$/, "");
 
@@ -262,9 +260,9 @@ CKEDITOR.plugins.add("wordcount", {
 
         function countWords(text) {
             var normalizedText = text.
-            replace(/(\r\n|\n|\r)/gm, " ").
-            replace(/^\s+|\s+$/g, "").
-            replace("&nbsp;", " ");
+                replace(/(\r\n|\n|\r)/gm, " ").
+                replace(/^\s+|\s+$/g, "").
+                replace("&nbsp;", " ");
 
             normalizedText = strip(normalizedText);
 
