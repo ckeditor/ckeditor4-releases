@@ -193,8 +193,10 @@ CKEDITOR.plugins.add("wordcount", {
 
         function doSEOCheck(text, editorInstance) {
             text = getTextBeforeFirstSEOObject(text);
-            var wordCount = countWords(text);
-            toggleSEO(editorInstance, wordCount);
+            if (!_.isUndefined(text)) {
+                var wordCount = countWords(text);
+                toggleSEO(editorInstance, wordCount);
+            }
         }
 
         function getTextBeforeFirstSEOObject(text) {
