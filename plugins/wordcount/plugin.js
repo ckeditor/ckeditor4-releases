@@ -242,13 +242,13 @@ CKEDITOR.plugins.add("wordcount", {
 
                 if (!config.countSpacesAsChars) {
                     normalizedText = text.
-                        replace(/\s/g, "").
-                        replace(/&nbsp;/g, "");
+                    replace(/\s/g, "").
+                    replace(/&nbsp;/g, "");
                 }
 
                 normalizedText = normalizedText.
-                    replace(/(\r\n|\n|\r)/gm, "").
-                    replace(/&nbsp;/gi, " ");
+                replace(/(\r\n|\n|\r)/gm, "").
+                replace(/&nbsp;/gi, " ");
 
                 normalizedText = strip(normalizedText).replace(/^([\t\r\n]*)$/, "");
 
@@ -262,9 +262,9 @@ CKEDITOR.plugins.add("wordcount", {
 
         function countWords(text) {
             var normalizedText = text.
-                replace(/(\r\n|\n|\r)/gm, " ").
-                replace(/^\s+|\s+$/g, "").
-                replace("&nbsp;", " ");
+            replace(/(\r\n|\n|\r)/gm, " ").
+            replace(/^\s+|\s+$/g, "").
+            replace("&nbsp;", " ");
 
             normalizedText = strip(normalizedText);
 
@@ -308,6 +308,22 @@ CKEDITOR.plugins.add("wordcount", {
 
             counterElement(editorInstance).className = "cke_path_item";
         }
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this,
+                    args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
 
         function updateCounter(editorInstance) {
             var paragraphs = 0,
@@ -403,14 +419,18 @@ CKEDITOR.plugins.add("wordcount", {
             return true;
         }
 
+        var updateCounterDebounced = debounce(function(editorInstance){
+            updateCounter(editorInstance);
+        }, 250);
+
         editor.on("key", function (event) {
             if (editor.mode === "source") {
-                updateCounter(event.editor);
+                updateCounterDebounced(event.editor);
             }
         }, editor, null, 100);
 
         editor.on("change", function (event) {
-            updateCounter(event.editor);
+            updateCounterDebounced(event.editor);
         }, editor, null, 100);
 
         editor.on("uiSpace", function (event) {
