@@ -192,14 +192,17 @@ CKEDITOR.plugins.add("wordcount", {
         }
 
         function doSEOCheck(text, editorInstance) {
-            text = getTextBeforeFirstSEOObject(text);
-            if (!_.isUndefined(text)) {
-                var wordCount = countWords(text);
-                toggleSEO(editorInstance, wordCount);
+            var seoObjectInfo = getFirstSEOObjectInfo(text, 0);
+            if (seoObjectInfo) {
+                text = seoObjectInfo.text;
+                if (!_.isUndefined(text)) {
+                    var wordCount = countWords(text);
+                    toggleSEO(editorInstance, wordCount, seoObjectInfo.type, seoObjectInfo.index);
+                }
             }
         }
 
-        function getTextBeforeFirstSEOObject(text) {
+        function getFirstSEOObjectInfo(text, iteration) {
             var assetCardSeperator = '<div asset="::asset"';
             var relatedLinkSeperator = '<span class="exclude-from-newsgate';
             var indexOfAssetCard = text.indexOf(assetCardSeperator);
@@ -207,19 +210,40 @@ CKEDITOR.plugins.add("wordcount", {
 
             //If condition to check if the relatedlink exists before a asset card.
             if (indexOfRelatedLink != -1 && (indexOfAssetCard == -1 || indexOfRelatedLink < indexOfAssetCard)) {
-                return text.split('<span class="exclude-from-newsgate')[0];
+                return {type: 'exclude-from-newsgate', text: text.split('<span class="exclude-from-newsgate')[0], index: 0};
             } else if (indexOfAssetCard > 0){
-                return text.split('<div asset="::asset"')[0];
+                return {type: 'assetcard', text: text.split('<div asset="::asset"')[0], index: iteration};
             } else if (indexOfAssetCard == 0 && !_.isEmpty(text)) {
-                return getTextBeforeFirstSEOObject('<div ' + text.slice(assetCardSeperator.length));
+                return getFirstSEOObjectInfo('<div ' + text.slice(assetCardSeperator.length), iteration + 1);
             }
         }
 
-        function toggleSEO(editorInstance, wordCount) {
+        function toggleSEO(editorInstance, wordCount, seoObjectType, index) {
+            removeClass(document.querySelectorAll('.exclude-from-newsgate'), -1);
+            removeClass(document.querySelectorAll('.assetcard'), -1);
             if (wordCount < 100) {
                 document.getElementById('cke_' + editorInstance.name).classList.add('seo_warning');
+                addClass(document.querySelectorAll('.' + seoObjectType), index);
             } else {
                 document.getElementById('cke_' + editorInstance.name).classList.remove('seo_warning');
+            }
+        }
+
+        function removeClass(collection) {
+            if (collection != null && collection.length > 0) {
+                var index = 0, length = collection.length;
+                for (; index < length; index++) {
+                    collection[index].className = collection[index].className.replace(' px-seo-warning', '');
+                }
+            }
+        }
+
+        function addClass(collection, position) {
+            if (collection != null && collection.length > 0) {
+                if (position > -1) {
+                    collection[position].className += " px-seo-warning";
+                    return;
+                }
             }
         }
 
