@@ -1,6 +1,6 @@
 {
   "name": "@gannettdigital/ckeditor",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "main": "ckeditor.js",
   "license": "UNLICENSED",
   "author": {
