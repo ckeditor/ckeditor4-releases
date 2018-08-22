@@ -166,6 +166,11 @@ CKEDITOR.plugins.add("wordcount", {
             markAsExcludeFromNewsGate.forEach(function(note) {
                 note.remove();
             });
+            var tagsExcludedFromWordCount = tmp.querySelectorAll('.exclude-from-wordcount');
+
+            tagsExcludedFromWordCount.forEach(function(tag) {
+                tag.remove();
+            });
             // END: Presto edge-case
 
             if (tmp.textContent == "" && typeof tmp.innerText == "undefined") {
@@ -191,41 +196,55 @@ CKEDITOR.plugins.add("wordcount", {
             return html;
         }
 
-        function doSEOCheck(text, editorInstance) {
-            var seoObjectInfo = getFirstSEOObjectInfo(text, 0);
-            if (seoObjectInfo) {
-                text = seoObjectInfo.text;
-                if (!_.isUndefined(text)) {
-                    var wordCount = countWords(text);
-                    toggleSEO(editorInstance, wordCount, seoObjectInfo.type, seoObjectInfo.index);
+        function doSEOCheck(text) {
+            removeClass(document.querySelectorAll('.exclude-from-newsgate'), -1);
+            removeClass(document.querySelectorAll('.assetcard'), -1);
+            var seoWordCount = 0;
+            var assetCartCount = 0;
+            var relatedLinkCount = 0;
+
+            while (seoWordCount < 100 && text != null) {
+                var seoObjectInfo = getSEOObjectInfo(text);
+                if (seoObjectInfo) {
+                    text = seoObjectInfo.remainingBody;
+                    var index = 0;
+                    if (seoObjectInfo.type == 'assetcard'){
+                        index = assetCartCount;
+                        assetCartCount += 1;
+                    } else if (seoObjectInfo.type == 'exclude-from-newsgate') {
+                        index = relatedLinkCount;
+                        relatedLinkCount += 1;
+                    }
+                    if (seoObjectInfo.text != null) {
+                        seoWordCount += countWords(seoObjectInfo.text);
+                        if (seoWordCount < 100) {
+                            addClass(document.querySelectorAll('.' + seoObjectInfo.type), index);
+                        }
+                    }
+                } else {
+                    text = null;
                 }
             }
         }
 
-        function getFirstSEOObjectInfo(text, iteration) {
+        function getSEOObjectInfo(text) {
             var assetCardSeperator = '<div asset="::asset"';
             var relatedLinkSeperator = '<span class="exclude-from-newsgate';
             var indexOfAssetCard = text.indexOf(assetCardSeperator);
             var indexOfRelatedLink = text.indexOf(relatedLinkSeperator);
-
+            var textArray = [];
             //If condition to check if the relatedlink exists before a asset card.
             if (indexOfRelatedLink != -1 && (indexOfAssetCard == -1 || indexOfRelatedLink < indexOfAssetCard)) {
-                return {type: 'exclude-from-newsgate', text: text.split('<span class="exclude-from-newsgate')[0], index: 0};
-            } else if (indexOfAssetCard > 0){
-                return {type: 'assetcard', text: text.split('<div asset="::asset"')[0], index: iteration};
-            } else if (indexOfAssetCard == 0 && !_.isEmpty(text)) {
-                return getFirstSEOObjectInfo('<div ' + text.slice(assetCardSeperator.length), iteration + 1);
-            }
-        }
-
-        function toggleSEO(editorInstance, wordCount, seoObjectType, index) {
-            removeClass(document.querySelectorAll('.exclude-from-newsgate'), -1);
-            removeClass(document.querySelectorAll('.assetcard'), -1);
-            if (wordCount < 100) {
-                document.getElementById('cke_' + editorInstance.name).classList.add('seo_warning');
-                addClass(document.querySelectorAll('.' + seoObjectType), index);
+                textArray = text.split('<span class="exclude-from-newsgate');
+                return {type: 'exclude-from-newsgate', text: textArray[0], remainingBody: '<span class="exclude-from-wordcount"' + text.substring(indexOfRelatedLink + 1)};
+            } else if (indexOfAssetCard != -1) {
+                textArray = text.split('<div asset="::asset"');
+                if (indexOfAssetCard == 0) {
+                    return {type: 'assetcard', text: null, remainingBody: '<div class="exclude-from-wordcount"' + text.substring(indexOfAssetCard + 1)};
+                }
+                return {type: 'assetcard', text: textArray[0], remainingBody: '<div class="exclude-from-wordcount"' + text.substring(indexOfAssetCard + 1)};
             } else {
-                document.getElementById('cke_' + editorInstance.name).classList.remove('seo_warning');
+                return null;
             }
         }
 
