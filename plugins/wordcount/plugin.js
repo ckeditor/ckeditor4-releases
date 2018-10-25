@@ -58,7 +58,7 @@ CKEDITOR.plugins.add("wordcount", {
             showWordCount: true,
             showCharCount: false,
             showInches: false,
-            charactersPerInch: 235,
+            charactersPerInch: 225,
             countSpacesAsChars: false,
             countHTML: false,
             hardLimit: true,
