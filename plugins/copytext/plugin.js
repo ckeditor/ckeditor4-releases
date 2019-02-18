@@ -21,7 +21,7 @@
                     document.body.appendChild(dummyTextArea);
                     dummyTextArea.select();
 
-                    let notification;
+                    var notification;
                     try {
                         document.execCommand('copy');
                         notification = new CKEDITOR.plugins.notification(editor, { message: 'Content successfully copied to clipboard', type: 'success' });
