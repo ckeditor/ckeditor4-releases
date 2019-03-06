@@ -23,10 +23,6 @@
                     const relatedLinks = contentDOM.querySelectorAll('p>span');
                     relatedLinks.forEach(function (relatedLink) { relatedLink.remove(); });
 
-                    // remove hyper links
-                    const hyperlinks = contentDOM.querySelectorAll('a');
-                    hyperlinks.forEach(function (hyperlink) { hyperlink.remove(); });
-
                     // remove empty tags
                     const emptyTags = contentDOM.querySelectorAll(':empty');
                     emptyTags.forEach(function (emptyTag) { emptyTag.remove(); });
