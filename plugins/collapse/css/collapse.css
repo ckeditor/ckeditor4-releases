@@ -1,0 +1,18 @@
+
+#cke_storyeditor .cke_top .cke_button__collapse.cke_button_off,
+#cke_storyeditor .cke_top .cke_button__collapse.cke_button_on,
+#cke_storyeditor .cke_top .cke_button__collapse.cke_button_off:focus,
+#cke_storyeditor .cke_top .cke_button__collapse.cke_button_off:active
+{
+    border:none;
+    background: transparent;
+}
+
+.cke_button__collapse.cke_button_on .cke_button__collapse_icon:after {
+    content: '\f078';
+    font-family: 'FontAwesome';
+}
+.cke_button__collapse.cke_button_off .cke_button__collapse_icon:after {
+    content: '\f077';
+    font-family: 'FontAwesome';
+}
