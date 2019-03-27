@@ -11,7 +11,7 @@
 
                     var collapseToolbar = collapseToolbox.parentElement;
                     collapseToolbar.style.cssFloat = 'right';
-                    const newlineElement = document.createElement('br');
+                    var newlineElement = document.createElement('br');
                     newlineElement.style.lineHeight = '33px';
                     collapseToolbar.parentElement.insertBefore(newlineElement, collapseToolbar.nextSibling);
                 }
@@ -36,7 +36,7 @@
                         }
                     }
                 }
-                const toolbars = editor.toolbox.toolbars.slice(collapseIndex);
+                var toolbars = editor.toolbox.toolbars.slice(collapseIndex);
                 toolbars.forEach(({ id }) => {
                     document.getElementById(id).style.display = displayStyle;
                 });
@@ -48,9 +48,11 @@
                     if (commandState === CKEDITOR.TRISTATE_OFF) {
                         commandState = CKEDITOR.TRISTATE_ON;
                         modifyPlugins('none');
+                        document.querySelector('.cke_contents').classList.add('collapsed');
                     } else {
                         commandState = CKEDITOR.TRISTATE_OFF;
                         modifyPlugins('inherit');
+                        document.querySelector('.cke_contents').classList.remove('collapsed');
                     }
                     editor.getCommand('Collapse').setState(commandState);
                 }
