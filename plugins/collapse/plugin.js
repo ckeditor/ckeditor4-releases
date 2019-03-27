@@ -37,8 +37,8 @@
                     }
                 }
                 var toolbars = editor.toolbox.toolbars.slice(collapseIndex);
-                toolbars.forEach(({ id }) => {
-                    document.getElementById(id).style.display = displayStyle;
+                toolbars.forEach(function (toolbar) {
+                    document.getElementById(toolbar.id).style.display = displayStyle;
                 });
             }
 
