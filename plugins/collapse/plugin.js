@@ -4,7 +4,7 @@
             CKEDITOR.document.appendStyleSheet(this.path + "css/collapse.css");
         },
         init: function (editor) {
-            editor.on('instanceReady',initializePlugin);
+            editor.on('instanceReady', initializePlugin);
 
             editor.addCommand('Collapse', {
                 exec: function (editor) {
@@ -28,11 +28,11 @@
                 toolbar: 'Collapse'
             });
 
-            function initializePlugin(){
+            function initializePlugin () {
                 var collapseButtons = document.querySelectorAll('.cke_button__collapse');
                 if (collapseButtons.length) {
                     collapseButtons.forEach(function (collapseButton) {
-                        if(!collapseButton.parentElement.classList.contains('collapse-toolbox')){
+                        if (!collapseButton.parentElement.classList.contains('collapse-toolbox')) {
                             collapseButton.parentElement.classList.add('collapse-toolbox');
                             collapseButton.parentElement.parentElement.classList.add('collapse-toolbar');
                             var newlineElement = document.createElement('br');
