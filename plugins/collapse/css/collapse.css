@@ -16,3 +16,24 @@
     content: '\f077';
     font-family: 'FontAwesome';
 }
+
+.cke_toolbar.collapse-toolbar, br.plugins-newline-seperator{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .cke_toolbar.collapse-toolbar{
+        float: right;
+        display: initial;
+    }
+    .cke_toolbar > .collapse-toolbox{
+        background: transparent;
+        border: none;
+    }
+
+    br.plugins-newline-seperator{
+        line-height: 33px;
+        display: initial;
+    }
+
+}
