@@ -48,15 +48,15 @@ You can also load CKEditor 4 using [CDN](https://cdn.ckeditor.com/#ckeditor4).
 
 ## Presets
 
-The CKEditor 4 npm package comes in the `standard-all` preset, so it includes all official CKEditor plugins, with those from the [standard package](https://ckeditor.com/docs/ckeditor4/latest/examples/standardpreset.html) active by default.
+The CKEditor 4 npm package comes in the `standard-all` preset, so it includes all official CKEditor plugins, with those from the [standard package](https://sdk.ckeditor.com/samples/standardpreset.html) active by default.
 
 ## Further Resources
 
-* [CKEditor 4 demo](https://ckeditor.com/ckeditor-4/demo/)
+* [CKEditor 4 demo](https://ckeditor.com/ckeditor-4/)
 * [Documentation](https://ckeditor.com/docs/ckeditor4/latest/)
 * [API documentation](https://ckeditor.com/docs/ckeditor4/latest/api/index.html)
 * [Configuration reference](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html)
-* [CKEditor SDK with more samples](https://ckeditor.com/docs/ckeditor4/latest/examples/index.html)
+* [CKEditor SDK with more samples](https://sdk.ckeditor.com/)
 
 If you are looking for CKEditor 5, here's a link to the relevant npm package: <https://www.npmjs.com/package/ckeditor5>
 

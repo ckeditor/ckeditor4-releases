@@ -1,9 +1,9 @@
 {
-	"name": "ckeditor/ckeditor4",
+	"name": "ckeditor/ckeditor",
 	"description": "JavaScript WYSIWYG web text editor.",
 	"type": "library",
 	"keywords": [ "ckeditor4", "ckeditor", "fckeditor", "editor", "wysiwyg", "html", "richtext", "text", "javascript" ],
-	"homepage": "https://ckeditor.com",
+	"homepage": "https://ckeditor.com/ckeditor-4/",
 	"license": [ "GPL-2.0+", "LGPL-2.1+", "MPL-1.1+" ],
 	"authors": [
 		{

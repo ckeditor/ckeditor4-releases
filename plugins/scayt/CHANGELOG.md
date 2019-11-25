@@ -3,8 +3,8 @@ SCAYT plugin for CKEditor 4 Changelog
 ### CKEditor 4.5.6
 
 New Features:
-* CKEditor [language addon](https://ckeditor.com/cke4/addon/language) support
-* CKEditor [placeholder addon](https://ckeditor.com/cke4/addon/placeholder) support
+* CKEditor [language addon](http://ckeditor.com/addon/language) support
+* CKEditor [placeholder addon](http://ckeditor.com/addon/placeholder) support
 * Drag and Drop support
 * *Experimental* GRAYT functionality http://www.webspellchecker.net/samples/scayt-ckeditor-plugin.html#25
 
