@@ -18,10 +18,10 @@
     "text",
     "javascript"
   ],
-  "author": "CKSource (http://cksource.com/)",
+  "author": "CKSource (https://cksource.com/)",
   "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
   "bugs": {
     "url": "https://github.com/ckeditor/ckeditor4/issues"
   },
-  "homepage": "http://ckeditor.com"
+  "homepage": "https://ckeditor.com/ckeditor-4/"
 }
