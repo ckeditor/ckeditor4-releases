@@ -385,6 +385,7 @@
                         var a= {};
                         this.commitContent(a);
                         var b=e.getSelection(), c=m.getLinkAttributes(e, a);
+                        a.url.url = a.url.url.trim();
                         if (this._.selectedElement) {
                             var d=this._.selectedElement, g=d.data("cke-saved-href"), h=d.getHtml(), f;
                             d.setAttributes(c.set);
