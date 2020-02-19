@@ -1,6 +1,10 @@
 pipeline {
   agent {
-    dockerfile true
+    dockerfile {
+      filename 'Dockerfile'
+      registryUrl 'https://quay.io'
+      registryCredentialsId 'quay'
+    }
   }
   environment {
     def NPM_CONFIG_CACHE = '/tmp/npm'
