@@ -78,7 +78,6 @@
                                             var a=this.getDialog();
                                             try {
                                                 a.getContentElement("info", "linkType") && "url" !=a.getValueOf("info", "linkType") ? !0 : new URL(this.getValue());
-                                                this.setValue(_.trim(this.getValue()));
                                                 var v = new URL(this.getValue());
                                                 var validSchemes = ['http', 'https', 'tel', '#', 'webcal', 'stocks', 'action', 'mailto'];
                                                 if (!validSchemes.includes(v.protocol.replace(':', ''))) {
