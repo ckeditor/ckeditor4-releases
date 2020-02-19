@@ -61,6 +61,8 @@ pipeline {
             sh "git push https://${env.GIT_PASSWORD}:${env.GIT_PASSWORD}@github.com/GannettDigital/${env.GIT_REPO_NAME} ${env.BRANCH_NAME}"
             def pkg = sh(script: 'npm pack .', returnStdout: true).trim()
             archiveArtifacts artifacts: pkg
+            env.LIBRARY_PKG_NAME = pkg
+            stash includes: pkg, name: 'LIBRARY_NPM_PACKAGE'
             paasTag.create apiKey: env.API_KEY,
                            version: node_package.version,
                            org: 'GannettDigital',
@@ -76,8 +78,9 @@ pipeline {
       post {
         success {
           script {
+            unstash 'LIBRARY_NPM_PACKAGE'
             def node_package = readJSON file: 'package.json'
-            slackSend color: 'good', message: "<${env.BUILD_URL}|#${env.BUILD_TAG}> - ${node_package.name}] ${pkg} publish!"
+            slackSend color: 'good', message: "<${env.BUILD_URL}|#${env.BUILD_TAG}> - ${node_package.name}] published to https://artifactory.gannettdigital.com/artifactory/${ARTIFACTORY_REPO}/${LIBRARY_PKG_NAME}!"
           }
         }
         failure {
