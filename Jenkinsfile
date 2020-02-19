@@ -23,6 +23,17 @@ pipeline {
         }
       }
     }
+    stage('quay login') {
+      steps {
+        script {
+          withVaultCredentials([
+            [path: 'secret/content-engineering/global/quay/gannett+content_engineering', keys: [username: 'QUAY_USERNAME', token: 'QUAY_KEY']]
+          ]) {
+            sh 'docker login -u "$QUAY_USERNAME" -p "$QUAY_KEY" quay.io'
+          }
+        }
+      } // script
+    } // stage('quay login')
     stage('bump version') {
       when {
         branch 'master'
