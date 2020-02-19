@@ -1,0 +1,34 @@
+# template version 0.0.1
+# ---- Base Node ----
+FROM quay.io/gannett/authoring-nodejs-test:latest AS base
+
+# set build-args for this base
+ARG VERSION
+ARG APP_NAME
+ENV APP_NAME=${APP_NAME}
+ENV NODE_ENV=integration
+WORKDIR /opt/gannett/staging
+
+RUN mkdir /opt/gannett/${APP_NAME} && \
+    chown ${NODE_USER}:${NODE_USER} /opt/gannett/staging && \
+    chown ${NODE_USER}:${NODE_USER} /opt/gannett/${APP_NAME}
+
+# copy project source
+COPY package.json package-lock.json .npmrc ./
+
+# install node packages
+RUN npm set progress=false && \
+    npm config set depth 0 && \
+    npm install && \
+
+# copy node_modules to /opt/gannett
+    mv node_modules /opt/gannett
+
+WORKDIR /opt/gannett/${APP_NAME}
+
+USER ${NODE_USER}
+ENV PATH="/opt/gannett/node_modules/.bin:${PATH}"
+LABEL maintainer=${TEAM}@gannett.com \
+        version=${VERSION}
+
+ENTRYPOINT ["tini", "--"]

@@ -5,5 +5,25 @@
   "license": "UNLICENSED",
   "author": {
     "name": "content-engineering"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GannettDigital/ckeditor-releases"
+  },
+  "scripts": {
+    "build:both": "echo 'nothing to do'",
+    "build:docker-test": "docker build --rm -t ${npm_package_name}-test:${npm_package_version} --build-arg VERSION=${npm_package_version} --build-arg APP_NAME=${npm_package_name} --build-arg TEAM=${npm_package_author_name} -f Dockerfile.test .",
+    "pretest:docker": "npm run build:docker-test",
+    "debug:docker": "NODE_ENV=integration APP_NAME=${npm_package_name} VERSION=${npm_package_version} TEAM=${npm_package_author_name} source export_secrets.sh && docker run --rm ${process_envs[@]} -it ${npm_package_name}-test:${npm_package_version} /bin/bash",
+    "debug:docker-root": "NODE_ENV=integration APP_NAME=${npm_package_name} VERSION=${npm_package_version} TEAM=${npm_package_author_name} source export_secrets.sh && docker run --rm ${process_envs[@]} --user root -it ${npm_package_name}-test:${npm_package_version} /bin/bash",
+    "start:docker-test": "export VAULT_TOKEN=$(cat ~/.vault-token | xargs) && export NODE_ENV=integration && docker run --rm -e NODE_ENV -e VAULT_TOKEN ${npm_package_name}-test:${npm_package_version} node app.js",
+    "prestart:docker-test": "npm run build:docker-test",
+    "test:docker": "NODE_ENV=integration APP_NAME=${npm_package_name} VERSION=${npm_package_version} TEAM=${npm_package_author_name} source export_secrets.sh && docker run --rm ${process_envs[@]} ${npm_package_name}-test:${npm_package_version} npm run test-docker",
+    "test:unit": "true",
+    "test:coverage": "true",
+    "test:integration": "true",
+    "test:lint": "true",
+    "test:lint-fix": "true",
+    "reinstall": "rm -rf node_modules && rm -rf coverage && npm i"
   }
 }
