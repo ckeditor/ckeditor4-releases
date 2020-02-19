@@ -5,5 +5,9 @@
   "license": "UNLICENSED",
   "author": {
     "name": "content-engineering"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/GannettDigital/ckeditor-releases"
   }
 }
