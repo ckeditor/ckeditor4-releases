@@ -76,13 +76,6 @@ pipeline {
         } // script
       } // steps
       post {
-        success {
-          script {
-            unstash 'LIBRARY_NPM_PACKAGE'
-            def node_package = readJSON file: 'package.json'
-            slackSend color: 'good', message: "<${env.BUILD_URL}|#${env.BUILD_TAG}> - ${node_package.name}] published to https://artifactory.gannettdigital.com/artifactory/${ARTIFACTORY_REPO}/${LIBRARY_PKG_NAME}!"
-          }
-        }
         failure {
           script {
             def node_package = readJSON file: 'package.json'
