@@ -49,6 +49,7 @@ var CKBUILDER_CONFIG = {
 		'less',
 		'node_modules',
 		'package.json',
+		'package-lock.json',
 		'tests'
 	],
 	plugins : {
