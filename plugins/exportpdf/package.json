@@ -1,0 +1,37 @@
+{
+  "name": "ckeditor4-plugin-exportpdf",
+  "version": "1.0.0",
+  "description": "Plugin adds export to PDF functionality to CKEditor 4.",
+  "main": "plugin.js",
+  "author": "CKSource (http://cksource.com/)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "peerDependencies": {
+    "ckeditor4": ">=4.6.1"
+  },
+  "homepage": "https://ckeditor.com/export-to-pdf-word/",
+  "bugs": "https://github.com/ckeditor/ckeditor4/issues/",
+  "keywords": [
+    "ckeditor",
+    "ckeditor4",
+    "ckeditor 4",
+    "ckeditor4-plugin",
+    "WYSIWYG",
+    "WYSIWYM",
+    "text",
+    "rich-text",
+    "richtext",
+    "editor",
+    "editing",
+    "html",
+    "contentEditable",
+    "PDF",
+    "print PDF",
+    "save PDF",
+    "convert to PDF",
+    "export PDF",
+    "export to PDF",
+    "PDF converter",
+    "HTML to PDF",
+    "HTML2PDF"
+  ]
+}
