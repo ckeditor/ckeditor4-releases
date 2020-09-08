@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 ﻿/*
 Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
+=======
+/*
+Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+>>>>>>> 4.12.1
 */
 CKEDITOR.plugins.setLang( 'image2', 'pl', {
 	alt: 'Tekst zastępczy',
 	btnUpload: 'Wyślij',
 	captioned: 'Obrazek z podpisem',
+<<<<<<< HEAD
+=======
+	captionPlaceholder: 'Podpis',
+>>>>>>> 4.12.1
 	infoTab: 'Informacje o obrazku',
 	lockRatio: 'Zablokuj proporcje',
 	menu: 'Właściwości obrazka',
@@ -15,5 +25,10 @@ CKEDITOR.plugins.setLang( 'image2', 'pl', {
 	resizer: 'Kliknij i przeciągnij, by zmienić rozmiar.',
 	title: 'Właściwości obrazka',
 	uploadTab: 'Wyślij',
+<<<<<<< HEAD
 	urlMissing: 'Podaj adres URL obrazka.'
+=======
+	urlMissing: 'Podaj adres URL obrazka.',
+	altMissing: 'Podaj tekst zastępczy obrazka.'
+>>>>>>> 4.12.1
 } );

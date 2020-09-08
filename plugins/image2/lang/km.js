@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 ﻿/*
 Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
+=======
+/*
+Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+>>>>>>> 4.12.1
 */
 CKEDITOR.plugins.setLang( 'image2', 'km', {
 	alt: 'អត្ថបទជំនួស',
 	btnUpload: 'បញ្ជូនទៅកាន់ម៉ាស៊ីនផ្តល់សេវា',
 	captioned: 'រូប​ដែល​មាន​ចំណង​ជើង',
+<<<<<<< HEAD
+=======
+	captionPlaceholder: 'Caption', // MISSING
+>>>>>>> 4.12.1
 	infoTab: 'ពត៌មានអំពីរូបភាព',
 	lockRatio: 'ចាក់​សោ​ផល​ធៀប',
 	menu: 'លក្ខណៈ​សម្បត្តិ​រូប​ភាព',
@@ -15,5 +25,10 @@ CKEDITOR.plugins.setLang( 'image2', 'km', {
 	resizer: 'ចុច​ហើយ​ទាញ​ដើម្បី​ប្ដូរ​ទំហំ',
 	title: 'លក្ខណៈ​សម្បត្តិ​រូប​ភាប',
 	uploadTab: 'ផ្ទុក​ឡើង',
+<<<<<<< HEAD
 	urlMissing: 'ខ្វះ URL ប្រភព​រូប​ភាព។'
+=======
+	urlMissing: 'ខ្វះ URL ប្រភព​រូប​ភាព។',
+	altMissing: 'Alternative text is missing.' // MISSING
+>>>>>>> 4.12.1
 } );

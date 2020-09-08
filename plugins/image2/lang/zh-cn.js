@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 ﻿/*
 Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
+=======
+/*
+Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+>>>>>>> 4.12.1
 */
 CKEDITOR.plugins.setLang( 'image2', 'zh-cn', {
 	alt: '替换文本',
 	btnUpload: '上传到服务器',
 	captioned: '带标题图像',
+<<<<<<< HEAD
+=======
+	captionPlaceholder: '标题',
+>>>>>>> 4.12.1
 	infoTab: '图像信息',
 	lockRatio: '锁定比例',
 	menu: '图像属性',
@@ -15,5 +25,10 @@ CKEDITOR.plugins.setLang( 'image2', 'zh-cn', {
 	resizer: '点击并拖拽以改变尺寸',
 	title: '图像属性',
 	uploadTab: '上传',
+<<<<<<< HEAD
 	urlMissing: '缺少图像源文件地址'
+=======
+	urlMissing: '缺少图像源文件地址',
+	altMissing: '缺少替换文本'
+>>>>>>> 4.12.1
 } );

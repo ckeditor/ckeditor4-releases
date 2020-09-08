@@ -1,6 +1,11 @@
 /**
+<<<<<<< HEAD
  * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
+=======
+ * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+>>>>>>> 4.12.1
  */
 
 /**
@@ -38,12 +43,23 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 
 		helpers = CKEDITOR.plugins.image2,
 
+<<<<<<< HEAD
+=======
+		// Editor instance configuration.
+		config = editor.config,
+
+		hasFileBrowser = !!( config.filebrowserImageBrowseUrl || config.filebrowserBrowseUrl ),
+
+>>>>>>> 4.12.1
 		// Content restrictions defined by the widget which
 		// impact on dialog structure and presence of fields.
 		features = editor.widgets.registered.image.features,
 
 		// Functions inherited from image2 plugin.
+<<<<<<< HEAD
 		checkHasNaturalRatio = helpers.checkHasNaturalRatio,
+=======
+>>>>>>> 4.12.1
 		getNatural = helpers.getNatural,
 
 		// Global variables referring to the dialog's context.
@@ -73,7 +89,11 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 			isValid = !!( match && parseInt( match[ 1 ], 10 ) !== 0 );
 
 		if ( !isValid )
+<<<<<<< HEAD
 			alert( commonLang[ 'invalid' + CKEDITOR.tools.capitalize( this.id ) ] );
+=======
+			alert( commonLang[ 'invalidLength' ].replace( '%1', commonLang[ this.id ] ).replace( '%2', 'px' ) ); // jshint ignore:line
+>>>>>>> 4.12.1
 
 		return isValid;
 	}
@@ -104,7 +124,11 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		// @param {Function} callback.
 		return function( src, callback, scope ) {
 			addListener( 'load', function() {
+<<<<<<< HEAD
 				// Don't use image.$.(width|height) since it's buggy in IE9-10 (#11159)
+=======
+				// Don't use image.$.(width|height) since it's buggy in IE9-10 (https://dev.ckeditor.com/ticket/11159)
+>>>>>>> 4.12.1
 				var dimensions = getNatural( image );
 
 				callback.call( scope, image, dimensions.width, dimensions.height );
@@ -118,7 +142,12 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 				callback( null );
 			} );
 
+<<<<<<< HEAD
 			image.setAttribute( 'src', src + '?' + Math.random().toString( 16 ).substring( 2 ) );
+=======
+			image.setAttribute( 'src',
+				( config.baseHref || '' ) + src + '?' + Math.random().toString( 16 ).substring( 2 ) );
+>>>>>>> 4.12.1
 		};
 	}
 
@@ -142,6 +171,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 					return toggleLockRatio( false );
 
 				// Fill width field with the width of the new image.
+<<<<<<< HEAD
 				widthField.setValue( width );
 
 				// Fill height field with the height of the new image.
@@ -152,6 +182,18 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 
 				// Cache the new height.
 				preLoadedHeight = height;
+=======
+				widthField.setValue( editor.config.image2_prefillDimensions === false ? 0 : width );
+
+				// Fill height field with the height of the new image.
+				heightField.setValue( editor.config.image2_prefillDimensions === false ? 0 : height );
+
+				// Cache the new width and update initial cache (#1348).
+				preLoadedWidth = domWidth = width;
+
+				// Cache the new height and update initial cache (#1348).
+				preLoadedHeight = domHeight = height;
+>>>>>>> 4.12.1
 
 				// Check for new lock value if image exist.
 				toggleLockRatio( helpers.checkHasNaturalRatio( image ) );
@@ -338,8 +380,12 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		heightField[ method ]();
 	}
 
+<<<<<<< HEAD
 	var hasFileBrowser = !!( editor.config.filebrowserImageBrowseUrl || editor.config.filebrowserBrowseUrl ),
 		srcBoxChildren = [
+=======
+	var srcBoxChildren = [
+>>>>>>> 4.12.1
 			{
 				id: 'src',
 				type: 'text',
@@ -364,7 +410,11 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 			id: 'browse',
 			// v-align with the 'txtUrl' field.
 			// TODO: We need something better than a fixed size here.
+<<<<<<< HEAD
 			style: 'display:inline-block;margin-top:16px;',
+=======
+			style: 'display:inline-block;margin-top:14px;',
+>>>>>>> 4.12.1
 			align: 'center',
 			label: editor.lang.common.browseServer,
 			hidden: true,
@@ -414,6 +464,10 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 							{
 								type: 'hbox',
 								widths: [ '100%' ],
+<<<<<<< HEAD
+=======
+								className: 'cke_dialog_image_url',
+>>>>>>> 4.12.1
 								children: srcBoxChildren
 							}
 						]
@@ -427,7 +481,12 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 						},
 						commit: function( widget ) {
 							widget.setData( 'alt', this.getValue() );
+<<<<<<< HEAD
 						}
+=======
+						},
+						validate: editor.config.image2_altRequired === true ? CKEDITOR.dialog.validate.notEmpty( lang.altMissing ) : null
+>>>>>>> 4.12.1
 					},
 					{
 						type: 'hbox',
@@ -492,10 +551,18 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 								id: 'align',
 								type: 'radio',
 								items: [
+<<<<<<< HEAD
 									[ 'None', 'none' ],
 									[ 'Left', 'left' ],
 									[ 'Center', 'center' ],
 									[ 'Right', 'right' ] ],
+=======
+									[ commonLang.alignNone, 'none' ],
+									[ commonLang.left, 'left' ],
+									[ commonLang.center, 'center' ],
+									[ commonLang.right, 'right' ]
+								],
+>>>>>>> 4.12.1
 								label: commonLang.align,
 								setup: function( widget ) {
 									this.setValue( widget.data.align );
@@ -543,4 +610,8 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 			}
 		]
 	};
+<<<<<<< HEAD
 } );
+=======
+} );
+>>>>>>> 4.12.1
