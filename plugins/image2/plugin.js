@@ -1,11 +1,6 @@
 ﻿/**
-<<<<<<< HEAD
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
-=======
  * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
->>>>>>> 4.12.1
  */
 
 'use strict';
@@ -13,16 +8,6 @@
 ( function() {
 
 	var template = '<img alt="" src="" />',
-<<<<<<< HEAD
-		templateBlock = '<figure class="caption">' +
-				template +
-				'<figcaption>Caption</figcaption>' +
-			'</figure>',
-		regexPercent = /^\s*(\d+\%)\s*$/i;
-
-	CKEDITOR.plugins.add( 'image2', {
-		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
-=======
 		templateBlock = new CKEDITOR.template(
 			'<figure class="{captionedClass}">' +
 				template +
@@ -35,15 +20,10 @@
 		// jscs:disable maximumLineLength
 		lang: 'af,ar,az,bg,bn,bs,ca,cs,cy,da,de,de-ch,el,en,en-au,en-ca,en-gb,eo,es,es-mx,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,oc,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
 		// jscs:enable maximumLineLength
->>>>>>> 4.12.1
 		requires: 'widget,dialog',
 		icons: 'image',
 		hidpi: true,
 
-<<<<<<< HEAD
-		onLoad: function( editor ) {
-			CKEDITOR.addCss(
-=======
 		onLoad: function() {
 			CKEDITOR.addCss(
 			'.cke_image_nocaption{' +
@@ -51,7 +31,6 @@
 				// wrapper is displayed property.
 				'line-height:0' +
 			'}' +
->>>>>>> 4.12.1
 			'.cke_editable.cke_image_sw, .cke_editable.cke_image_sw *{cursor:sw-resize !important}' +
 			'.cke_editable.cke_image_se, .cke_editable.cke_image_se *{cursor:se-resize !important}' +
 			'.cke_image_resizer{' +
@@ -63,11 +42,7 @@
 				'right:-5px;' +
 				'background:#000;' +
 				'outline:1px solid #fff;' +
-<<<<<<< HEAD
-				// Prevent drag handler from being misplaced (#11207).
-=======
 				// Prevent drag handler from being misplaced (https://dev.ckeditor.com/ticket/11207).
->>>>>>> 4.12.1
 				'line-height:0;' +
 				'cursor:se-resize;' +
 			'}' +
@@ -85,8 +60,6 @@
 			'.cke_widget_wrapper:hover .cke_image_resizer,' +
 			'.cke_image_resizer.cke_image_resizing{' +
 				'display:block' +
-<<<<<<< HEAD
-=======
 			'}' +
 			// Hide resizer in read only mode (#2816).
 			'.cke_editable[contenteditable="false"] .cke_image_resizer{' +
@@ -95,20 +68,16 @@
 			// Expand widget wrapper when linked inline image.
 			'.cke_widget_wrapper>a{' +
 				'display:inline-block' +
->>>>>>> 4.12.1
 			'}' );
 		},
 
 		init: function( editor ) {
-<<<<<<< HEAD
-=======
 			// Abort when Easyimage is to be loaded since this plugins
 			// share the same functionality (#1791).
 			if ( editor.plugins.detectConflict( 'image2', [ 'easyimage' ] ) ) {
 				return;
 			}
 
->>>>>>> 4.12.1
 			// Adapts configuration from original image plugin. Should be removed
 			// when we'll rename image2 to image.
 			var config = editor.config,
@@ -151,62 +120,12 @@
 		},
 
 		afterInit: function( editor ) {
-<<<<<<< HEAD
-=======
 			// Integrate with align commands (justify plugin).
->>>>>>> 4.12.1
 			var align = { left: 1, right: 1, center: 1, block: 1 },
 				integrate = alignCommandIntegrator( editor );
 
 			for ( var value in align )
 				integrate( value );
-<<<<<<< HEAD
-		}
-	} );
-
-	// @param {CKEDITOR.editor}
-	// @returns {Object}
-	function widgetDef( editor ) {
-		return {
-			// Widget-specific rules for Allowed Content Filter.
-			allowedContent: {
-				// This widget may need <div> centering wrapper.
-				div: {
-					match: centerWrapperChecker( editor ),
-					styles: 'text-align'
-				},
-				figcaption: true,
-				figure: {
-					classes: '!caption',
-					styles: 'float,display'
-				},
-				img: {
-					attributes: '!src,alt,width,height',
-					styles: 'float'
-				},
-				// This widget may need <p> centering wrapper.
-				p: {
-					match: centerWrapperChecker( editor ),
-					styles: 'text-align'
-				}
-			},
-
-			requiredContent: 'img[src,alt]',
-
-			// Note: The following may not cover all the possible cases since
-			// requiredContent supports a single tag only.
-			features: {
-				dimension: {
-					requiredContent: 'img[width,height]'
-				},
-				align: {
-					requiredContent: 'img{float}'
-				},
-				caption: {
-					requiredContent: 'figcaption'
-				}
-			},
-=======
 
 			// Integrate with link commands (link plugin).
 			linkCommandIntegrator( editor );
@@ -367,7 +286,6 @@
 			features: getWidgetFeatures( editor ),
 
 			styleableElements: 'img figure',
->>>>>>> 4.12.1
 
 			// This widget converts style-driven dimensions to attributes.
 			contentTransformations: [
@@ -378,21 +296,14 @@
 			editables: {
 				caption: {
 					selector: 'figcaption',
-<<<<<<< HEAD
-					allowedContent: 'br em strong sub sup u s; a[!href]'
-=======
 					allowedContent: 'br em strong sub sup u s; a[!href,target]'
->>>>>>> 4.12.1
 				}
 			},
 
 			parts: {
 				image: 'img',
 				caption: 'figcaption'
-<<<<<<< HEAD
-=======
 				// parts#link defined in widget#init
->>>>>>> 4.12.1
 			},
 
 			// The name of this widget's dialog.
@@ -402,95 +313,6 @@
 			template: template,
 
 			data: function() {
-<<<<<<< HEAD
-				var widget = this,
-					editor = widget.editor,
-					doc = editor.document,
-					editable = editor.editable(),
-					oldState = widget.oldData,
-					newState = widget.data,
-					features = this.features;
-
-				// Image can't be captioned when figcaption is disallowed (#11004).
-				if ( newState.hasCaption && !editor.filter.checkFeature( features.caption ) )
-					newState.hasCaption = false;
-
-				// Image can't be aligned when floating is disallowed (#11004).
-				if ( newState.align != 'none' && !editor.filter.checkFeature( features.align ) )
-					newState.align = 'none';
-
-				// Convert the internal form of the widget from the old state to the new one.
-				widget.shiftState( {
-					element: widget.element,
-					oldState: oldState,
-					newState: newState,
-
-					// Destroy the widget.
-					destroy: function() {
-						if ( this.destroyed )
-							return;
-
-						// Remember whether widget was focused before destroyed.
-						if ( editor.widgets.focused == widget )
-							this.focused = true;
-
-						editor.widgets.destroy( widget );
-
-						// Mark widget was destroyed.
-						this.destroyed = true;
-					},
-
-					init: function( element ) {
-						// Create a new widget. This widget will be either captioned
-						// non-captioned, block or inline according to what is the
-						// new state of the widget.
-						if ( this.destroyed ) {
-							widget = editor.widgets.initOn( element, 'image', widget.data );
-
-							// Once widget was re-created, it may become an inline element without
-							// block wrapper (i.e. when unaligned, end not captioned). Let's do some
-							// sort of autoparagraphing here (#10853).
-							if ( widget.inline && !( new CKEDITOR.dom.elementPath( widget.wrapper, editable ).block ) ) {
-								var block = doc.createElement( editor.activeEnterMode == CKEDITOR.ENTER_P ? 'p' : 'div' );
-								block.replace( widget.wrapper );
-								widget.wrapper.move( block );
-							}
-
-							// The focus must be transferred from the old one (destroyed)
-							// to the new one (just created).
-							if ( this.focused ) {
-								widget.focus();
-								delete this.focused;
-							}
-
-							delete this.destroyed;
-						}
-
-						// If now widget was destroyed just update wrapper's alignment.
-						// According to the new state.
-						else
-							setWrapperAlign( widget );
-
-					}
-				} );
-
-				widget.parts.image.setAttributes( {
-					src: widget.data.src,
-
-					// This internal is required by the editor.
-					'data-cke-saved-src': widget.data.src,
-
-					alt: widget.data.alt
-				} );
-
-				// Set dimensions of the image according to gathered data.
-				// Do it only when the attributes are allowed (#11004).
-				if ( editor.filter.checkFeature( features.dimension ) )
-					setDimensions( widget );
-
-				// Cache current data.
-				widget.oldData = CKEDITOR.tools.extend( {}, widget.data );
-=======
 				var features = this.features;
 
 				// Image can't be captioned when figcaption is disallowed (https://dev.ckeditor.com/ticket/11004).
@@ -544,7 +366,6 @@
 
 				// Cache current data.
 				this.oldData = CKEDITOR.tools.extend( {}, this.data );
->>>>>>> 4.12.1
 			},
 
 			init: function() {
@@ -557,18 +378,6 @@
 						width: image.getAttribute( 'width' ) || '',
 						height: image.getAttribute( 'height' ) || '',
 
-<<<<<<< HEAD
-						// Lock ratio is on by default (#10833).
-						lock: this.ready ? helpers.checkHasNaturalRatio( image ) : true
-					};
-
-				// Read initial float style from figure/image and
-				// then remove it. This style will be set on wrapper in #data listener.
-				if ( !data.align ) {
-					data.align = this.element.getStyle( 'float' ) || image.getStyle( 'float' ) || 'none';
-					this.element.removeStyle( 'float' );
-					image.removeStyle( 'float' );
-=======
 						// Lock ratio is on by default (https://dev.ckeditor.com/ticket/10833).
 						lock: this.ready ? helpers.checkHasNaturalRatio( image ) : true
 					};
@@ -619,46 +428,31 @@
 					if ( advanced && advanced.advCSSClasses ) {
 						advanced.advCSSClasses = CKEDITOR.tools.trim( advanced.advCSSClasses.replace( /cke_\S+/, '' ) );
 					}
->>>>>>> 4.12.1
 				}
 
 				// Get rid of extra vertical space when there's no caption.
 				// It will improve the look of the resizer.
-<<<<<<< HEAD
-				if ( !data.hasCaption )
-					this.wrapper.setStyle( 'line-height', '0' );
-=======
 				this.wrapper[ ( data.hasCaption ? 'remove' : 'add' ) + 'Class' ]( 'cke_image_nocaption' );
->>>>>>> 4.12.1
 
 				this.setData( data );
 
 				// Setup dynamic image resizing with mouse.
-<<<<<<< HEAD
-				// Don't initialize resizer when dimensions are disallowed (#11004).
-				if ( editor.filter.checkFeature( this.features.dimension ) )
-					setupResizer( this );
-=======
 				// Don't initialize resizer when dimensions are disallowed (https://dev.ckeditor.com/ticket/11004).
 				if ( editor.filter.checkFeature( this.features.dimension ) && editor.config.image2_disableResizer !== true ) {
 					setupResizer( this );
 				}
->>>>>>> 4.12.1
 
 				this.shiftState = helpers.stateShifter( this.editor );
 
 				// Add widget editing option to its context menu.
 				this.on( 'contextMenu', function( evt ) {
 					evt.data.image = CKEDITOR.TRISTATE_OFF;
-<<<<<<< HEAD
-=======
 
 					// Integrate context menu items for link.
 					// Note that widget may be wrapped in a link, which
 					// does not belong to that widget (https://dev.ckeditor.com/ticket/11814).
 					if ( this.parts.link || this.wrapper.getAscendant( 'a' ) )
 						evt.data.link = evt.data.unlink = CKEDITOR.TRISTATE_OFF;
->>>>>>> 4.12.1
 				} );
 
 				// Pass the reference to this widget to the dialog.
@@ -667,13 +461,6 @@
 				}, this );
 			},
 
-<<<<<<< HEAD
-			upcast: upcastWidgetElement( editor ),
-			downcast: downcastWidgetElement
-		};
-	}
-
-=======
 			// Overrides default method to handle internal mutability of Image2.
 			// @see CKEDITOR.plugins.widget#addClass
 			addClass: function( className ) {
@@ -728,119 +515,10 @@
 	 * @class
 	 * @singleton
 	 */
->>>>>>> 4.12.1
 	CKEDITOR.plugins.image2 = {
 		stateShifter: function( editor ) {
 			// Tag name used for centering non-captioned widgets.
 			var doc = editor.document,
-<<<<<<< HEAD
-				editable = editor.editable(),
-
-				// The order that stateActions get executed. It matters!
-				shiftables = [ 'hasCaption', 'align' ],
-
-				// Atomic procedures, one per state variable.
-				stateActions = {
-					align: function( data, oldValue, newValue ) {
-						var hasCaptionAfter = data.newState.hasCaption,
-							element = data.element;
-
-						// Alignment changed.
-						if ( changed( data, 'align' ) ) {
-							// No caption in the new state.
-							if ( !hasCaptionAfter ) {
-								// Changed to "center" (non-captioned).
-								if ( newValue == 'center' ) {
-									data.destroy();
-									data.element = wrapInCentering( editor, element );
-								}
-
-								// Changed to "non-center" from "center" while caption removed.
-								if ( !changed( data, 'hasCaption' ) && oldValue == 'center' && newValue != 'center' ) {
-									data.destroy();
-									data.element = unwrapFromCentering( element );
-								}
-							}
-						}
-
-						// Alignment remains and "center" removed caption.
-						else if ( newValue == 'center' && changed( data, 'hasCaption' ) && !hasCaptionAfter ) {
-							data.destroy();
-							data.element = wrapInCentering( editor, element );
-						}
-
-						// Finally set display for figure.
-						if ( element.is( 'figure' ) ) {
-							if ( newValue == 'center' )
-								element.setStyle( 'display', 'inline-block' );
-							else
-								element.removeStyle( 'display' );
-						}
-					},
-
-					hasCaption:	function( data, oldValue, newValue ) {
-						// This action is for real state change only.
-						if ( !changed( data, 'hasCaption' ) )
-							return;
-
-						var element = data.element,
-							oldState = data.oldState,
-							newState = data.newState,
-							img;
-
-						// Switching hasCaption always destroys the widget.
-						data.destroy();
-
-						// There was no caption, but the caption is to be added.
-						if ( newValue ) {
-							// Get <img> from element. As element may be either
-							// <img> or centering <p>, consider it now.
-							img = element.findOne( 'img' ) || element;
-
-							// Create new <figure> from widget template.
-							var figure = CKEDITOR.dom.element.createFromHtml( templateBlock, doc );
-
-							// Replace element with <figure>.
-							replaceSafely( figure, element );
-
-							// Use old <img> instead of the one from the template,
-							// so we won't lose additional attributes.
-							img.replace( figure.findOne( 'img' ) );
-
-							// Update widget's element.
-							data.element = figure;
-						}
-
-						// The caption was present, but now it's to be removed.
-						else {
-							// Unwrap <img> from figure.
-							img = element.findOne( 'img' );
-							img.replace( element );
-
-							// Update widget's element.
-							data.element = img;
-						}
-					}
-				};
-
-			function getValue( state, name ) {
-				return state && state[ name ] !== undefined ? state[ name ] : null;
-			}
-
-			function changed( data, name ) {
-				if ( !data.oldState )
-					return false;
-				else
-					return data.oldState[ name ] !== data.newState[ name ];
-			}
-
-			function wrapInCentering( editor, element ) {
-				// When widget gets centered. Wrapper must be created.
-				// Create new <p|div> with text-align:center.
-				var center = doc.createElement( editor.activeEnterMode == CKEDITOR.ENTER_P ? 'p' : 'div', {
-					styles: { 'text-align': 'center' }
-				} );
-=======
 				alignClasses = editor.config.image2_alignClasses,
 				captionedClass = editor.config.image2_captionedClass,
 				editable = editor.editable(),
@@ -984,7 +662,6 @@
 				// that wraps widget contents and does the trick either with style or class.
 				var center = doc.createElement(
 					editor.activeEnterMode == CKEDITOR.ENTER_P ? 'p' : 'div', attribsAndStyles );
->>>>>>> 4.12.1
 
 				// Replace element with centering wrapper.
 				replaceSafely( center, element );
@@ -994,11 +671,6 @@
 			}
 
 			function unwrapFromCentering( element ) {
-<<<<<<< HEAD
-				var img = element.findOne( 'img' );
-
-				img.replace( element );
-=======
 				var imageOrLink = element.findOne( 'a,img' );
 
 				imageOrLink.replace( element );
@@ -1034,7 +706,6 @@
 				var img = link.findOne( 'img' );
 
 				img.replace( link );
->>>>>>> 4.12.1
 
 				return img;
 			}
@@ -1052,34 +723,6 @@
 
 					editable.insertElementIntoRange( replacing, range );
 				}
-<<<<<<< HEAD
-				else
-					replacing.replace( replaced );
-			}
-
-			return function( data ) {
-				var oldState = data.oldState,
-					newState = data.newState,
-					name;
-
-				// Iterate over possible state variables.
-				for ( var i = 0; i < shiftables.length; i++ ) {
-					name = shiftables[ i ];
-
-					stateActions[ name ]( data,
-						oldState ? oldState[ name ] : null,
-						newState[ name ] );
-				}
-
-				data.init( data.element );
-			};
-		},
-
-		// Checks whether current ratio of the image match the natural one.
-		// by comparing dimensions.
-		// @param {CKEDITOR.dom.element} image
-		// @returns {Boolean}
-=======
 				else {
 					replacing.replace( replaced );
 				}
@@ -1117,7 +760,6 @@
 		 * @param {CKEDITOR.dom.element} image
 		 * @returns {Boolean}
 		 */
->>>>>>> 4.12.1
 		checkHasNaturalRatio: function( image ) {
 			var $ = image.$,
 				natural = this.getNatural( image );
@@ -1130,13 +772,6 @@
 				Math.round( $.clientHeight / natural.height * natural.width ) == $.clientWidth;
 		},
 
-<<<<<<< HEAD
-		// Returns natural dimensions of the image. For modern browsers
-		// it uses natural(Width|Height) for old ones (IE8), creates
-		// a new image and reads dimensions.
-		// @param {CKEDITOR.dom.element} image
-		// @returns {Object}
-=======
 		/**
 		 * Returns natural dimensions of the image. For modern browsers
 		 * it uses natural(Width|Height). For old ones (IE8) it creates
@@ -1145,7 +780,6 @@
 		 * @param {CKEDITOR.dom.element} image
 		 * @returns {Object}
 		 */
->>>>>>> 4.12.1
 		getNatural: function( image ) {
 			var dimensions;
 
@@ -1165,28 +799,6 @@
 			}
 
 			return dimensions;
-<<<<<<< HEAD
-		}
-	};
-
-	function setWrapperAlign( widget ) {
-		var wrapper = widget.wrapper,
-			align = widget.data.align;
-
-		if ( align == 'center' ) {
-			if ( !widget.inline )
-				wrapper.setStyle( 'text-align', 'center' );
-
-			wrapper.removeStyle( 'float' );
-		} else {
-			if ( !widget.inline )
-				wrapper.removeStyle( 'text-align' );
-
-			if ( align == 'none' )
-				wrapper.removeStyle( 'float' );
-			else
-				wrapper.setStyle( 'float', align );
-=======
 		},
 
 		/**
@@ -1277,7 +889,6 @@
 
 				wrapper.removeStyle( 'text-align' );
 			}
->>>>>>> 4.12.1
 		}
 	}
 
@@ -1287,12 +898,8 @@
 	// @param {CKEDITOR.editor} editor
 	// @returns {Function}
 	function upcastWidgetElement( editor ) {
-<<<<<<< HEAD
-		var isCenterWrapper = centerWrapperChecker( editor );
-=======
 		var isCenterWrapper = centerWrapperChecker( editor ),
 			captionedClass = editor.config.image2_captionedClass;
->>>>>>> 4.12.1
 
 		// @param {CKEDITOR.htmlParser.element} el
 		// @param {Object} data
@@ -1301,11 +908,7 @@
 				name = el.name,
 				image;
 
-<<<<<<< HEAD
-			// #11110 Don't initialize on pasted fake objects.
-=======
 			// https://dev.ckeditor.com/ticket/11110 Don't initialize on pasted fake objects.
->>>>>>> 4.12.1
 			if ( el.attributes[ 'data-cke-realelement' ] )
 				return;
 
@@ -1336,18 +939,6 @@
 				// If there's a centering wrapper, save it in data.
 				data.align = 'center';
 
-<<<<<<< HEAD
-				image = el.getFirst( 'img' );
-			}
-
-			// No center wrapper has been found.
-			else if ( name == 'figure' && el.hasClass( 'caption' ) )
-				image = el.getFirst( 'img' );
-
-			// Inline widget from plain img.
-			else if ( name == 'img' )
-				image = el;
-=======
 				// Image can be wrapped in link <a><img/></a>.
 				image = el.getFirst( 'img' ) || el.getFirst( 'a' ).getFirst( 'img' );
 			}
@@ -1363,7 +954,6 @@
 			} else if ( isLinkedOrStandaloneImage( el ) ) {
 				image = el.name == 'a' ? el.children[ 0 ] : el;
 			}
->>>>>>> 4.12.1
 
 			if ( !image )
 				return;
@@ -1381,54 +971,6 @@
 		};
 	}
 
-<<<<<<< HEAD
-	// Transforms the widget to the external format according to the current configuration.
-	//
-	// @param {CKEDITOR.htmlParser.element} el
-	function downcastWidgetElement( el ) {
-		var attrs = el.attributes,
-			align = this.data.align;
-
-		// De-wrap the image from resize handle wrapper.
-		// Only block widgets have one.
-		if ( !this.inline ) {
-			var resizeWrapper = el.getFirst( 'span' ),
-				img;
-
-			if ( resizeWrapper ) {
-				img = resizeWrapper.getFirst( 'img' );
-				resizeWrapper.replaceWith( img );
-			} else
-				img = el.getFirst( 'img' );
-		}
-
-		if ( align && align != 'none' ) {
-			var styles = CKEDITOR.tools.parseCssText( attrs.style || '' );
-
-			// When the widget is captioned (<figure>) and internally centering is done
-			// with widget's wrapper inline style, in the external data representation,
-			// <figure> must be wrapped with an element holding an inline style:
-			//
-			//   <div style="text-align:center">
-			//     <figure class="image" style="display:inline-block">
-			//      <img alt="A" src="B" />
-			//       <figcaption>C</figcaption>
-			//     </figure>
-			//   </div>
-			if ( align == 'center' && el.name == 'figure' )
-				el = el.wrapWith( new CKEDITOR.htmlParser.element( 'div', { style: 'text-align:center' } ) );
-
-			// If left/right, add float style to the downcasted element.
-			else if ( align in { left: 1, right: 1 } )
-				styles[ 'float' ] = align;
-
-			// Update element styles.
-			if ( !CKEDITOR.tools.isEmpty( styles ) )
-				attrs.style = CKEDITOR.tools.writeCssText( styles );
-		}
-
-		return el;
-=======
 	// Returns a function which transforms the widget to the external format
 	// according to the current configuration.
 	//
@@ -1488,7 +1030,6 @@
 
 			return el;
 		};
->>>>>>> 4.12.1
 	}
 
 	// Returns a function that checks if an element is a centering wrapper.
@@ -1496,13 +1037,10 @@
 	// @param {CKEDITOR.editor} editor
 	// @returns {Function}
 	function centerWrapperChecker( editor ) {
-<<<<<<< HEAD
-=======
 		var captionedClass = editor.config.image2_captionedClass,
 			alignClasses = editor.config.image2_alignClasses,
 			validChildren = { figure: 1, a: 1, img: 1 };
 
->>>>>>> 4.12.1
 		return function( el ) {
 			// Wrapper must be either <div> or <p>.
 			if ( !( el.name in { div: 1, p: 1 } ) )
@@ -1514,51 +1052,23 @@
 			if ( children.length !== 1 )
 				return false;
 
-<<<<<<< HEAD
-			var child = children[ 0 ],
-				childName = child.name;
-
-			// Only <figure> or <img /> can be first (only) child of centering wrapper,
-			// regardless of its type.
-			if ( childName != 'figure' && childName != 'img' )
-=======
 			var child = children[ 0 ];
 
 			// Only <figure> or <img /> can be first (only) child of centering wrapper,
 			// regardless of its type.
 			if ( !( child.name in validChildren ) )
->>>>>>> 4.12.1
 				return false;
 
 			// If centering wrapper is <p>, only <img /> can be the child.
 			//   <p style="text-align:center"><img /></p>
 			if ( el.name == 'p' ) {
-<<<<<<< HEAD
-				if ( childName != 'img' )
-=======
 				if ( !isLinkedOrStandaloneImage( child ) )
->>>>>>> 4.12.1
 					return false;
 			}
 			// Centering <div> can hold <img/> or <figure>, depending on enterMode.
 			else {
 				// If a <figure> is the first (only) child, it must have a class.
 				//   <div style="text-align:center"><figure>...</figure><div>
-<<<<<<< HEAD
-				if ( childName == 'figure' && !child.hasClass( 'caption' ) )
-					return false;
-
-				// Centering <div> can hold <img /> only when enterMode is ENTER_(BR|DIV).
-				//   <div style="text-align:center"><img /></div>
-				if ( childName == 'img' && editor.enterMode == CKEDITOR.ENTER_P )
-					return false;
-			}
-
-			var styles = CKEDITOR.tools.parseCssText( el.attributes.style || '', true );
-
-			// Centering wrapper got to be... centering.
-			if ( styles[ 'text-align' ] == 'center' )
-=======
 				if ( child.name == 'figure' ) {
 					if ( !child.hasClass( captionedClass ) )
 						return false;
@@ -1581,15 +1091,12 @@
 			// check for centering class. Otherwise, check the style.
 			if ( alignClasses ? el.hasClass( alignClasses[ 1 ] ) :
 					CKEDITOR.tools.parseCssText( el.attributes.style || '', true )[ 'text-align' ] == 'center' )
->>>>>>> 4.12.1
 				return true;
 
 			return false;
 		};
 	}
 
-<<<<<<< HEAD
-=======
 	// Checks whether element is <img/> or <a><img/></a>.
 	//
 	// @param {CKEDITOR.htmlParser.element}
@@ -1602,7 +1109,6 @@
 		return false;
 	}
 
->>>>>>> 4.12.1
 	// Sets width and height of the widget image according to current widget data.
 	//
 	// @param {CKEDITOR.plugins.widget} widget
@@ -1627,11 +1133,7 @@
 			editable = editor.editable(),
 			doc = editor.document,
 
-<<<<<<< HEAD
-			// Store the resizer in a widget for testing (#11004).
-=======
 			// Store the resizer in a widget for testing (https://dev.ckeditor.com/ticket/11004).
->>>>>>> 4.12.1
 			resizer = widget.resizer = doc.createElement( 'span' );
 
 		resizer.addClass( 'cke_image_resizer' );
@@ -1640,20 +1142,12 @@
 
 		// Inline widgets don't need a resizer wrapper as an image spans the entire widget.
 		if ( !widget.inline ) {
-<<<<<<< HEAD
-			var oldResizeWrapper = widget.element.getFirst(),
-				resizeWrapper = doc.createElement( 'span' );
-
-			resizeWrapper.addClass( 'cke_image_resizer_wrapper' );
-			resizeWrapper.append( widget.parts.image );
-=======
 			var imageOrLink = widget.parts.link || widget.parts.image,
 				oldResizeWrapper = imageOrLink.getParent(),
 				resizeWrapper = doc.createElement( 'span' );
 
 			resizeWrapper.addClass( 'cke_image_resizer_wrapper' );
 			resizeWrapper.append( imageOrLink );
->>>>>>> 4.12.1
 			resizeWrapper.append( resizer );
 			widget.element.append( resizeWrapper, true );
 
@@ -1661,21 +1155,14 @@
 			// and which could be corrupted (e.g. resizer span has been lost).
 			if ( oldResizeWrapper.is( 'span' ) )
 				oldResizeWrapper.remove();
-<<<<<<< HEAD
-		} else
-			widget.wrapper.append( resizer );
-=======
 		} else {
 			widget.wrapper.append( resizer );
 		}
->>>>>>> 4.12.1
 
 		// Calculate values of size variables and mouse offsets.
 		resizer.on( 'mousedown', function( evt ) {
 			var image = widget.parts.image,
 
-<<<<<<< HEAD
-=======
 				// Don't update attributes if less than 15.
 				// This is to prevent images to visually disappear.
 				min = {
@@ -1685,7 +1172,6 @@
 
 				max = getMaxSize(),
 
->>>>>>> 4.12.1
 				// "factor" can be either 1 or -1. I.e.: For right-aligned images, we need to
 				// subtract the difference to get proper width, etc. Without "factor",
 				// resizer starts working the opposite way.
@@ -1803,14 +1289,9 @@
 						}
 
 						// Case: II.
-<<<<<<< HEAD
-						else
-							adjustToY();
-=======
 						else {
 							adjustToY();
 						}
->>>>>>> 4.12.1
 					}
 				}
 
@@ -1827,14 +1308,9 @@
 						}
 
 						// Case: I.
-<<<<<<< HEAD
-						else
-							adjustToY();
-=======
 						else {
 							adjustToY();
 						}
->>>>>>> 4.12.1
 					} else {
 						// Case: III.
 						if ( moveDiffY <= 0 )
@@ -1842,34 +1318,15 @@
 
 						// Case: II.
 						else {
-<<<<<<< HEAD
-							if ( moveRatio >= ratio )
-								adjustToX();
-							else
-								adjustToY();
-=======
 							if ( moveRatio >= ratio ) {
 								adjustToX();
 							} else {
 								adjustToY();
 							}
->>>>>>> 4.12.1
 						}
 					}
 				}
 
-<<<<<<< HEAD
-				// Don't update attributes if less than 10.
-				// This is to prevent images to visually disappear.
-				if ( newWidth >= 15 && newHeight >= 15 ) {
-					image.setAttributes( { width: newWidth, height: newHeight } );
-					updateData = true;
-				} else
-					updateData = false;
-			}
-
-			function onMouseUp( evt ) {
-=======
 				if ( isAllowedSize( newWidth, newHeight ) ) {
 					updateData = { width: newWidth, height: newHeight };
 					image.setAttributes( updateData );
@@ -1877,7 +1334,6 @@
 			}
 
 			function onMouseUp() {
->>>>>>> 4.12.1
 				var l;
 
 				while ( ( l = listeners.pop() ) )
@@ -1890,11 +1346,7 @@
 				resizer.removeClass( 'cke_image_resizing' );
 
 				if ( updateData ) {
-<<<<<<< HEAD
-					widget.setData( { width: newWidth, height: newHeight } );
-=======
 					widget.setData( updateData );
->>>>>>> 4.12.1
 
 					// Save another undo snapshot: after resizing.
 					editor.fire( 'saveSnapshot' );
@@ -1903,8 +1355,6 @@
 				// Don't update data twice or more.
 				updateData = false;
 			}
-<<<<<<< HEAD
-=======
 
 			function getMaxSize() {
 				var maxSize = editor.config.image2_maxSize,
@@ -1928,7 +1378,6 @@
 					isTooBig = max && ( width > max.width || height > max.height );
 				return !isTooSmall && !isTooBig;
 			}
->>>>>>> 4.12.1
 		} );
 
 		// Change the position of the widget resizer when data changes.
@@ -1985,37 +1434,20 @@
 				// Cache "enabled" on first use. This is because filter#checkFeature may
 				// not be available during plugin's afterInit in the future — a moment when
 				// alignCommandIntegrator is called.
-<<<<<<< HEAD
-				if ( enabled == undefined )
-					enabled = editor.filter.checkFeature( editor.widgets.registered.image.features.align );
-
-				// Don't allow justify commands when widget alignment is disabled (#11004).
-=======
 				if ( enabled === undefined )
 					enabled = editor.filter.checkFeature( editor.widgets.registered.image.features.align );
 
 				// Don't allow justify commands when widget alignment is disabled (https://dev.ckeditor.com/ticket/11004).
->>>>>>> 4.12.1
 				if ( !enabled )
 					this.setState( CKEDITOR.TRISTATE_DISABLED );
 				else {
 					this.setState(
-<<<<<<< HEAD
-						( widget.data.align == value ) ?
-								CKEDITOR.TRISTATE_ON
-							:
-								( value in allowed ) ?
-										CKEDITOR.TRISTATE_OFF
-									:
-										CKEDITOR.TRISTATE_DISABLED );
-=======
 						( widget.data.align == value ) ? (
 							CKEDITOR.TRISTATE_ON
 						) : (
 							( value in allowed ) ? CKEDITOR.TRISTATE_OFF : CKEDITOR.TRISTATE_DISABLED
 						)
 					);
->>>>>>> 4.12.1
 				}
 
 				evt.cancel();
@@ -2023,8 +1455,6 @@
 		};
 	}
 
-<<<<<<< HEAD
-=======
 	function linkCommandIntegrator( editor ) {
 		// Nothing to integrate with if link is not loaded.
 		if ( !editor.plugins.link )
@@ -2120,7 +1550,6 @@
 		} );
 	}
 
->>>>>>> 4.12.1
 	// Returns the focused widget, if of the type specific for this plugin.
 	// If no widget is focused, `null` is returned.
 	//
@@ -2134,9 +1563,6 @@
 
 		return null;
 	}
-<<<<<<< HEAD
-} )();
-=======
 
 	// Returns a set of widget allowedContent rules, depending
 	// on configurations like config#image2_alignClasses or
@@ -2360,4 +1786,3 @@ CKEDITOR.config.image2_captionedClass = 'image';
  * @cfg {Object.<String, Number/String>} [image2_maxSize]
  * @member CKEDITOR.config
  */
->>>>>>> 4.12.1
