@@ -1,7 +1,7 @@
 @bender-tags: exportpdf, feature, 4
 @bender-ui: collapsed
 @bender-include: ../_helpers/tools.js
-@bender-ckeditor-plugins: wysiwygarea, toolbar
+@bender-ckeditor-plugins: wysiwygarea, toolbar, notification
 
 **Note:** Errors in console during this test are allowed.
 
