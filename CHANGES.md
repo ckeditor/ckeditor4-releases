@@ -1,11 +1,42 @@
 CKEditor 4 Changelog
 ====================
 
-## CKEditor 4.17.1
+## CKEditor 4.17.2
 
 Fixed issues:
 
-* [#4979](https://github.com/ckeditor/ckeditor4/issues/3757): Added cache key in [#4761](https://github.com/ckeditor/ckeditor4/issues/4761) started to breaking relative links for external CSS resources. The fix had been reverted and will be corrected in the upcoming release.
+* [#4934](https://github.com/ckeditor/ckeditor4/issues/4934): Fixed: Active focus in dialog tabs is not visible in the High Contrast mode.
+* [#547](https://github.com/ckeditor/ckeditor4/issues/547): Fixed: Dragging and dropping elements like images within a table is no longer available.
+* [#4875](https://github.com/ckeditor/ckeditor4/issues/4875): Fixed: It is not possible to delete multiple selected lists.
+* [#4873](https://github.com/ckeditor/ckeditor4/issues/4873): Fixed: Pasting content from MS Word and Outlook with horizontal lines prevents images from being uploaded.
+* [#4952](https://github.com/ckeditor/ckeditor4/issues/4952): Fixed: Dragging and dropping images within a table cell appends additional elements.
+* [#4761](https://github.com/ckeditor/ckeditor4/issues/4761): Fixed: Some CSS files are missing unique timestamp used to prevent browser to cache static resources between editor releases.
+* [#4987](https://github.com/ckeditor/ckeditor4/issues/4987): Fixed: [Find/Replace](https://ckeditor.com/cke4/addon/find) is not recognizing more than one space character.
+* [#5061](https://github.com/ckeditor/ckeditor4/issues/5061): Fixed: [Find/Replace](https://ckeditor.com/cke4/addon/find) plugin incorrectly handles multiple whitespace during replacing text.
+* [#5004](https://github.com/ckeditor/ckeditor4/issues/5004): Fixed: `MutationObserver` used in [IFrame Editing Area](https://ckeditor.com/cke4/addon/wysiwygarea) plugin causes memory leaks.
+* [#4994](https://github.com/ckeditor/ckeditor4/issues/4994): Fixed: [Easy Image](https://ckeditor.com/cke4/addon/easyimage) plugin caused content pasted from Word to turn into an image.
+
+API changes:
+
+* [#4918](https://github.com/ckeditor/ckeditor4/issues/4918): Explicitly set the [`config.useComputedState`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-useComputedState) default value to `true`. Thanks to [Shabab Karim](https://github.com/shabab477)!
+* [#4761](https://github.com/ckeditor/ckeditor4/issues/4761): The [`CKEDITOR.appendTimestamp()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR.html#method-appendTimestamp) function was added.
+* [#4761](https://github.com/ckeditor/ckeditor4/issues/4761): [`CKEDITOR.dom.document#appendStyleSheet()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dom_document.html#method-appendStyleSheet) and [`CKEDITOR.tools.buildStyleHtml()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_tools.html#method-buildStyleHtml) now use the newly added [`CKEDITOR.appendTimestamp()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR.html#method-appendTimestamp) function to correctly handle caching of CSS files.
+
+Other changes:
+
+* [#5014](https://github.com/ckeditor/ckeditor4/issues/5014): Fixed: Toolbar configurator fails when plugin does not define a toolbar group. Thanks to [SuperPat](https://github.com/SuperPat45)!
+
+## CKEditor 4.17.1
+
+**Highlights:**
+
+Due to a regression in CKEeditor 4.17.0 version that was only revealed after the release and affected a limited area of operation, CSS assets loaded via relative links started to point into invalid location when loaded from external resources.
+
+We have therefore decided to immediately release CKEditor 4.17.1 that fixed this problem. If you have already upgraded to v4.17.0, make sure to upgrade to v4.17.1 to avoid this regression.
+
+Fixed issues:
+
+* [#4979](https://github.com/ckeditor/ckeditor4/issues/3757): Fixed: Added cache key in [#4761](https://github.com/ckeditor/ckeditor4/issues/4761) started to breaking relative links for external CSS resources. The fix has been reverted and will be corrected in the next editor version.
 
 ## CKEditor 4.17
 
@@ -117,7 +148,7 @@ Fixed Issues:
 * [#4351](https://github.com/ckeditor/ckeditor4/issues/4351): Fixed: Incorrect values for RGBA/HSLA colors in [Color Dialog](https://ckeditor.com/cke4/addon/colordialog).
 * [#4509](https://github.com/ckeditor/ckeditor4/issues/4509): Fixed: Incorrect handling of drag & drop inside [widgets](https://ckeditor.com/cke4/addon/widget) and nested editables.
 * [#4611](https://github.com/ckeditor/ckeditor4/issues/4611): [Android, iOS] Fixed: Incorrect hover styles for buttons in the toolbar on mobile devices.
-* [#4652](https://github.com/ckeditor/ckeditor4/issues/4652): Fixed: [Event data](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_eventInfo.html) set to `false` is treated as an event cancelation.
+* [#4652](https://github.com/ckeditor/ckeditor4/issues/4652): Fixed: [Event data](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_eventInfo.html) set to `false` is treated as an event cancellation.
 * [#4659](https://github.com/ckeditor/ckeditor4/issues/4659): Fixed: [`CKEDITOR.htmlParser`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_htmlParser.html) does not treat `--!>` as a comment end tag correctly.
 
 ## CKEditor 4.16
@@ -1616,7 +1647,7 @@ Other Changes:
 
 New Features:
 
-* [#11297](https://dev.ckeditor.com/ticket/11297): Styles can now be applied to widgets. The definition of a style which can be applied to a specific widget must contain two additional properties &mdash; `type` and `widget`. Read more in the [Widget Styles](https://ckeditor.com/docs/ckeditor4/latest/guide/dev_styles.html#widget-styles) section of the "Syles Drop-down" guide. Note that by default, widgets support only classes and no other attributes or styles. Related changes and features:
+* [#11297](https://dev.ckeditor.com/ticket/11297): Styles can now be applied to widgets. The definition of a style which can be applied to a specific widget must contain two additional properties &mdash; `type` and `widget`. Read more in the [Widget Styles](https://ckeditor.com/docs/ckeditor4/latest/guide/dev_styles.html#widget-styles) section of the "Styles Drop-down" guide. Note that by default, widgets support only classes and no other attributes or styles. Related changes and features:
   * Introduced the [`CKEDITOR.style.addCustomHandler()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_style.html#static-method-addCustomHandler) method for registering custom style handlers.
   * The [`CKEDITOR.style.apply()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_style.html#method-apply) and [`CKEDITOR.style.remove()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_style.html#method-remove) methods are now called with an editor instance instead of the document so they can be reused by the [`CKEDITOR.editor.applyStyle()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_editor.html#method-applyStyle) and [`CKEDITOR.editor.removeStyle()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_editor.html#method-removeStyle) methods. Backward compatibility was preserved, but from CKEditor 4.4 it is highly recommended to pass an editor instead of a document to these methods.
   * Many new methods and properties were introduced in the [Widget API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR.plugins.widget.html) to make the handling of styles by widgets fully customizable. See: [`widget.definition.styleableElements`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget_definition.html#property-styleableElements), [`widget.definition.styleToAllowedContentRule`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget_definition.html#property-styleToAllowedContentRules), [`widget.addClass()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-addClass), [`widget.removeClass()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-removeClass), [`widget.getClasses()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-getClasses), [`widget.hasClass()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-hasClass), [`widget.applyStyle()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-applyStyle), [`widget.removeStyle()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-removeStyle), [`widget.checkStyleActive()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget.html#method-checkStyleActive).
