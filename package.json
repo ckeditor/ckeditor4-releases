@@ -1,6 +1,6 @@
 {
   "name": "ckeditor4",
-  "version": "4.17.2",
+  "version": "4.18.0",
   "description": "JavaScript WYSIWYG web text editor.",
   "main": "ckeditor.js",
   "repository": {
