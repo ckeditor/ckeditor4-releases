@@ -1,6 +1,35 @@
 CKEditor 4 Changelog
 ====================
 
+## CKEditor 4.19.1
+
+Fixed Issues:
+
+* [#5125](https://github.com/ckeditor/ckeditor4/issues/5125): Fixed: Deleting a widget with disabled [autoParagraph](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-autoParagraph) by the keyboard `backspace` key removes the editor editable area and crashes the editor.
+* [#5135](https://github.com/ckeditor/ckeditor4/issues/5135): Fixed: The [`checkbox.setValue`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_ui_dialog_checkbox.html#method-setValue) and [`radio.setValue`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_ui_dialog_radio.html#method-setValue) methods are not chainable as stated in the documentation. Thanks to [Jordan Bradford](https://github.com/LordPachelbel)!
+* [#5085](https://github.com/ckeditor/ckeditor4/issues/5085): Fixed: The [Language](https://ckeditor.com/cke4/addon/language) plugin removes the element marking the text in foreign language if said element does not have an information about the text direction.
+* [#4284](https://github.com/ckeditor/ckeditor4/issues/4284): Fixed: [Tableselection](https://ckeditor.com/cke4/addon/tableselection) Merging cells with a rowspan throws an unexpected error and does not create an undo step.
+* [#5184](https://github.com/ckeditor/ckeditor4/issues/5184): Fixed: The [Editor Placeholder](https://ckeditor.com/cke4/addon/wysiwygarea) plugin degrades typing performance.
+* [#5158](https://github.com/ckeditor/ckeditor4/issues/5158): Fixed: [`CKEDITOR.tools#convertToPx()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_tools.html#method-convertToPx) gives invalid results if the helper calculator element was deleted from the DOM.
+* [#5234](https://github.com/ckeditor/ckeditor4/issues/5234): Fixed: [Easy Image](https://ckeditor.com/cke4/addon/easyimage) doesn't allow to upload images files using toolbar button.
+* [#438](https://github.com/ckeditor/ckeditor4/issues/438): Fixed: It is impossible to navigate to the [elementspath](https://ckeditor.com/cke4/addon/elementspath) from the [toolbar](https://ckeditor.com/cke4/addon/toolbar) by keyboard and vice versa.
+* [#4449](https://github.com/ckeditor/ckeditor4/issues/4449): Fixed: [`dialog.validate#functions`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-functions) incorrectly composes functions that return an optional error message, like e.g. [`dialog.validate.number`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-number) due to unnecessary return type coercion.
+* [#4473](https://github.com/ckeditor/ckeditor4/issues/4473): Fixed: The [dialog.validate](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html) method does not accept parameter value. The issue originated in [dialog.validate.functions](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-functions) method that did not properly propagate parameter value to validator. Affected validators:
+	* [`functions`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-functions)
+	* [`equals`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-equals)
+	* [`notEqual`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-notEqual)
+	* [`cssLength`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-cssLength)
+	* [`htmlLength`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-htmlLength)
+	* [`inlineStyle`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_validate.html#method-inlineStyle)
+* [#5147](https://github.com/ckeditor/ckeditor4/issues/5147): Fixed: The [Accessibility Help](https://ckeditor.com/cke4/addon/a11yhelp) dialog does not contain info about focus being moved back to the editing area upon leaving dialogs.
+* [#5144](https://github.com/ckeditor/ckeditor4/issues/5144): Fixed: [Menu buttons](https://ckeditor.com/cke4/addon/menubutton) and [panel buttons](https://ckeditor.com/cke4/addon/panelbutton) incorrectly indicate the open status of their associated pop-up menus in the browser's accessibility tree.
+* [#5022](https://github.com/ckeditor/ckeditor4/issues/5022): Fixed: [Find and Replace](https://ckeditor.com/cke4/addon/find) does not respond to the `Enter` key.
+
+API changes:
+
+* [#5184](https://github.com/ckeditor/ckeditor4/issues/5184): Added the [`config.editorplaceholder_delay`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-editorplaceholder_delay) configuration option allowing to delay placeholder before it is toggled when changing editor content.
+* [#5184](https://github.com/ckeditor/ckeditor4/issues/5184): Added the [`CKEDITOR.tools#debounce()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_tools.html#method-debounce) function allowing to postpone a passed function execution until the given milliseconds have elapsed since the last time it was invoked.
+
 ## CKEditor 4.19.0
 
 New features:
