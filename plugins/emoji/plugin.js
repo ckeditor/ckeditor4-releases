@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function k(a){a.name||(a.name=e(a.id.replace(/::.*$/,":").replace(/^:|:$/g,"")));return a}var g=!1,f=CKEDITOR.tools.array,e=CKEDITOR.tools.htmlEncodeAttr,h=CKEDITOR.tools.createClass({$:function(a,d){var c=this.lang=a.lang.emoji,b=this;this.listeners=[];this.plugin=d;this.editor=a;this.groups=[{name:"people",sectionName:c.groups.people,svgId:"cke4-icon-emoji-2",position:{x:-21,y:0},items:[]},{name:"nature",sectionName:c.groups.nature,svgId:"cke4-icon-emoji-3",position:{x:-42,y:0},items:[]},
 {name:"food",sectionName:c.groups.food,svgId:"cke4-icon-emoji-4",position:{x:-63,y:0},items:[]},{name:"travel",sectionName:c.groups.travel,svgId:"cke4-icon-emoji-6",position:{x:-42,y:-21},items:[]},{name:"activities",sectionName:c.groups.activities,svgId:"cke4-icon-emoji-5",position:{x:-84,y:0},items:[]},{name:"objects",sectionName:c.groups.objects,svgId:"cke4-icon-emoji-7",position:{x:0,y:-21},items:[]},{name:"symbols",sectionName:c.groups.symbols,svgId:"cke4-icon-emoji-8",position:{x:-21,y:-21},

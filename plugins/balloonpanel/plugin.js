@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){var f=!1;CKEDITOR.plugins.add("balloonpanel",{init:function(){f||(CKEDITOR.document.appendStyleSheet(this.path+"skins/"+CKEDITOR.skin.name+"/balloonpanel.css"),f=!0)}});CKEDITOR.ui.balloonPanel=function(a,b){this.editor=a;CKEDITOR.tools.extend(this,{width:360,height:"auto",triangleWidth:20,triangleHeight:20,triangleMinDistance:40},b,!0);this.templates={};for(var c in this.templateDefinitions)this.templates[c]=new CKEDITOR.template(this.templateDefinitions[c]);this.parts={};this.focusables=
 {};this.showListeners={};this.activeShowListeners={};this.rect={visible:!1};this.build();a.on("destroy",function(){this.destroy()},this)};CKEDITOR.ui.balloonPanel.prototype={templateDefinitions:{panel:'\x3cdiv class\x3d"cke {id} cke_reset_all cke_chrome cke_balloon cke_editor_{name} cke_{langDir} '+CKEDITOR.env.cssClass+'" dir\x3d"{langDir}" title\x3d"'+(CKEDITOR.env.gecko?" ":"")+'" lang\x3d"{langCode}" role\x3d"dialog" style\x3d"{style}" tabindex\x3d"-1" aria-labelledby\x3d"cke_{name}_arialbl"\x3e\x3c/div\x3e',

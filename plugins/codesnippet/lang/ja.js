@@ -1,5 +1,5 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("codesnippet","ja",{button:"コードスニペットを挿入",codeContents:"コード内容",emptySnippetError:"コードスニペットを入力してください。",language:"言語",title:"コードスニペット",pathName:"コードスニペット"});

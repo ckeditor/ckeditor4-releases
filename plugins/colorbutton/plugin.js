@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){var n,k,l;CKEDITOR.plugins.add("colorbutton",{requires:"panelbutton,floatpanel",lang:"af,ar,az,bg,bn,bs,ca,cs,cy,da,de,de-ch,el,en,en-au,en-ca,en-gb,eo,es,es-mx,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,oc,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn",icons:"bgcolor,textcolor",hidpi:!0,init:function(a){function b(d){function b(){var d=a.config["colorButton_"+h+"Style"];d.childRule="back"==h?function(a){return f(a)}:
 function(a){return!(a.is("a")||a.getElementsByTag("a").count())||f(a)};return d}function z(d,w,e){var c={};d&&(c.color=d);w&&(c.colorName=w);w=!CKEDITOR.tools.isEmpty(c)&&new CKEDITOR.style(b(),c);a.execCommand(m,{newStyle:w});if(d&&e)for(e.addColor(d.substr(1).toUpperCase()),d=t.element.find("[role\x3doption]").toArray(),e=0;e<d.length;e++)d[e].setAttributes({"aria-posinset":e+1,"aria-setsize":d.length})}var g=d.name,h=d.type,k=d.title,C=d.order,m=d.commandName;d=d.contentTransformations||{};var A=

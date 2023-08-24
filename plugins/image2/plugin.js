@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function F(a){function b(){this.deflated||(a.widgets.focused==this.widget&&(this.focused=!0),a.widgets.destroy(this.widget),this.deflated=!0)}function h(){var d=a.editable(),c=a.document;if(this.deflated)this.widget=a.widgets.initOn(this.element,"image",this.widget.data),this.widget.inline&&!(new CKEDITOR.dom.elementPath(this.widget.wrapper,d)).block&&(d=c.createElement(a.activeEnterMode==CKEDITOR.ENTER_P?"p":"div"),d.replace(this.widget.wrapper),this.widget.wrapper.move(d)),this.focused&&
 (this.widget.focus(),delete this.focused),delete this.deflated;else{var f=this.widget,d=e,c=f.wrapper,b=f.data.align,f=f.data.hasCaption;if(d){for(var x=3;x--;)c.removeClass(d[x]);"center"==b?f&&c.addClass(d[1]):"none"!=b&&c.addClass(d[p[b]])}else"center"==b?(f?c.setStyle("text-align","center"):c.removeStyle("text-align"),c.removeStyle("float")):("none"==b?c.removeStyle("float"):c.setStyle("float",b),c.removeStyle("text-align"))}}var e=a.config.image2_alignClasses,g=a.config.image2_captionedClass;

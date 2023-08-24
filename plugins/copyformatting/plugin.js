@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function k(a,b,e,d){var c=new CKEDITOR.dom.walker(a);if(a=a.startContainer.getAscendant(b,!0)||a.endContainer.getAscendant(b,!0))if(e(a),d)return;for(;a=c.next();)if(a=a.getAscendant(b,!0))if(e(a),d)break}function u(a,b){var e={ul:"ol",ol:"ul"};return-1!==l(b,function(b){return b.element===a||b.element===e[a]})}function q(a){this.styles=null;this.sticky=!1;this.editor=a;this.filter=new CKEDITOR.filter(a,a.config.copyFormatting_allowRules);!0===a.config.copyFormatting_allowRules&&(this.filter.disabled=
 !0);a.config.copyFormatting_disallowRules&&this.filter.disallow(a.config.copyFormatting_disallowRules)}var l=CKEDITOR.tools.indexOf,r=CKEDITOR.tools.getMouseButton,t=!1;CKEDITOR.plugins.add("copyformatting",{lang:"ar,az,bg,cs,da,de,de-ch,el,en,en-au,eo,es-mx,et,eu,fa,fr,gl,hr,hu,it,ja,ko,ku,lv,nb,nl,oc,pl,pt,pt-br,ro,ru,sk,sq,sr,sr-latn,sv,tr,uk,vi,zh,zh-cn",icons:"copyformatting",hidpi:!0,init:function(a){var b=CKEDITOR.plugins.copyformatting;b._addScreenReaderContainer();t||(CKEDITOR.document.appendStyleSheet(this.path+

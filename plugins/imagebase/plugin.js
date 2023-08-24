@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function p(c){var a=c.widgets,b=c.focusManager.currentActive;if(c.focusManager.hasFocus){if(a.focused)return a.focused;if(b instanceof CKEDITOR.plugins.widget.nestedEditable)return a.getByElement(b)}}function l(c,a){return c.features&&-1!==CKEDITOR.tools.array.indexOf(c.features,a)}function t(c,a){return CKEDITOR.tools.array.reduce(CKEDITOR.tools.object.keys(c),function(b,d){var e=c[d];l(e,a)&&b.push(e);return b},[])}function u(c,a){a=CKEDITOR.tools.object.merge({pathName:c.lang.imagebase.pathName,
 defaults:{imageClass:c.config.easyimage_class||"",alt:"",src:"",caption:""},template:'\x3cfigure class\x3d"{imageClass}"\x3e\x3cimg alt\x3d"{alt}" src\x3d"{src}" /\x3e\x3cfigcaption\x3e{caption}\x3c/figcaption\x3e\x3c/figure\x3e',allowedContent:{img:{attributes:"!src,alt,width,height"},figure:!0,figcaption:!0},requiredContent:"figure; img[!src]",features:[],editables:{caption:{selector:"figcaption",pathName:c.lang.imagebase.pathNameCaption,allowedContent:"br em strong sub sup u s; a[!href,target]"}},

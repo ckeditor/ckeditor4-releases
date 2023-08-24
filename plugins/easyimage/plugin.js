@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function g(a){return CKEDITOR.tools.capitalize(a,!0)}function p(a,c){function b(a){return function(b,c){var e=b.widgets.focused,h=CKEDITOR.TRISTATE_DISABLED;e&&"easyimage"===e.name&&(h=a&&a.call(this,e,b,c)?CKEDITOR.TRISTATE_ON:CKEDITOR.TRISTATE_OFF);this.setState(h)}}function f(a,c,d,e){d.type="widget";d.widget="easyimage";d.group=d.group||"easyimage";d.element="figure";c=new CKEDITOR.style(d);a.filter.allow(c);c=new CKEDITOR.styleCommand(c);c.contextSensitive=!0;c.refresh=b(function(a,
 b,c){return this.style.checkActive(c,b)});a.addCommand(e,c);c=a.getCommand(e);c.enable=function(){};c.refresh(a,a.elementPath());return c}a.addCommand("easyimageAlt",new CKEDITOR.dialogCommand("easyimageAlt",{startDisabled:!0,contextSensitive:!0,refresh:b()}));(function(b){function c(a,b){var d=a.match(/^easyimage(.+)$/);if(d){var f=(d[1][0]||"").toLowerCase()+d[1].substr(1);if(d[1]in b)return d[1];if(f in b)return f}return null}a.on("afterCommandExec",function(e){c(e.data.name,b)&&(a.forceNextSelectionCheck(),

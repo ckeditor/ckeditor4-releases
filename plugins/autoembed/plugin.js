@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function p(a,g){var b=a.editable().findOne('a[data-cke-autoembed\x3d"'+g+'"]'),c=a.lang.autoembed,d;if(b&&b.data("cke-saved-href")){var b=b.data("cke-saved-href"),e=CKEDITOR.plugins.autoEmbed.getWidgetDefinition(a,b);if(e){var f="function"==typeof e.defaults?e.defaults():e.defaults,f=CKEDITOR.dom.element.createFromHtml(e.template.output(f)),h,m=a.widgets.wrapElement(f,e.name),n=new CKEDITOR.dom.documentFragment(m.getDocument());n.append(m);(h=a.widgets.initOn(f,e))?(d=a.showNotification(c.embeddingInProgress,
 "info"),h.loadContent(b,{noNotifications:!0,callback:function(){var b=a.editable().findOne('a[data-cke-autoembed\x3d"'+g+'"]');if(b){var c=a.getSelection(),e=a.createRange(),f=a.editable();a.fire("saveSnapshot");a.fire("lockSnapshot",{dontUpdate:!0});var l=c.createBookmarks(!1)[0],k=l.startNode,h=l.endNode||k;CKEDITOR.env.ie&&9>CKEDITOR.env.version&&!l.endNode&&k.equals(b.getNext())&&b.append(k);e.setStartBefore(b);e.setEndAfter(b);f.insertElement(m,e);f.contains(k)&&f.contains(h)?c.selectBookmarks([l]):

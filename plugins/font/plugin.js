@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function k(a,b){var c=a.config,e=b.lang,d=new CKEDITOR.style(b.styleDefinition),f=new l({entries:b.entries,styleVariable:b.styleVariable,styleDefinition:b.styleDefinition}),g;a.addCommand(b.commandName,{exec:function(a,b){var c=b.newStyle,d=b.oldStyle,e=a.getSelection().getRanges()[0],f=void 0===c;if(d||c)d&&e.collapsed&&m({editor:a,range:e,style:d}),f?a.removeStyle(d):(d&&!n(d,c)&&a.removeStyle(d),a.applyStyle(c))},refresh:function(a,b){d.checkApplicable(b,a,a.activeFilter)||this.setState(CKEDITOR.TRISTATE_DISABLED)}});
 g=a.getCommand(b.commandName);a.ui.addRichCombo(b.comboName,{label:e.label,title:e.panelTitle,command:b.commandName,toolbar:"styles,"+b.order,defaultValue:"cke-default",allowedContent:d,requiredContent:d,contentTransformations:"span"===b.styleDefinition.element?[[{element:"font",check:"span",left:function(a){return!!a.attributes.size||!!a.attributes.align||!!a.attributes.face},right:function(a){var b=" x-small small medium large x-large xx-large 48px".split(" ");a.name="span";a.attributes.size&&(a.styles["font-size"]=

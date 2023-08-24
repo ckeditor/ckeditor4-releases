@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function h(b,f){var e=CKEDITOR.plugins.getPath("preview"),a=b.config,c=b.title,d;d=a.baseHref?'\x3cbase href\x3d"'+a.baseHref+'"\x3e':"";if(a.fullPage)e=b.getData().replace(/<head>/,"$\x26"+d).replace(/[^>]*(?=<\/title>)/,"$\x26 \x26mdash; "+c);else{e=a.docType+'\x3chtml dir\x3d"'+a.contentsLangDirection+'"\x3e\x3chead\x3e'+d+"\x3ctitle\x3e"+c+"\x3c/title\x3e"+CKEDITOR.tools.buildStyleHtml(a.contentsCss)+'\x3clink rel\x3d"stylesheet" media\x3d"screen" href\x3d"'+e+'styles/screen.css"\x3e\x3c/head\x3e';
 a="\x3cbody\x3e";if(c=b.document&&b.document.getBody())c.getAttribute("id")&&(a=a.replace("\x3e",' id\x3d"'+c.getAttribute("id")+'"\x3e')),c.getAttribute("class")&&(a=a.replace("\x3e",' class\x3d"'+c.getAttribute("class")+'"\x3e'));e=e+a+b.getData()+(f?"\x3cscript\x3e"+(CKEDITOR.env.ie?"window.onload":"document.onreadystatechange")+" \x3d function() { previewCallback(); } \x3c/script\x3e":"")+"\x3c/body\x3e\x3c/html\x3e"}return e}function k(){var b=window.screen;return{width:Math.round(.8*b.width),

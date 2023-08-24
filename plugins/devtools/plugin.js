@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.add("devtools",{lang:"ar,az,bg,ca,cs,cy,da,de,de-ch,el,en,en-au,en-gb,eo,es,es-mx,et,eu,fa,fi,fr,fr-ca,gl,gu,he,hr,hu,id,it,ja,km,ko,ku,lt,lv,nb,nl,no,oc,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,tr,tt,ug,uk,vi,zh,zh-cn",init:function(k){k._.showDialogDefinitionTooltips=1},onLoad:function(){CKEDITOR.document.appendStyleText(CKEDITOR.config.devtools_styles||"#cke_tooltip { padding: 5px; border: 2px solid #333; background: #ffffff }#cke_tooltip h2 { font-size: 1.1em; border-bottom: 1px solid; margin: 0; padding: 1px; }#cke_tooltip ul { padding: 0pt; list-style-type: none; }")}});
 (function(){function k(a,c,b,f){a=a.lang.devtools;var l='\x3ca href\x3d"https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_dialog_definition_'+(b?"text"==b.type?"textInput":b.type:"content")+'.html" target\x3d"_blank" rel\x3d"noopener noreferrer"\x3e'+(b?b.type:"content")+"\x3c/a\x3e";c="\x3ch2\x3e"+a.title+"\x3c/h2\x3e\x3cul\x3e\x3cli\x3e\x3cstrong\x3e"+a.dialogName+"\x3c/strong\x3e : "+c.getName()+"\x3c/li\x3e\x3cli\x3e\x3cstrong\x3e"+a.tabName+"\x3c/strong\x3e : "+f+"\x3c/li\x3e";b&&(c+="\x3cli\x3e\x3cstrong\x3e"+

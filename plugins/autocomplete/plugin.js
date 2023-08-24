@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function d(a,b){var c=a.config.autocomplete_commitKeystrokes||CKEDITOR.config.autocomplete_commitKeystrokes;this.editor=a;this.throttle=void 0!==b.throttle?b.throttle:20;this.followingSpace=b.followingSpace;this.view=this.getView();this.model=this.getModel(b.dataCallback);this.model.itemsLimit=b.itemsLimit;this.textWatcher=this.getTextWatcher(b.textTestCallback);this.commitKeystrokes=CKEDITOR.tools.array.isArray(c)?c.slice():[c];this._listeners=[];this.outputTemplate=void 0!==b.outputTemplate?
 new CKEDITOR.template(b.outputTemplate):null;b.itemTemplate&&(this.view.itemTemplate=new CKEDITOR.template(b.itemTemplate));if("ready"===this.editor.status)this.attach();else this.editor.on("instanceReady",function(){this.attach()},this);a.on("destroy",function(){this.destroy()},this)}function g(a){this.itemTemplate=new CKEDITOR.template('\x3cli data-id\x3d"{id}"\x3e{name}\x3c/li\x3e');this.editor=a}function f(a){this.dataCallback=a;this.isActive=!1;this.itemsLimit=0}function h(a){return CKEDITOR.tools.array.reduce(CKEDITOR.tools.object.keys(a),

@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){CKEDITOR.plugins.add("language",{requires:"menubutton",lang:"ar,az,bg,ca,cs,cy,da,de,de-ch,el,en,en-au,en-gb,eo,es,es-mx,et,eu,fa,fi,fo,fr,gl,he,hr,hu,id,it,ja,km,ko,ku,lt,lv,nb,nl,no,oc,pl,pt,pt-br,ro,ru,sk,sl,sq,sr,sr-latn,sv,tr,tt,ug,uk,vi,zh,zh-cn",icons:"language",hidpi:!0,init:function(a){var c=a.config.language_list||["ar:Arabic:rtl","fr:French","es:Spanish"],f=this,d=a.lang.language,e={},h,k,l,g;a.addCommand("language",{allowedContent:"span[!lang,dir]",requiredContent:"span[lang]",
 contextSensitive:!0,exec:function(b,a){var c=e["language_"+a];if(c)b[c.style.checkActive(b.elementPath(),b)?"removeStyle":"applyStyle"](c.style)},refresh:function(b){this.setState(f.getCurrentLangElement(b)?CKEDITOR.TRISTATE_ON:CKEDITOR.TRISTATE_OFF)}});for(g=0;g<c.length;g++)h=c[g].split(":"),k=h[0],l="language_"+k,e[l]={label:h[1],langId:k,group:"language",order:g,ltr:"rtl"!=(""+h[2]).toLowerCase(),onClick:function(){a.execCommand("language",this.langId)},role:"menuitemcheckbox"},e[l].style=new CKEDITOR.style({element:"span",

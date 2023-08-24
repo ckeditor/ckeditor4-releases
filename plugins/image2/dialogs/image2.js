@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.dialog.add("image2",function(e){function D(){var a=this.getValue().match(E);(a=!(!a||0===parseInt(a[1],10)))||alert(c.invalidLength.replace("%1",c[this.id]).replace("%2","px"));return a}function O(){function a(a,b){f.push(l.once(a,function(a){for(var l;l=f.pop();)l.removeListener();b(a)}))}var l=t.createElement("img"),f=[];return function(f,b,c){a("load",function(){var a=F(l);b.call(c,l,a.width,a.height)});a("error",function(){b(null)});a("abort",function(){b(null)});var e=-1!==f.indexOf("?")?
 "\x26":"?";l.setAttribute("src",(x.baseHref||"")+f+e+Math.random().toString(16).substring(2))}}function G(){var a=this.getValue(),b=e.config.image2_defaultLockRatio,f=void 0!==b;u(!1);a!==y.data.src?(H(a,function(a,c,d){u(!0);if(!a)return p(f?b:!1);h.setValue(!1===e.config.image2_prefillDimensions?0:c);k.setValue(!1===e.config.image2_prefillDimensions?0:d);v=m=c;w=n=d;p(f?b:I.checkHasNaturalRatio(a))}),q=!0):q?(u(!0),h.setValue(m),k.setValue(n),q=!1):u(!0)}function J(){if(d){var a=this.getValue();

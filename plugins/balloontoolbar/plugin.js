@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function g(a,b){this.editor=a;this.options=b;this.toolbar=new CKEDITOR.ui.balloonToolbar(a);this.options&&"undefined"===typeof this.options.priority&&(this.options.priority=CKEDITOR.plugins.balloontoolbar.PRIORITY.MEDIUM);this._loadButtons()}function h(a){this.editor=a;this._contexts=[];this._listeners=[];this._attachListeners()}var l=function(){return CKEDITOR.tools.array.filter(["matches","msMatchesSelector","webkitMatchesSelector","mozMatchesSelector","oMatchesSelector"],function(a){return window.HTMLElement?
 a in HTMLElement.prototype:!1})[0]}();CKEDITOR.ui.balloonToolbarView=function(a,b){b=CKEDITOR.tools.extend(b||{},{width:"auto",triangleWidth:7,triangleHeight:7});CKEDITOR.ui.balloonPanel.call(this,a,b);this._listeners=[]};CKEDITOR.ui.balloonToolbar=function(a,b){this._view=new CKEDITOR.ui.balloonToolbarView(a,b);this._items={}};CKEDITOR.ui.balloonToolbar.prototype.attach=function(a,b){this._view.renderItems(this._items);this._view.attach(a,{focusElement:!1,show:!b})};CKEDITOR.ui.balloonToolbar.prototype.show=

@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function h(a,b){var d=b.feed;this.caseSensitive=b.caseSensitive;this.marker=b.hasOwnProperty("marker")?b.marker:"@";this.minChars=null!==b.minChars&&void 0!==b.minChars?b.minChars:2;var c;if(!(c=b.pattern)){c=this.minChars;var g="\\"+this.marker+"[_a-zA-Z0-9À-ž]",g=(c?g+("{"+c+",}"):g+"*")+"$";c=new RegExp(g)}this.pattern=c;this.cache=void 0!==b.cache?b.cache:!0;this.followingSpace=b.followingSpace;this.throttle=void 0!==b.throttle?b.throttle:200;this._autocomplete=new CKEDITOR.plugins.autocomplete(a,
 {textTestCallback:k(this.marker,this.minChars,this.pattern),dataCallback:m(d,this),itemTemplate:b.itemTemplate,outputTemplate:b.outputTemplate,throttle:this.throttle,itemsLimit:b.itemsLimit,followingSpace:this.followingSpace})}function k(a,b,d){function c(b,a){var c=b.slice(0,a).match(d);if(!c)return null;var e=b[c.index-1];return void 0===e||e.match(/\s+/)?{start:c.index,end:a}:null}return function(b){return b.collapsed?CKEDITOR.plugins.textMatch.match(b,c):null}}function m(a,b){return function(d,
