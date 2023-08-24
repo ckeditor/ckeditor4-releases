@@ -23,6 +23,8 @@ After June 30, 2023 the `master` version of the [LICENSE.md](https://github.com/
 
 All future versions of CKEditor 4 are released as CKEditor 4 LTS distributions and require a license key.
 
+The NPM package is tagged as 4.23.* without the `-lts` suffix, to keep it consistent with NPM versioning guidelines. Note that the version 4.23.0 and above are the LTS versions of the editor.
+
 ### Getting CKEditor 4 (Open Source)
 
 You may continue using CKEditor 4.22.* and below under the open source license terms. Please note, however, that the open source version no longer comes with any security updates, so your application will be at risk.
