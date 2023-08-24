@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.dialog.add("button",function(b){function d(a){var b=this.getValue();b?(a.attributes[this.id]=b,"name"==this.id&&(a.attributes["data-cke-saved-name"]=b)):(delete a.attributes[this.id],"name"==this.id&&delete a.attributes["data-cke-saved-name"])}return{title:b.lang.forms.button.title,minWidth:350,minHeight:150,getModel:function(a){return(a=a.getSelection().getSelectedElement())&&a.is("input")&&a.getAttribute("type")in{button:1,reset:1,submit:1}?a:null},onShow:function(){var a=this.getModel(this.getParentEditor());
 a&&this.setupContent(a)},onOk:function(){var a=this.getParentEditor(),b=this.getModel(a),d=this.getMode(a)==CKEDITOR.dialog.CREATION_MODE,c=b?CKEDITOR.htmlParser.fragment.fromHtml(b.getOuterHtml()).children[0]:new CKEDITOR.htmlParser.element("input");this.commitContent(c);var e=new CKEDITOR.htmlParser.basicWriter;c.writeHtml(e);c=CKEDITOR.dom.element.createFromHtml(e.getHtml(),a.document);d?a.insertElement(c):(c.replace(b),a.getSelection().selectElement(c))},contents:[{id:"info",label:b.lang.forms.button.title,

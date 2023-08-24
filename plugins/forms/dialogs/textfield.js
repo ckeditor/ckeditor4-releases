@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.dialog.add("textfield",function(b){function e(a){a=a.element;var b=this.getValue();b?a.setAttribute(this.id,b):a.removeAttribute(this.id)}function f(a){a=a.hasAttribute(this.id)&&a.getAttribute(this.id);this.setValue(a||"")}var g={email:1,password:1,search:1,tel:1,text:1,url:1};return{title:b.lang.forms.textfield.title,minWidth:350,minHeight:150,getModel:function(a){a=a.getSelection().getSelectedElement();return!a||"input"!=a.getName()||!g[a.getAttribute("type")]&&a.getAttribute("type")?
 null:a},onShow:function(){var a=this.getModel(this.getParentEditor());a&&this.setupContent(a)},onOk:function(){var a=this.getParentEditor(),b=this.getModel(a),c=this.getMode(a)==CKEDITOR.dialog.CREATION_MODE;c&&(b=a.document.createElement("input"),b.setAttribute("type","text"));b={element:b};c&&a.insertElement(b.element);this.commitContent(b);c||a.getSelection().selectElement(b.element)},onLoad:function(){this.foreach(function(a){a.getValue&&(a.setup||(a.setup=f),a.commit||(a.commit=e))})},contents:[{id:"info",

@@ -1,6 +1,6 @@
 ﻿/*
  Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
- For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function v(){return!1}var l=CKEDITOR.tools,D=CKEDITOR.plugins.pastetools,w=D.filters.common,h=w.styles,E=w.createAttributeStack,A=w.lists.getElementIndentation,F=["o:p","xml","script","meta","link"],G="v:arc v:curve v:line v:oval v:polyline v:rect v:roundrect v:group".split(" "),B={},z=0,u={},f,t;CKEDITOR.plugins.pastetools.filters.word=u;CKEDITOR.plugins.pastefromword=u;u.rules=function(c,b,d){function e(a){(a.attributes["o:gfxdata"]||"v:group"===a.parent.name)&&k.push(a.attributes.id)}
 var g=Boolean(c.match(/mso-list:\s*l\d+\s+level\d+\s+lfo\d+/)),k=[],x={root:function(a){a.filterChildren(d);CKEDITOR.plugins.pastefromword.lists.cleanup(f.createLists(a,b))},elementNames:[[/^\?xml:namespace$/,""],[/^v:shapetype/,""],[new RegExp(F.join("|")),""]],elements:{a:function(a){if(a.attributes.name){if("_GoBack"==a.attributes.name){delete a.name;return}if(a.attributes.name.match(/^OLE_LINK\d+$/)){delete a.name;return}}if(a.attributes.href&&a.attributes.href.match(/#.+$/)){var b=a.attributes.href.match(/#(.+)$/)[1];
