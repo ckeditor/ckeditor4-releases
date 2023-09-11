@@ -23,18 +23,6 @@ After June 30, 2023 the `master` version of the [LICENSE.md](https://github.com/
 
 All future versions of CKEditor 4 (4.23.0-lts and above) are released as CKEditor 4 LTS distributions and require a license key.
 
-If you acquired the [Extended Support Model](https://ckeditor.com/ckeditor-4-support/) for CKEditor 4 LTS, please read [the CKEditor 4 LTS key activation guide.](https://ckeditor.com/docs/ckeditor4/latest/support/licensing/license-key-and-activation.html)
-
-In order to activate CKEditor 4 LTS, add `licenseKey` configure the editor with a valid license key:
-
-```html
-<script>
-    CKEDITOR.replace( 'editor', {
-        licenseKey: 'your license key'
-    } );
-</script>
-```
-
 The NPM package is tagged as 4.23.* without the `-lts` suffix, to keep it consistent with NPM versioning guidelines. Note that the version 4.23.0 and above are the LTS versions of the editor.
 
 ### Getting CKEditor 4 (Open Source)
@@ -96,7 +84,17 @@ You can also load CKEditor 4 using [CDN](https://cdn.ckeditor.com/#ckeditor4).
 
 #### CKEditor 4 LTS
 
-Since the introduction of the LTS version of CKEditor (`4.23.0-lts`) in July 2023, all future versions of CKEditor 4 will contain `-lts` in their version number.
+If you acquired the [Extended Support Model](https://ckeditor.com/ckeditor-4-support/) for CKEditor 4 LTS, please read [the CKEditor 4 LTS key activation guide.](https://ckeditor.com/docs/ckeditor4/latest/support/licensing/license-key-and-activation.html)
+
+In order to activate CKEditor 4 LTS, add `licenseKey` configure the editor with a valid license key:
+
+```html
+<script>
+    CKEDITOR.replace( 'editor', {
+        licenseKey: 'your license key'
+    } );
+</script>
+```
 
 ## Features
 
