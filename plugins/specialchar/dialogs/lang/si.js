@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","si",{euro:"යුරෝ සලකුණ",lsquo:"වමේ තනි උපුටා දක්වීම ",rsquo:"දකුණේ තනි උපුටා දක්වීම ",ldquo:"වමේ දිත්ව  උපුටා දක්වීම ",rdquo:"දකුණේ දිත්ව  උපුටා දක්වීම ",ndash:"En dash",mdash:"Em dash",iexcl:"යටිකුරු හර්ෂදී ",cent:"Cent sign",pound:"Pound sign",curren:"මුල්‍යමය ",yen:"යෙන් ",brvbar:"Broken bar",sect:"තෙරේම් ",uml:"Diaeresis",copy:"පිටපත් අයිතිය ",ordf:"දර්ශකය",laquo:"Left-pointing double angle quotation mark",not:"සලකුණක් නොවේ",reg:"සලකුණක් ලියාපදිංචි කිරීම",

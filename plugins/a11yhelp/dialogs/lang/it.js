@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("a11yhelp","it",{title:"Istruzioni di Accessibilità",contents:"Contenuti di Aiuto. Per chiudere questa finestra premi ESC.",legend:[{name:"Generale",items:[{name:"Barra degli strumenti Editor",legend:"Premi ${toolbarFocus} per accedere alla barra degli strumenti. Passa al gruppo di barre degli strumenti successivo o precedente con TAB o MAIUSC+TAB. Passa al pulsante della barra degli strumenti successivo o precedente con FRECCIA DESTRA o FRECCIA SINISTRA. Premi SPAZIO o INVIO per attivare il pulsante della barra degli strumenti. Lo stato attivo verrà riportato all'area di modifica dopo l'attivazione del pulsante della barra degli strumenti."},

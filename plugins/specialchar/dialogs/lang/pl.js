@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","pl",{euro:"Znak euro",lsquo:"Cudzysłów pojedynczy otwierający",rsquo:"Cudzysłów pojedynczy zamykający",ldquo:"Cudzysłów apostrofowy otwierający",rdquo:"Cudzysłów apostrofowy zamykający",ndash:"Półpauza",mdash:"Pauza",iexcl:"Odwrócony wykrzyknik",cent:"Znak centa",pound:"Znak funta",curren:"Znak waluty",yen:"Znak jena",brvbar:"Przerwana pionowa kreska",sect:"Paragraf",uml:"Diereza",copy:"Znak praw autorskich",ordf:"Wskaźnik rodzaju żeńskiego liczebnika porządkowego",
