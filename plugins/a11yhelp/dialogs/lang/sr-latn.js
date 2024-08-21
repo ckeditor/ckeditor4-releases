@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("a11yhelp","sr-latn",{title:"Uputstva za pomoć",contents:"Sadržaji za pomoć. Da bi ste zatvorili diјalog pritisnite ESC.",legend:[{name:"Opšte",items:[{name:"Alatke za uređivanje",legend:"Pritisnite ${toolbarFocus} da biste prešli na traku sa alatkama. Pređite na sledeću i prethodnu grupu traka sa alatkama pomoću TAB i SHIFT+TAB. Pređite na sledeće i prethodno dugme na traci sa alatkama pomoću STRELICE NADESNO ili STRELICA NALEVO. Pritisnite SPACE ili ENTER da biste aktivirali dugme na traci sa alatkama. Nakon aktiviranja dugmeta na traci sa alatkama, fokus će biti pomeren nazad u oblast za uređivanje."},

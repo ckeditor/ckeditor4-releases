@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","af",{euro:"Euroteken",lsquo:"Linker enkelkwotasie",rsquo:"Regter enkelkwotasie",ldquo:"Linker dubbelkwotasie",rdquo:"Regter dubbelkwotasie",ndash:"Kortkoppelteken",mdash:"Langkoppelteken",iexcl:"Omgekeerdeuitroepteken",cent:"Centteken",pound:"Pondteken",curren:"Geldeenheidteken",yen:"Yenteken",brvbar:"Gebreekte balk",sect:"Afdeelingsteken",uml:"Deelteken",copy:"Kopieregteken",ordf:"Vroulikekenteken",laquo:"Linkgeoorienteerde aanhaalingsteken",not:"Verbodeteken",

@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","es",{euro:"Símbolo de euro",lsquo:"Comilla simple izquierda",rsquo:"Comilla simple derecha",ldquo:"Comilla doble izquierda",rdquo:"Comilla doble derecha",ndash:"Guión corto",mdash:"Guión medio largo",iexcl:"Signo de admiración invertido",cent:"Símbolo centavo",pound:"Símbolo libra",curren:"Símbolo moneda",yen:"Símbolo yen",brvbar:"Barra vertical rota",sect:"Símbolo sección",uml:"Diéresis",copy:"Signo de derechos de autor",ordf:"Indicador ordinal femenino",laquo:"Abre comillas angulares",

@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 (function(){function v(){return!1}var l=CKEDITOR.tools,D=CKEDITOR.plugins.pastetools,w=D.filters.common,h=w.styles,E=w.createAttributeStack,A=w.lists.getElementIndentation,F=["o:p","xml","script","meta","link"],G="v:arc v:curve v:line v:oval v:polyline v:rect v:roundrect v:group".split(" "),B={},z=0,u={},f,t;CKEDITOR.plugins.pastetools.filters.word=u;CKEDITOR.plugins.pastefromword=u;u.rules=function(c,b,d){function e(a){(a.attributes["o:gfxdata"]||"v:group"===a.parent.name)&&k.push(a.attributes.id)}

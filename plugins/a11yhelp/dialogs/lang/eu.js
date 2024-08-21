@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("a11yhelp","eu",{title:"Erabilerraztasunaren argibideak",contents:"Laguntzaren edukiak. Elkarrizketa-koadro hau ixteko sakatu ESC.",legend:[{name:"Orokorra",items:[{name:"Editorearen tresna-barra",legend:"Sakatu ${toolbarFocus} tresna-barrara nabigatzeko. Tresna-barrako aurreko eta hurrengo taldera joateko erabili TAB eta MAIUS+TAB. Tresna-barrako aurreko eta hurrengo botoira joateko erabili ESKUIN-GEZIA eta EZKER-GEZIA. Sakatu ZURIUNEA edo SARTU tresna-barrako botoia aktibatzeko."},

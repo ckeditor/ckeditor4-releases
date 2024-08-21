@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","az",{euro:"Avropa valyuta işarəsi",lsquo:"Sol tək dırnaq işarəsi",rsquo:"Sağ tək dırnaq işarəsi",ldquo:"Sol cüt dırnaq işarəsi",rdquo:"Sağ cüt dırnaq işarəsi",ndash:"Çıxma işarəsi",mdash:"Tire",iexcl:"Çevrilmiş nida işarəsi",cent:"Sent işarəsi",pound:"Funt sterlinq işarəsi",curren:"Valyuta işarəsi",yen:"İena işarəsi",brvbar:"Sınmış zolaq",sect:"Paraqraf işarəsi",uml:"Umlyaut",copy:"Müəllif hüquqları haqqında işarəsi",ordf:"Qadın sıra indikatoru (a)",laquo:"Sola göstərən cüt bucaqlı dırnaq",

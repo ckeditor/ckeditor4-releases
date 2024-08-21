@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("a11yhelp","es-mx",{title:"Instrucciones de accesibilidad",contents:"Contenidos de ayuda. Para cerrar este cuadro de diálogo presione ESC.",legend:[{name:"General",items:[{name:"Barra de herramientas del editor",legend:"Presione ${toolbarFocus} para navegar a la barra de herramientas. Desplácese al grupo de barras de herramientas siguiente y anterior con  SHIFT + TAB. Desplácese al botón siguiente y anterior de la barra de herramientas con FLECHA DERECHA o FLECHA IZQUIERDA. Presione SPACE o ENTER para activar el botón de la barra de herramientas."},

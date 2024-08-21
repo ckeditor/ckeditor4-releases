@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("a11yhelp","oc",{title:"Instruccions d'accessibilitat",contents:"Contengut de l'ajuda. Per tampar aquesta fenèstra, quichatz sus la tòca Escap.",legend:[{name:"General",items:[{name:"Barra d'aisinas de l'editor",legend:"Quichar sus ${toolbarFocus} per accedir a la barra d'aisinas. Se desplaçar cap al groupe seguent o precedent de la barra d'aisinas amb las tòcas Tab e Maj+Tab. Se desplaçar cap al boton seguent o precedent de la barra d'aisinas amb las tòcas Sageta dreita e Sageta esquèrra. Quichar sus la barra d'espaci o la tòca Entrada per activer lo boton de barra d'aisinas."},

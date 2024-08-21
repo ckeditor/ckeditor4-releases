@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","ro",{euro:"Simbol EURO €",lsquo:"Ghilimea simplă stânga",rsquo:"Ghilimea simplă dreapta",ldquo:"Ghilimea dublă stânga",rdquo:"Ghilimea dublă dreapta",ndash:"liniuță despărțire cu spații",mdash:"liniuță despărțire cuvinte fără spații",iexcl:"semnul exclamației inversat",cent:"simbol cent",pound:"simbol lira sterlină",curren:"simbol monedă",yen:"simbol yen",brvbar:"bara verticală întreruptă",sect:"simbol paragraf",uml:"tréma",copy:"simbol drept de autor",ordf:"Indicatorul ordinal feminin a superscript",

@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.setLang("specialchar","ru",{euro:"Знак евро",lsquo:"Левая одинарная кавычка",rsquo:"Правая одинарная кавычка",ldquo:"Левая двойная кавычка",rdquo:"Левая двойная кавычка",ndash:"Среднее тире",mdash:"Длинное тире",iexcl:"перевёрнутый восклицательный знак",cent:"Цент",pound:"Фунт",curren:"Знак валюты",yen:"Йена",brvbar:"Вертикальная черта с разрывом",sect:"Знак параграфа",uml:"Умлаут",copy:"Знак охраны авторского права",ordf:"Указатель окончания женского рода ...ая",laquo:"Левая кавычка-«ёлочка»",
