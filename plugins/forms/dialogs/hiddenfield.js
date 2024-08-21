@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.dialog.add("hiddenfield",function(c){return{title:c.lang.forms.hidden.title,hiddenField:null,minWidth:350,minHeight:110,getModel:function(a){return(a=a.getSelection().getSelectedElement())&&a.data("cke-real-element-type")&&"hiddenfield"==a.data("cke-real-element-type")?a:null},onShow:function(){var a=this.getParentEditor(),b=this.getModel(a);b&&(this.setupContent(a.restoreRealElement(b)),a.getSelection().selectElement(b))},onOk:function(){var a=this.getValueOf("info","_cke_saved_name"),b=

@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  CKEditor 4 LTS ("Long Term Support") is available under the terms of the Extended Support Model.
 */
 CKEDITOR.plugins.add("panelbutton",{requires:"button",onLoad:function(){function e(c){var b=this._;b.state!=CKEDITOR.TRISTATE_DISABLED&&(this.createPanel(c),b.on?b.panel.hide():b.panel.showBlock(this._.id,this.document.getById(this._.id),4))}CKEDITOR.ui.panelButton=CKEDITOR.tools.createClass({base:CKEDITOR.ui.button,$:function(c){var b=c.panel||{};delete c.panel;this.base(c);this.document=b.parent&&b.parent.getDocument()||CKEDITOR.document;b.block={attributes:b.attributes};b.toolbarRelated=!0;this.hasArrow=
