@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license/
  */
 
@@ -13,10 +13,10 @@
  * (1) https://ckeditor.com/cke4/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) https://ckeditor.com/cke4/builder/6480ccb59da30ef8dc821b78ab13c9b8
+ * (2) https://ckeditor.com/cke4/builder/4ce60919f9338deecae021f0b560cdfe
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) https://ckeditor.com/cke4/builder/download/6480ccb59da30ef8dc821b78ab13c9b8
+ * (3) https://ckeditor.com/cke4/builder/download/4ce60919f9338deecae021f0b560cdfe
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -30,8 +30,10 @@ var CKBUILDER_CONFIG = {
 	ignore: [
 		'.DS_Store',
 		'.bender',
+		'.circleci',
 		'.editorconfig',
 		'.gitattributes',
+		'.github',
 		'.gitignore',
 		'.idea',
 		'.jscsrc',
@@ -40,7 +42,6 @@ var CKBUILDER_CONFIG = {
 		'.mailmap',
 		'.npm',
 		'.nvmrc',
-		'.travis.yml',
 		'bender-err.log',
 		'bender-out.log',
 		'bender-runner.config.json',
